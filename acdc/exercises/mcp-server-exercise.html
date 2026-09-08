@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SonarQube MCP Server Onboarding Exercise</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--blue-soft);color:var(--ink)}.badge strong{display:block;margin-bottom:4px;color:var(--blue);font-size:13px}.badge span{font-size:13px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 0;position:sticky;top:0;background:var(--bg);z-index:5}.progress-wrap{flex:1;min-width:180px;display:flex;align-items:center;gap:10px}.progress-track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-fill{height:100%;width:0%;background:var(--blue);border-radius:99px;transition:width .2s ease}#progress-label{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#1d4fd1;color:#fff}.notice{padding:16px 20px;border-radius:12px;background:var(--amber-soft);color:var(--amber);font-size:14px;margin:0 0 30px}.notice strong{display:block;margin-bottom:4px}.notice ul{margin:6px 0 0;padding-left:18px}.section-intro{margin:8px 0 22px;color:var(--muted)}.roadmap{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px;margin-top:10px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:90px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item.task .num{background:var(--purple)}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px}.tag.question{background:var(--blue-soft);color:var(--blue)}.tag.task{background:var(--purple-soft);color:var(--purple)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.guidance{margin:0 0 16px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;color:var(--ink)}.guidance strong{display:block;margin-bottom:6px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.guidance ul{margin:0;padding-left:18px}.guidance li{margin:4px 0}.guidance a{color:var(--blue);font-weight:700;text-decoration:none}.guidance a:hover{text-decoration:underline}.guidance code{background:var(--blue-soft);color:var(--blue);padding:1px 6px;border-radius:6px;font-size:12.5px}label.answer-label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff}textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}.status-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}.status-row .saved{color:var(--green);font-weight:700;opacity:0;transition:opacity .3s}.status-row .saved.show{opacity:1}.footer-note{margin-top:44px;padding:20px 22px;border-radius:14px;background:var(--blue-soft);color:var(--ink);font-size:14px}.footer-note strong{display:block;margin-bottom:6px;color:var(--blue)}.teacher-link-row{position:fixed;left:14px;bottom:14px;z-index:10}.teacher-link{display:inline-flex;opacity:.1;transition:opacity .15s ease}.teacher-link:hover,.teacher-link:focus-visible{opacity:1}.teacher-link img{display:block}.print-only{display:none}@media print{.toolbar,.roadmap,.teacher-link-row{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}textarea{border:1px solid #999;min-height:70px}.print-only{display:block}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="mcp-server-exercise-page">
+
+<section class="hero" data-glean-id="exercise-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="exercise-eyebrow">AC/DC · Onboarding exercise · Student copy</p>
+    <h1 data-glean-id="exercise-title">SonarQube MCP Server: figure it out</h1>
+    <p class="lead" data-glean-id="exercise-lead">Ten questions and hands-on tasks that build your working knowledge of the SonarQube MCP Server. Each one gives you a pointer, not the answer &mdash; use the official Sonar documentation and your own testing to work it out.</p>
+  </div>
+  <aside class="badge" data-glean-id="exercise-availability">
+    <strong>How to use this page</strong>
+    <span>Read the goal, follow the guidance, then write your answer in your own words in the box provided.</span>
+  </aside>
+</section>
+
+<div class="teacher-link-row" data-glean-id="teacher-link-row"><a class="teacher-link" href="mcp-server-exercise-teacher.html" target="_blank" rel="noopener" title="Grading key (mentors)" aria-label="Grading key (mentors)"><img src="../../shared/img/545988.png" alt="" width="22" height="22"></a></div>
+
+<div class="toolbar" data-glean-id="exercise-toolbar">
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span id="progress-label">0 / 10 answered</span>
+  </div>
+  <button class="btn primary" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<div class="notice" data-glean-id="exercise-local-save-notice">
+  <strong>Answers save to this browser only</strong>
+  Your answers are kept in this browser's local storage on this device, so closing the tab, refreshing, or reopening the page days later will restore them. They are NOT backed up anywhere and will be lost if you clear this browser's site data, switch browsers or devices, or use a private/incognito window.
+  <ul>
+    <li>Use <b>Print / save as PDF</b> to keep a permanent copy, especially before switching browsers, devices, or clearing site data.</li>
+    <li>If this exercise is part of a tracked onboarding task, <b>commit your written answers to your onboarding notes in your GitHub repo</b> so the work is actually saved and visible to your manager or mentor.</li>
+  </ul>
+</div>
+
+<nav class="roadmap" data-glean-id="exercise-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a>
+  <a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a>
+</nav>
+
+<section data-glean-id="exercise-items">
+  <div class="items" id="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>What is the SonarQube MCP Server used for, and where does it run?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand MCP Server architecture and deployment modes.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Start with the overview page: <a href="https://docs.sonarsource.com/sonarqube-mcp-server/about-the-mcp-server" target="_blank" rel="noopener">About the MCP Server</a>. What problem is it solving for an AI coding agent that the agent couldn't do on its own?</li>
+          <li>Look at the setup pages for the different hosting shapes: <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/self-hosted" target="_blank" rel="noopener">Self-hosted</a>, <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/sonarqube-server-hosted" target="_blank" rel="noopener">SonarQube Server-hosted</a>, and <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/sonarqube-cloud-hosted" target="_blank" rel="noopener">SonarQube Cloud-hosted</a>. Note how "runs locally on your machine" differs from "runs as a proxy through your SonarQube instance."</li>
+          <li>Think about who the client is (an IDE, a CLI agent, a chat client) versus who the server is (something that talks to SonarQube on the client's behalf).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-1">Your answer</label>
+      <textarea id="answer-1" data-item="1" placeholder="Explain the purpose and where it can run..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>What does it mean to integrate the SonarQube MCP Server with SonarQube for IDE?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the IDE integration and what it adds on top of the MCP server alone.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube-mcp-server/using/integration" target="_blank" rel="noopener">Integrate with SonarQube for IDE</a>.</li>
+          <li>Ask yourself: without this integration, what does the MCP server alone give an agent? What extra capability does wiring it up to a running SonarQube for IDE instance unlock (hint: think about triggering an analysis directly in the editor)?</li>
+          <li>Note the token requirement mentioned in setup docs &mdash; connected mode and MCP integrations need a specific token type. Which one, and why do the other types not work?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-2">Your answer</label>
+      <textarea id="answer-2" data-item="2" placeholder="Explain what the IDE integration unlocks..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>What configuration setting should you include if your SonarQube Server has a private certificate (self-signed or internal CA-signed)?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how to configure private certificates for the MCP server.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Check <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/environment-considerations" target="_blank" rel="noopener">Environment considerations</a> and the <a href="https://github.com/SonarSource/sonarqube-mcp-server" target="_blank" rel="noopener">MCP server GitHub repo</a> for how custom certificates are supplied to the container.</li>
+          <li>Think in terms of Docker: what do you mount, and where, so the container's trust store picks up your organization's CA? What certificate formats are accepted?</li>
+          <li>This is the same underlying problem as certificate errors elsewhere in Sonar's stack (compare with the equivalent AI CodeFix question if you've done that exercise) &mdash; the fix pattern rhymes.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-3">Your answer</label>
+      <textarea id="answer-3" data-item="3" placeholder="Explain the setting and how you'd apply it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>What configuration setting allows you to run the SonarQube MCP Server with an HTTPS endpoint?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how to configure HTTPS for the MCP server.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the transport mode section on <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/environment-considerations" target="_blank" rel="noopener">Environment considerations</a> and the <a href="https://docs.sonarsource.com/sonarqube-mcp-server/reference/environment-variables" target="_blank" rel="noopener">environment variables reference</a>.</li>
+          <li>The MCP server supports more than one transport mode. Which one is the default, and which one requires you to also provision a TLS certificate?</li>
+          <li>Note why the docs steer you toward HTTPS instead of plain HTTP for anything beyond local, single-user testing.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-4">Your answer</label>
+      <textarea id="answer-4" data-item="4" placeholder="Name the setting and when you'd use it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Can you restrict which MCP tools a user's valid token can reach? How would you monitor MCP server usage, and what makes that hard?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand security scoping and the practical limits of monitoring MCP server usage.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Look at the <code>SONARQUBE_TOOLSETS</code> and read-only style headers described in the <a href="https://docs.sonarsource.com/sonarqube-mcp-server/reference/environment-variables" target="_blank" rel="noopener">environment variables reference</a>. Can a per-request header <i>expand</i> what a client can reach, or only narrow it?</li>
+          <li>Separately, think about token scope itself: SonarQube token types (user vs. project vs. global) already exist independently of the MCP server. Which type does the MCP server actually require, and what does that imply about the blast radius of a leaked token?</li>
+          <li>For monitoring: what does the MCP server expose today (health/service endpoints, telemetry) versus what a security team would actually want (a full audit trail of which tool a specific user invoked, and on which data)? Where's the gap?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-5">Your answer</label>
+      <textarea id="answer-5" data-item="5" placeholder="Cover restriction options, monitoring options, and the gap between them..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Install the SonarQube MCP Server locally using both the jar and Docker installation methods</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice MCP server installation both ways.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Docker path: <a href="https://github.com/SonarSource/sonarqube-mcp-server" target="_blank" rel="noopener">SonarSource/sonarqube-mcp-server on GitHub</a> has the container image and run command. Jar path: the same repo's releases, or the <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/build" target="_blank" rel="noopener">Build</a> page. The jar requires a specific Java version, note which one.</li>
+          <li>Do both installs against the same SonarQube instance/token so you can compare behavior, not just confirm each one starts.</li>
+          <li>Worth noting for later: the jar path may not be a permanent deployment option. Keep that in mind if you're documenting steps for someone else.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-6">Notes (what worked, what didn't, any version/Java requirements you hit)</label>
+      <textarea id="answer-6" data-item="6" placeholder="Record your steps and outcome for both install methods..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Set up the SonarQube MCP Server in HTTP transport mode, and point your AI agent at the HTTP connection</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice MCP transport configuration beyond the stdio default.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Revisit your answer to question 4, then follow the transport configuration in <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/environment-considerations" target="_blank" rel="noopener">Environment considerations</a> to switch from the default stdio transport to HTTP.</li>
+          <li>Reconfigure your agent's MCP client config to point at the HTTP endpoint instead of launching the server as a local process. Confirm tools still show up in the agent.</li>
+          <li>If you run this in a container, check whether you need to bind to all interfaces for port mapping to work, versus just localhost.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-7">Notes (agent used, connection details, anything that tripped you up)</label>
+      <textarea id="answer-7" data-item="7" placeholder="Record your setup and what you tested..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Get information about one of your projects from the AI agent via the MCP server, and validate it against the SonarQube UI</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Verify the MCP server actually retrieves correct data, not just that it responds.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Pick a real project you have in SonarQube (Cloud or Server), and ask your agent something concrete: open issue count, quality gate status, a specific rule's findings.</li>
+          <li>Cross-check the agent's answer against the same data in the SonarQube UI. Do the numbers match exactly? If not, is that a caching/timing issue, a scoping issue (wrong branch/project), or something else?</li>
+          <li>This is a good moment to also notice which MCP tool the agent actually called, most agents will show you the tool call, which ties back to the toolset question in task 9.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-8">Notes (what you asked, what came back, and whether it matched the UI)</label>
+      <textarea id="answer-8" data-item="8" placeholder="Record your validation results..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Test the toolsets-related environment variables and see how the agent's available tools change</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Deep dive into toolset scoping. Optional, but a good one for understanding least-privilege setups.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Check the toolset-related variable in the <a href="https://docs.sonarsource.com/sonarqube-mcp-server/reference/environment-variables" target="_blank" rel="noopener">environment variables reference</a> and the full toolset list on the <a href="https://docs.sonarsource.com/sonarqube-mcp-server/reference/tools" target="_blank" rel="noopener">Tools reference</a> page.</li>
+          <li>Launch the server with a narrowed toolset list, then ask your agent to do something that would need a tool you excluded. What happens: an error, a silent "can't help with that," or something else?</li>
+          <li>Pay attention to whether specifying a subset replaces the default set entirely, versus just removing what you listed. That distinction matters for anyone locking this down for a team.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-9">Notes (which toolsets you tried, what changed)</label>
+      <textarea id="answer-9" data-item="9" placeholder="Record what you configured and observed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Test the SonarQube MCP Server alongside Sonar Vortex agentic analysis and context augmentation</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how Vortex capabilities show up through the same MCP server. Optional, but useful if you've already done the Vortex exercise.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the <a href="../vortex-onboarding.html" target="_blank" rel="noopener">Vortex onboarding page</a> in this hub if you haven't already &mdash; context augmentation and agentic analysis are both delivered to an agent through this same MCP server.</li>
+          <li>On a project with Vortex enabled, give your agent a real coding task and watch whether it pulls context before writing, and gets verification feedback as it edits files.</li>
+          <li>Note any prerequisites specific to Vortex (like a prior CI analysis on a long-lived branch) that aren't required for plain MCP server usage &mdash; that's a good way to see where "just the MCP server" ends and "Vortex on top of it" begins.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-10">Notes (what you tested, what Vortex added on top of the base MCP tools)</label>
+      <textarea id="answer-10" data-item="10" placeholder="Record what you observed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+  </div>
+</section>
+
+<div class="footer-note" data-glean-id="exercise-footer-note">
+  <strong>Your answers stay on this device</strong>
+  This page saves your answers in this browser's local storage, so they will still be here if you come back later, even after closing the browser. They are not synced anywhere else, so they will not follow you to another browser, another device, or survive clearing this site's data. Print this page (button above, or Cmd/Ctrl+P) for a permanent copy, and if this exercise is tracked as part of your onboarding, commit your written answers into your onboarding notes in your GitHub repo so the work isn't lost.
+</div>
+
+</main>
+<script>
+(function(){
+  var textareas=Array.from(document.querySelectorAll('textarea[data-item]'));
+  var fill=document.getElementById('progress-fill');
+  var label=document.getElementById('progress-label');
+  var total=textareas.length;
+  function storageKey(id){return 'mcp-server-exercise-'+id;}
+  function updateProgress(){
+    var answered=textareas.filter(function(t){return t.value.trim().length>0;}).length;
+    fill.style.width=(total?Math.round(answered/total*100):0)+'%';
+    label.textContent=answered+' / '+total+' answered';
+  }
+  textareas.forEach(function(t){
+    try{
+      var saved=localStorage.getItem(storageKey(t.dataset.item));
+      if(saved)t.value=saved;
+    }catch(e){}
+    var statusEl=t.closest('.item').querySelector('.saved');
+    var timer;
+    t.addEventListener('input',function(){
+      try{localStorage.setItem(storageKey(t.dataset.item),t.value);}catch(e){}
+      updateProgress();
+      if(statusEl){
+        statusEl.classList.add('show');
+        clearTimeout(timer);
+        timer=setTimeout(function(){statusEl.classList.remove('show');},1200);
+      }
+    });
+  });
+  updateProgress();
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body></html>

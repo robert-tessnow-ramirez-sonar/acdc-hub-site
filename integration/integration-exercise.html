@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integration Onboarding Exercise</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--blue-soft);color:var(--ink)}.badge strong{display:block;margin-bottom:4px;color:var(--blue);font-size:13px}.badge span{font-size:13px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 0;position:sticky;top:0;background:var(--bg);z-index:5}.progress-wrap{flex:1;min-width:180px;display:flex;align-items:center;gap:10px}.progress-track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-fill{height:100%;width:0%;background:var(--blue);border-radius:99px;transition:width .2s ease}#progress-label{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#1d4fd1;color:#fff}.notice{padding:16px 20px;border-radius:12px;background:var(--amber-soft);color:var(--amber);font-size:14px;margin:0 0 30px}.notice strong{display:block;margin-bottom:4px}.notice ul{margin:6px 0 0;padding-left:18px}.section-intro{margin:8px 0 22px;color:var(--muted)}.roadmap{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0;max-height:92px;overflow-y:auto;padding:2px}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 10px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px;margin-top:10px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:90px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px;white-space:nowrap}.tag.diff{background:var(--blue-soft);color:var(--blue)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.tag.cluster{background:var(--purple-soft);color:var(--purple)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.cluster-note{margin:0 0 14px;padding:10px 14px;border-radius:10px;background:var(--purple-soft);color:var(--purple);font-size:13px;font-weight:700}.guidance{margin:0 0 16px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;color:var(--ink)}.guidance strong{display:block;margin-bottom:6px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.guidance ul{margin:0;padding-left:18px}.guidance li{margin:4px 0}.guidance a{color:var(--blue);font-weight:700;text-decoration:none}.guidance a:hover{text-decoration:underline}.guidance code{background:var(--blue-soft);color:var(--blue);padding:1px 6px;border-radius:6px;font-size:12.5px}label.answer-label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff}textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}.status-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}.status-row .saved{color:var(--green);font-weight:700;opacity:0;transition:opacity .3s}.status-row .saved.show{opacity:1}.footer-note{margin-top:44px;padding:20px 22px;border-radius:14px;background:var(--blue-soft);color:var(--ink);font-size:14px}.footer-note strong{display:block;margin-bottom:6px;color:var(--blue)}.teacher-link-row{position:fixed;left:14px;bottom:14px;z-index:10}.teacher-link{display:inline-flex;opacity:.1;transition:opacity .15s ease}.teacher-link:hover,.teacher-link:focus-visible{opacity:1}.teacher-link img{display:block}.print-only{display:none}@media print{.toolbar,.roadmap,.teacher-link-row{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}textarea{border:1px solid #999;min-height:70px}.print-only{display:block}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="integration-exercise-page">
+
+<section class="hero" data-glean-id="exercise-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="exercise-eyebrow">Sonar Support &middot; Onboarding exercise &middot; Student copy</p>
+    <h1 data-glean-id="exercise-title">Integration: figure it out</h1>
+    <p class="lead" data-glean-id="exercise-lead">21 hands-on integration exercises, ordered from easiest to hardest: DevOps platform PR decoration, pipelines, webhooks, Jenkins, authentication (SSO/LDAP/SAML), and provisioning. Each one gives you a pointer, not the answer.</p>
+  </div>
+  <aside class="badge" data-glean-id="exercise-availability">
+    <strong>How to use this page</strong>
+    <span>Work through these roughly in order. Items tagged "pick one" are a cluster, one platform is enough, you don't need to repeat the same exercise four times.</span>
+  </aside>
+</section>
+
+<div class="teacher-link-row" data-glean-id="teacher-link-row"><a class="teacher-link" href="integration-exercise-teacher.html" target="_blank" rel="noopener" title="Grading key (mentors)" aria-label="Grading key (mentors)"><img src="../shared/img/545988.png" alt="" width="22" height="22"></a></div>
+
+<div class="toolbar" data-glean-id="exercise-toolbar">
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span id="progress-label">0 / 21 answered</span>
+  </div>
+  <button class="btn primary" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<div class="notice" data-glean-id="exercise-local-save-notice">
+  <strong>Answers save to this browser only</strong>
+  Your answers are kept in this browser's local storage on this device, so closing the tab, refreshing, or reopening the page days later will restore them. They are NOT backed up anywhere and will be lost if you clear this browser's site data, switch browsers or devices, or use a private/incognito window.
+  <ul>
+    <li>Use <b>Print / save as PDF</b> to keep a permanent copy, especially before switching browsers, devices, or clearing site data.</li>
+    <li>If this exercise is part of a tracked onboarding task, <b>commit your written answers to your onboarding notes in your GitHub repo</b> so the work is actually saved and visible to your manager or mentor.</li>
+  </ul>
+</div>
+
+<nav class="roadmap" data-glean-id="exercise-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a><a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a><a href="#item-11">11</a><a href="#item-12">12</a><a href="#item-13">13</a><a href="#item-14">14</a><a href="#item-15">15</a><a href="#item-16">16</a><a href="#item-17">17</a><a href="#item-18">18</a><a href="#item-19">19</a><a href="#item-20">20</a><a href="#item-21">21</a></nav>
+
+<section data-glean-id="exercise-items">
+  <div class="items" id="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>Create a PR on one of the DevOps platforms</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know the Git basics (clone/pull/push/commit) and how repos/branches work, before layering any SonarQube integration on top.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Pick any DevOps platform you have access to (GitHub, GitLab, Bitbucket, or Azure DevOps) and clone a test repo.</li>
+          <li>Create a branch, make a small commit, push it, and open a pull request against the main branch.</li>
+          <li>This is a prerequisite for nearly everything else in this exercise, if any of clone/branch/commit/push/PR felt unfamiliar, spend extra time here before moving on.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-1">Your answer</label>
+      <textarea id="answer-1" data-item="1" placeholder="Record which platform and repo you used, and confirm you opened a PR..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>Set up a webhook (global or project level)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how a SonarQube webhook is triggered and what information it can carry.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find where webhooks are configured, either globally (Administration) or per-project, and point one at a URL you can inspect (a request-catching tool like webhook.site works well for testing).</li>
+          <li>Trigger an analysis and confirm the webhook actually fires, then inspect the payload it sent.</li>
+          <li>Look at what optional configuration exists for including more information in the payload (e.g. secret signing, custom properties), and think about what a receiving system would use this for (triggering a downstream deploy, posting to chat, etc.).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-2">Your answer</label>
+      <textarea id="answer-2" data-item="2" placeholder="Describe where you configured the webhook, what triggered it, and what was in the payload..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>Set up a Quality Gate wait step on top of your pipeline</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how a pipeline waits for the Quality Gate result, and how to troubleshoot the most common failure mode: timeouts.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Using the pipeline you set up in the earlier item, add whatever step or task "waits for Quality Gate" in your CI tool (for example, a dedicated task/step, or a scanner flag depending on platform).</li>
+          <li>Confirm your pipeline actually pauses and reflects Pass/Fail based on the Quality Gate outcome.</li>
+          <li>Deliberately investigate the timeout scenario: what causes a wait-for-QG step to time out, and what would you check first if a customer reported this? (Hint: think about background task processing time and network reachability between CI and SonarQube.)</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-3">Your answer</label>
+      <textarea id="answer-3" data-item="3" placeholder="Describe the wait step you configured and what you'd check first if it timed out..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>PR analysis without a DevOps platform integration</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how PR analysis behaves differently when there's no DevOps platform integration configured, and see how that affects the resulting PR decoration.</p>
+      <p class="cluster-note">&#9888; Pick one of these four, not all of them.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Run a PR analysis manually (via scanner properties, not through an integrated CI/DevOps binding) and observe what happens without any DevOps platform integration configured.</li>
+          <li>Compare the outcome to a normal, fully-integrated PR analysis: what's missing (decoration on the PR itself?) versus what still works (the analysis and its results in the SonarQube UI)?</li>
+          <li>A public example project exists for this exact scenario, search for a small Spring/Gradle demo repo built for this exercise if you want a ready-made target rather than building your own.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-4">Your answer</label>
+      <textarea id="answer-4" data-item="4" placeholder="Describe what you ran and how the result differed from a fully-integrated PR analysis..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Set up pipelines on GitHub, GitLab, Azure DevOps, and Bitbucket</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to set up a working CI pipeline across multiple different CI platforms.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>For each platform, create a minimal pipeline/workflow file that checks out code, builds it, and runs a SonarQube scan.</li>
+          <li>Note the syntax differences between them (YAML structure, how secrets/service connections are referenced, how a SonarQube scanner step is invoked) rather than treating them as interchangeable.</li>
+          <li>You don't need every platform to be equally polished, but confirm you can at least get a successful analysis from each one you attempt.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-5">Your answer</label>
+      <textarea id="answer-5" data-item="5" placeholder="List which platforms you set up and note the key syntax/setup differences you found..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>PR decoration for Azure DevOps</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe PR decoration working end to end on Azure DevOps, and know how to troubleshoot it via Compute Engine logs.</p>
+      <p class="cluster-note">&#9888; Pick one of these four, not all of them.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set Compute Engine (CE) logging to INFO or DEBUG level and watch the logs while a PR analysis with decoration runs, so you can see exactly what SonarQube does during that step.</li>
+          <li>Understand Azure DevOps pipeline YAML syntax well enough to trigger a PR-triggered pipeline run, and know the difference between a "classic" (UI-designed) pipeline and an Infrastructure-as-Code (YAML) pipeline, this affects how you'd retrieve or troubleshoot the pipeline definition.</li>
+          <li>If you have a classic pipeline, find how to export/view its YAML representation, useful for support scenarios where a customer only has a classic pipeline to share.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-6">Your answer</label>
+      <textarea id="answer-6" data-item="6" placeholder="Describe your ADO setup, what you saw in CE logs, and classic vs. YAML pipeline differences..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>PR decoration for Bitbucket Cloud</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe PR decoration working end to end on Bitbucket Cloud, including plan-tier limitations.</p>
+      <p class="cluster-note">&#9888; Pick one of these four, not all of them.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set CE logging to INFO or DEBUG and watch the logs during a PR analysis with decoration enabled.</li>
+          <li>Look at exactly how the Quality Gate/analysis result is displayed in the Bitbucket Cloud PR UI.</li>
+          <li>Research Bitbucket Cloud's free-tier build-minute limits, and think through how a customer on a constrained plan might hit a wall running frequent PR analyses, this is a real support scenario, not just an academic detail.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-7">Your answer</label>
+      <textarea id="answer-7" data-item="7" placeholder="Describe your Bitbucket Cloud setup, what appeared in the PR UI, and the plan-tier limitation you found..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>PR decoration for GitLab</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe PR (merge request) decoration working end to end on GitLab.</p>
+      <p class="cluster-note">&#9888; Pick one of these four, not all of them.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set CE logging to INFO or DEBUG and watch the logs during a merge request analysis with decoration enabled.</li>
+          <li>Understand GitLab CI YAML syntax well enough to trigger and modify a merge-request pipeline.</li>
+          <li>Find where to download build/job logs from GitLab CI directly, useful if you ever need to compare GitLab's own logs against SonarQube's CE logs for the same run.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-8">Your answer</label>
+      <textarea id="answer-8" data-item="8" placeholder="Describe your GitLab setup, what appeared in CE logs, and how you downloaded GitLab's own build logs..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>PR decoration for GitHub</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe PR decoration working end to end on GitHub.</p>
+      <p class="cluster-note">&#9888; Pick one of these four, not all of them.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set CE logging to INFO or DEBUG and watch the logs during a PR analysis with decoration enabled.</li>
+          <li>Understand GitHub Actions YAML syntax well enough to trigger and modify a PR-triggered workflow.</li>
+          <li>Find where to download workflow run logs directly from GitHub Actions.</li>
+          <li>Watch this walkthrough if you want a guided setup: <a href="https://www.youtube.com/watch?v=6zvBuZr8CeI" target="_blank" rel="noopener">GitHub PR decoration walkthrough</a>.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-9">Your answer</label>
+      <textarea id="answer-9" data-item="9" placeholder="Describe your GitHub setup, what appeared in CE logs, and how you downloaded Actions run logs..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Set up SSO header authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand HTTP header-based SSO, where SonarQube trusts headers set by an upstream proxy instead of handling login itself.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the SSO header authentication settings (login/name/email header names, and the enable flag).</li>
+          <li>Since a real reverse proxy is overkill for testing, use a browser extension that lets you inject custom request headers (a header-modifier extension) to simulate what a proxy would send.</li>
+          <li>Confirm you can "log in" purely by sending the right headers, and separately test what happens without them, do you get an error, a login prompt, or something else? Also note the version of the parameter set you used, since exact property names have shifted across SonarQube releases.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-10">Your answer</label>
+      <textarea id="answer-10" data-item="10" placeholder="Describe the headers you configured, how you injected them, and what happened with vs. without them..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-11" data-glean-id="item-11">
+      <div class="item-head">
+        <div class="item-title"><span class="num">11</span><h3>Set LDAP authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the LDAP authentication model and how SonarQube talks to an LDAP directory.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set up or connect to a test LDAP server (several lightweight test LDAP servers/containers exist for exactly this purpose).</li>
+          <li>Configure SonarQube's LDAP settings (server URL, bind credentials, user/group search bases) to point at it.</li>
+          <li>Log in as an LDAP user and confirm authentication succeeds, then investigate group mapping: does an LDAP group translate into a SonarQube group, and if so, how?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-11">Your answer</label>
+      <textarea id="answer-11" data-item="11" placeholder="Describe your LDAP setup, the SonarQube config you used, and how group mapping behaved..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-12" data-glean-id="item-12">
+      <div class="item-head">
+        <div class="item-title"><span class="num">12</span><h3>Set GitHub authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how GitHub-based authentication works, including how GitHub teams/organizations map into SonarQube groups.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Register a GitHub OAuth App (or GitHub App, depending on the exact flow your version uses) and configure SonarQube's GitHub authentication settings with it.</li>
+          <li>Log in via "Log in with GitHub" and confirm you land in SonarQube as an authenticated user.</li>
+          <li>Investigate how GitHub org membership and team membership map into SonarQube, is there a group-sync behavior here, and is it automatic or does it need separate configuration (compare with the GitHub provisioning item later in this exercise)?</li>
+          <li>Watch this walkthrough if useful: <a href="https://www.youtube.com/watch?v=6zvBuZr8CeI" target="_blank" rel="noopener">GitHub integration walkthrough</a>.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-12">Your answer</label>
+      <textarea id="answer-12" data-item="12" placeholder="Describe your GitHub OAuth setup and what you found about team/group mapping..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-13" data-glean-id="item-13">
+      <div class="item-head">
+        <div class="item-title"><span class="num">13</span><h3>Set up SAML authentication using OKTA</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the SAML protocol well enough to wire up a real identity provider, using OKTA as a free, accessible option.</p>
+      <p class="cluster-note">&#9888; At least one saml provider is a must, not all of them.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Sign up for a free OKTA developer/Integrator Free Plan instance: <a href="https://developer.okta.com/signup/" target="_blank" rel="noopener">OKTA developer signup</a>.</li>
+          <li>Create a SAML application in OKTA and configure SonarQube's SAML settings (IdP metadata/entity ID, SSO URL, certificate, attribute mappings) to match.</li>
+          <li>Test the login flow end to end, from clicking "Log in with SAML" through OKTA's authentication and back into SonarQube as a logged-in user. Note where a mismatch (wrong entity ID, wrong attribute name) would show up as an error, this is genuinely useful for future troubleshooting.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-13">Your answer</label>
+      <textarea id="answer-13" data-item="13" placeholder="Describe your OKTA app setup, the SonarQube SAML config, and confirm the login flow worked end to end..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-14" data-glean-id="item-14">
+      <div class="item-head">
+        <div class="item-title"><span class="num">14</span><h3>Set up SAML authentication using Azure AD (Entra ID)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the SAML protocol using a second real-world identity provider, Azure AD/Entra ID, and compare the experience to OKTA.</p>
+      <p class="cluster-note">&#9888; At least one saml provider is a must, not all of them.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>The easiest path is creating your own free-tier Azure organization with Azure AD (now branded Entra ID).</li>
+          <li>Register a SAML enterprise application in Azure AD and configure SonarQube's SAML settings to match it, the same conceptual fields as OKTA (entity ID, SSO URL, certificate, attribute mappings), but in a different admin UI.</li>
+          <li>Test the login flow, and note any differences in setup friction, terminology, or attribute mapping compared to OKTA, if you did that item. This comparison is useful, since customers use both.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-14">Your answer</label>
+      <textarea id="answer-14" data-item="14" placeholder="Describe your Azure AD setup and how it compared to OKTA's SAML setup..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-15" data-glean-id="item-15">
+      <div class="item-head">
+        <div class="item-title"><span class="num">15</span><h3>Set up Jenkins and scan a project with it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand Jenkins well enough to connect it to a DevOps platform and run a real scan, including Jenkins' own architecture.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Connect a Bitbucket or GitHub project to a Jenkins instance (a job that checks out the repo and runs a build).</li>
+          <li>Configure a SonarQube scanner step in that Jenkins job and confirm a successful analysis lands in SonarQube.</li>
+          <li>Extra mile: try scanning a C# or C++ project on Jenkins running on Windows, a genuinely different setup than a typical Linux/Java job. A public example repo exists for this if you want a ready-made target.</li>
+          <li>Along the way, get familiar with Jenkins pipeline vs. freestyle jobs, where Jenkins configuration lives (Java versions, secrets/credentials, executables, logs), and Jenkins' agent/master (now sometimes called controller/agent) architecture, all common sources of "why doesn't my Jenkins scan work" tickets.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-15">Your answer</label>
+      <textarea id="answer-15" data-item="15" placeholder="Describe your Jenkins setup, the project you scanned, and what you learned about Jenkins' own architecture..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-16" data-glean-id="item-16">
+      <div class="item-head">
+        <div class="item-title"><span class="num">16</span><h3>Set up GitHub user/group provisioning</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 9/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand automatic user and group provisioning from GitHub, including exactly when sync happens.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>This requires GitHub authentication to already be set up (see that earlier item), provisioning builds on top of authentication, it doesn't replace it.</li>
+          <li>Enable GitHub provisioning and investigate which APIs it actually calls behind the scenes (organization membership, team membership).</li>
+          <li>Work out precisely what happens to a user and their group memberships once provisioning is enabled, especially for a user who already existed in SonarQube before provisioning was turned on, and what happens if a user or team is removed on the GitHub side.</li>
+          <li>Also determine when synchronization actually happens: is it real-time, on next login, or on some scheduled interval?</li>
+          <li>Watch this walkthrough if useful: <a href="https://www.youtube.com/watch?v=6zvBuZr8CeI" target="_blank" rel="noopener">GitHub provisioning walkthrough</a>.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-16">Your answer</label>
+      <textarea id="answer-16" data-item="16" placeholder="Describe what you set up and exactly what happens to users/groups and when sync occurs..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-17" data-glean-id="item-17">
+      <div class="item-head">
+        <div class="item-title"><span class="num">17</span><h3>Set up GitLab user/group provisioning</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 9/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand automatic user and group provisioning from GitLab, including exactly when sync happens.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>This requires GitLab authentication to already be set up first, provisioning builds on top of authentication.</li>
+          <li>Enable GitLab provisioning and investigate which APIs it actually calls behind the scenes.</li>
+          <li>Work out what happens to a user and their group memberships once provisioning is enabled, for both a brand-new user and one who already existed in SonarQube beforehand, and what happens if group membership changes on the GitLab side.</li>
+          <li>Determine when synchronization actually happens (real-time, on login, or scheduled), and compare this against what you found for GitHub provisioning, if you did that item, are they the same model or different?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-17">Your answer</label>
+      <textarea id="answer-17" data-item="17" placeholder="Describe what you set up, what happens to users/groups, when sync occurs, and how it compares to GitHub's model..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-18" data-glean-id="item-18">
+      <div class="item-head">
+        <div class="item-title"><span class="num">18</span><h3>Set up SCIM provisioning on OKTA</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 9/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand SCIM as a provisioning protocol, distinct from SAML authentication, including its stricter network requirements.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Using the OKTA instance from your SAML setup item, enable SCIM provisioning and connect it to SonarQube.</li>
+          <li>Work out what APIs SCIM actually uses, and what happens to a user or group that was assigned in OKTA BEFORE SCIM was enabled, versus one assigned after.</li>
+          <li>Deliberately test the deactivate vs. suspend distinction in OKTA: deactivate one test user and merely suspend another, then check what happened to each in SonarQube. This distinction is a genuine, well-documented gotcha.</li>
+          <li>Note the network requirement that makes SCIM different from SAML: SAML can tolerate SonarQube not being directly reachable from the IdP, but SCIM cannot, unless an on-premises provisioning agent is used. What would this mean for a customer whose SonarQube instance isn't reachable from the public internet?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-18">Your answer</label>
+      <textarea id="answer-18" data-item="18" placeholder="Describe your SCIM setup, the deactivate-vs-suspend test results, and the network requirement difference from SAML..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-19" data-glean-id="item-19">
+      <div class="item-head">
+        <div class="item-title"><span class="num">19</span><h3>Trigger code scanning alerts on GitHub</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 9/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand GitHub Code Scanning integration, where SonarQube's security findings surface as native GitHub Security alerts.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>This requires your GitHub repository to already be imported/connected to SonarQube.</li>
+          <li>Configure the GitHub App permissions needed for this (Code scanning alerts: Read and write, plus subscribing to the Code scanning alert event).</li>
+          <li>Run an analysis that produces at least one security vulnerability, and confirm it appears both in SonarQube's own UI and as a Code Scanning alert under GitHub's Security tab.</li>
+          <li>Test the bidirectional sync: change the alert's status in GitHub, then check whether that's reflected back in SonarQube (and vice versa), and understand this happens via a webhook GitHub sends to SonarQube.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-19">Your answer</label>
+      <textarea id="answer-19" data-item="19" placeholder="Describe your setup, the vulnerability you triggered, and what you observed testing the bidirectional status sync..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-20" data-glean-id="item-20">
+      <div class="item-head">
+        <div class="item-title"><span class="num">20</span><h3>Block the merge of a PR when the Quality Gate fails (ADO, GitHub, etc.)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand DevOps-platform-native branch policies and PR checks, and how they enforce a SonarQube Quality Gate result.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Prerequisite: you'll need a working pipeline and PR decoration already set up on whichever platform you choose (reuse an earlier item).</li>
+          <li>On Azure DevOps: find the branch policy for "require approval from additional services" / status checks, add the SonarQube/Quality Gate status, and set it to Required (not Optional). On GitHub: find the branch protection rule for required status checks and require the SonarQube check.</li>
+          <li>Deliberately fail the Quality Gate on a test PR and confirm the platform actually blocks the merge button, not just shows a warning.</li>
+          <li>If you can't get the status check to appear as an option at all, that's itself a real, common support scenario, note what you'd check first (global integration binding, pipeline configuration, whether the check has ever successfully reported once).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-20">Your answer</label>
+      <textarea id="answer-20" data-item="20" placeholder="Describe the platform and policy you configured, and confirm merge was actually blocked on a failing Quality Gate..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-21" data-glean-id="item-21">
+      <div class="item-head">
+        <div class="item-title"><span class="num">21</span><h3>Set up SAML authentication using Keycloak</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 10/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> See a third SAML identity provider option. The catalog itself flags this as very optional, self-hosted Keycloak is useful for testing but isn't widely used by real customers, so weigh the time investment before diving in.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>This is explicitly marked as low-priority in the source catalog, don't feel obligated to spend significant time here if you've already done OKTA and/or Azure AD.</li>
+          <li>If you do attempt it: Keycloak is self-hosted, so you'll need to stand up your own instance (a container image is the fastest path) before you can even begin configuring a SAML client.</li>
+          <li>Configure a SAML client in Keycloak and match SonarQube's SAML settings to it, then test the login flow the same way as your other SAML items.</li>
+          <li>If you skip this one, that's a reasonable call, note briefly why (time tradeoff) rather than leaving it blank with no context.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-21">Your answer</label>
+      <textarea id="answer-21" data-item="21" placeholder="Describe what you attempted, or explain your reasoning if you chose to skip this optional item..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+  </div>
+</section>
+
+<div class="footer-note" data-glean-id="exercise-footer-note">
+  <strong>Your answers stay on this device</strong>
+  This page saves your answers in this browser's local storage, so they will still be here if you come back later, even after closing the browser. They are not synced anywhere else, so they will not follow you to another browser, another device, or survive clearing this site's data. Print this page (button above, or Cmd/Ctrl+P) for a permanent copy, and if this exercise is tracked as part of your onboarding, commit your written answers into your onboarding notes in your GitHub repo so the work isn't lost.
+</div>
+
+</main>
+<script>
+(function(){
+  var textareas=Array.from(document.querySelectorAll('textarea[data-item]'));
+  var fill=document.getElementById('progress-fill');
+  var label=document.getElementById('progress-label');
+  var total=textareas.length;
+  function storageKey(id){return 'integration-exercise-'+id;}
+  function updateProgress(){
+    var answered=textareas.filter(function(t){return t.value.trim().length>0;}).length;
+    fill.style.width=(total?Math.round(answered/total*100):0)+'%';
+    label.textContent=answered+' / '+total+' answered';
+  }
+  textareas.forEach(function(t){
+    try{
+      var saved=localStorage.getItem(storageKey(t.dataset.item));
+      if(saved)t.value=saved;
+    }catch(e){}
+    var statusEl=t.closest('.item').querySelector('.saved');
+    var timer;
+    t.addEventListener('input',function(){
+      try{localStorage.setItem(storageKey(t.dataset.item),t.value);}catch(e){}
+      updateProgress();
+      if(statusEl){
+        statusEl.classList.add('show');
+        clearTimeout(timer);
+        timer=setTimeout(function(){statusEl.classList.remove('show');},1200);
+      }
+    });
+  });
+  updateProgress();
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body></html>

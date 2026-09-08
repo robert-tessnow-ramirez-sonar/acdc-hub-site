@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administration Onboarding Exercise: Teacher Key</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff;--red:#b42318;--red-soft:#fdecea}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--red);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--red-soft);color:var(--red)}.badge strong{display:block;margin-bottom:4px;font-size:13px}.badge span{font-size:13px;color:var(--ink)}.notice{padding:16px 20px;border-radius:12px;background:var(--red-soft);color:var(--red);font-size:14px;margin:26px 0 30px}.notice strong{display:block;margin-bottom:4px}.toolbar{display:flex;justify-content:flex-end;padding:0 0 20px}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700;font:inherit;cursor:pointer}.btn:hover{border-color:var(--blue);color:var(--blue)}.roadmap{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 24px;max-height:92px;overflow-y:auto;padding:2px}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 10px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:20px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px;white-space:nowrap}.tag.diff{background:var(--blue-soft);color:var(--blue)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.answer{margin:0 0 14px;padding:16px 18px;border-radius:10px;background:var(--green-soft);border:1px solid #bfe6d8}.answer strong{display:block;margin-bottom:6px;color:var(--green);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.answer p{margin:0;font-size:14px}.rubric{margin:0;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:13.5px}.rubric strong{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.rubric p{margin:0}@media print{.toolbar,.roadmap{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="administration-exercise-teacher-page">
+
+<section class="hero" data-glean-id="teacher-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="teacher-eyebrow">Sonar Support &middot; Onboarding exercise &middot; Teacher key</p>
+    <h1 data-glean-id="teacher-title">Administration: grading key</h1>
+    <p class="lead" data-glean-id="teacher-lead">Model answers and grading notes for all 32 items on the <a href="administration-exercise.html" target="_blank" rel="noopener">student exercise page</a>. Not for distribution to onboarders.</p>
+  </div>
+  <aside class="badge" data-glean-id="teacher-availability">
+    <strong>Restricted</strong>
+    <span>This page is not linked from any nav. Share the link only with people grading onboarding work.</span>
+  </aside>
+</section>
+
+<div class="notice" data-glean-id="teacher-confidential-warning">
+  <strong>Do not share this URL with new joiners</strong>
+  This page contains model answers for the Administration onboarding exercise. Send onboarders to <code>administration-exercise.html</code> instead. Treat the model answers as a grading aid, not a rigid rubric &mdash; a new joiner who reasons to a correct answer by a different path, or on a newer SonarQube version with different exact UI labels, should still pass.
+</div>
+
+<div class="toolbar" data-glean-id="teacher-toolbar">
+  <button class="btn" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<nav class="roadmap" data-glean-id="teacher-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a><a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a><a href="#item-11">11</a><a href="#item-12">12</a><a href="#item-13">13</a><a href="#item-14">14</a><a href="#item-15">15</a><a href="#item-16">16</a><a href="#item-17">17</a><a href="#item-18">18</a><a href="#item-19">19</a><a href="#item-20">20</a><a href="#item-21">21</a><a href="#item-22">22</a><a href="#item-23">23</a><a href="#item-24">24</a><a href="#item-25">25</a><a href="#item-26">26</a><a href="#item-27">27</a><a href="#item-28">28</a><a href="#item-29">29</a><a href="#item-30">30</a><a href="#item-31">31</a><a href="#item-32">32</a></nav>
+
+<section data-glean-id="teacher-items">
+  <div class="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>Understand the issue lifecycle, and how permission changes it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how an issue's status/resolution can change, and how the "Administer Issues" permission affects what you can do to it.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The issue lifecycle runs through statuses like Open, Confirmed, Resolved (with a resolution: Fixed, Won't Fix, False Positive), and Reopened. Actions like Confirm, Resolve, Reopen, Won't Fix, and False Positive are all transitions between these states. The "Administer Issues" project permission gates the ability to change an issue's status/resolution and to assign it to someone; without it, a user can typically still comment and view issues but cannot change their state.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly separates "can view/comment" from "can change status/resolution," and names Administer Issues as the gating permission. Common miss: describing this as the same lifecycle as security hotspots (item 2), it isn't.</p>
+      </div>
+    </article>
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>Understand the security hotspot lifecycle, and how permission changes it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how a security hotspot's status/resolution can change, and how the "Administer Security Hotspots" permission affects what you can do to it.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Security hotspots use a review workflow distinct from the issue lifecycle: To Review, Acknowledged, Fixed, and Safe, framed around whether the hotspot needs a human security review rather than a bug/code-smell resolution. The "Administer Hotspots" permission (also called Administer Security Hotspots) gates changing a hotspot's review status; without it a user can typically view hotspots but not mark them Safe/Fixed/Acknowledged.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly names the review states (To Review, Acknowledged, Fixed, Safe) as distinct terminology from issue resolutions, and names Administer Hotspots as the gating permission. This is a common support confusion point, since hotspots look similar to issues in the UI but follow a different model.</p>
+      </div>
+    </article>
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>Compare a Support Info File and a System Info File</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand there are effectively two names for closely related content, and which detail is available on which edition.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>"System Info" is the product/documentation name for the feature under Administration > System, and the downloadable snapshot from the "Download System Info" button. "Support Info File" is the same downloadable artifact, referred to that way specifically in Sonar's support/ticketing context, when a support engineer asks a customer to attach it to a case. They are the same file under two names used by different audiences, not two separate exports. The System Info page/feature itself exists in Community Edition too; what's gated by edition or support contract is things like downloading raw log files from the UI, and richer licensing/line-of-code detail available on commercial editions.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly identifies these as the same artifact under two names (product-facing vs. support-facing), not two different files. Common miss: assuming "Support Info File" is an Enterprise-only superset, it's the same download; what differs by edition/contract is related but separate (log downloads, licensing detail).</p>
+      </div>
+    </article>
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>Go through a System Info File and check the configurations</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what's actually inside a System Info snapshot.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The System Info file is a JSON document with sections covering System (version, edition, uptime), Database (vendor, version, connection pool stats), Settings/Configuration (a large key-value dump of most instance settings, including housekeeping values and default Quality Gate info), installed plugins and their versions, and (on a cluster) per-node breakdowns. It's valuable to support because it answers most "what version/edition/config is this instance running" questions in one file, without a back-and-forth asking the customer to manually check and paste settings one at a time.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: names at least 3 real sections (System, Database, Settings, Plugins) and can point to a specific setting they located, such as a housekeeping value or a Quality Gate default. Strong answer: explains the efficiency gain for support (one artifact vs. many follow-up questions).</p>
+      </div>
+    </article>
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Modify a Quality Profile by editing its backup XML file</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that a Quality Profile can be edited outside the UI by editing its exported backup.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Exporting a Quality Profile via "Back up" produces an XML file listing every active rule and its parameters, plus profile metadata (name, language, parent profile if extended). Editing the XML to remove a <rule> block and change the name element, then restoring it, creates a new profile missing that rule under the new name. This technique is useful for bulk edits across many rules at once, cloning-with-tweaks without repeating UI clicks, and keeping a profile definition under version control outside the SonarQube database.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirms they actually removed a rule and renamed it via XML edit, and can articulate at least one practical use case (bulk edit, cloning, version control) beyond "because it's possible."</p>
+      </div>
+    </article>
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Display a login message</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Find the setting that lets an admin show a custom message on the login page.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The login-page custom message is under Administration > General settings > General (sometimes labeled something like "Login message" or found under a Security/General subsection depending on version), and it renders on the login screen before authentication. A realistic use case: telling everyone hitting the login page about a scheduled maintenance window, an upcoming version upgrade, or where to find internal support contacts, before they even log in.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: names the setting's approximate location and confirms it renders on the login page specifically (pre-auth), plus a plausible use case.</p>
+      </div>
+    </article>
+    <article class="item" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Display an announcement message</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Find the setting that lets an admin show a banner/announcement to logged-in users.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The announcement message is a separate setting from the login message, it targets users who are already logged in, typically shown as a banner across the top of the UI rather than on the login screen. This distinction matters for support: a customer asking "how do I message all my users" needs to know whether they mean pre-login visitors or already-authenticated users, since those are two different settings with two different audiences.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly distinguishes audience (pre-auth vs. logged-in) and placement (login screen vs. in-app banner) between this and item 6's login message. This distinction is the actual point of the exercise.</p>
+      </div>
+    </article>
+    <article class="item" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Segregate project configuration from project permissions</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand where project-level configuration management is separated from project-level permission management.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Project-level configuration (Quality Gate/Profile assignment, analysis parameters, webhooks, links) and project-level permissions (who has Browse, Administer Issues, Execute Analysis, etc.) are managed under separate sub-sections of a project's Administration tab. A project can have an "Administer" permission split from other admin-adjacent capabilities, letting an org grant someone rights to tune configuration without being able to grant themselves or others broader access. Real scenario: a build/tooling team might need to adjust a project's Quality Gate or webhook config regularly, but shouldn't be able to add themselves as a project owner or change who else has access.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly identifies configuration management and permission management as separate concerns/sections, and gives a plausible real-world reason to split them (least privilege, avoiding self-escalation).</p>
+      </div>
+    </article>
+    <article class="item" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Delegate Quality Profile and Quality Gate permissions to a group or user</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the use case for delegating QP/QG management without full instance admin rights.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Quality Profiles and Quality Gates each support assigning specific "administrators" (a group or user) scoped to just that profile/gate, separate from global SonarQube Administrators. Granting this lets a delegated user or group edit that one Quality Profile or Gate without being made a full instance admin. Real reason: a large org might want each language or product team to own and tune their own Quality Gate/Profile without needing central IT/platform admins to be the bottleneck for every rule tweak.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirms the delegated user could edit the specific QP/QG but nothing else instance-wide, and gives a scalable-organization rationale (avoiding a central-admin bottleneck) rather than just "because you can."</p>
+      </div>
+    </article>
+    <article class="item" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Download logs from the UI</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand when and why to pull logs directly from the SonarQube UI instead of the filesystem.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Logs can be downloaded directly from Administration > System, near the System Info download, typically covering web, Compute Engine (ce), Elasticsearch (es), and access logs. This UI path is most useful for support-contract customers who want a quick, self-service way to pull recent logs without shell/filesystem access to the server. It's less useful (or insufficient alone) on a clustered Data Center deployment, where logs are spread across multiple nodes and the UI download may only reflect a subset, so direct filesystem or centralized log aggregation access matters more there.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: names the log types available (web/ce/es/access) and correctly notes the UI download's limitation on a multi-node Data Center cluster versus a single-node instance.</p>
+      </div>
+    </article>
+    <article class="item" id="item-11" data-glean-id="item-11">
+      <div class="item-head">
+        <div class="item-title"><span class="num">11</span><h3>Create a custom Quality Profile, change a rule's severity, and fail an analysis</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how to create and edit a Quality Profile end to end.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Creating a Quality Profile (from scratch or copied), setting a rule's severity to Blocker, assigning the profile to a project, and analyzing code that triggers that rule causes the analysis to report a Blocker issue. Whether that alone fails the Quality Gate depends on the Gate's own conditions (e.g. "no new Blocker issues" or a rating-based condition), changing a rule's severity doesn't automatically fail anything; it's the separate Quality Gate configuration that turns a severity into a pass/fail outcome.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly identifies that severity change alone doesn't fail an analysis, it has to be connected through a Quality Gate condition that reacts to that severity/rating. This is the key insight the exercise is testing for.</p>
+      </div>
+    </article>
+    <article class="item" id="item-12" data-glean-id="item-12">
+      <div class="item-head">
+        <div class="item-title"><span class="num">12</span><h3>Lock yourself out of a project's permissions, then fix it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that it's possible to remove all access to a private project, and how a system admin restores it.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Removing every permission grant on a private project (including your own) locks everyone, including project admins, out of managing it through the normal Permissions UI. A global/instance System Administrator can still restore access: from the global Administration > Security/Users area (or via the "Administer" system permission), a system admin can grant themselves or another user Administer permission on that specific project even though no project-level admin currently exists, then that person can re-assign the rest of the permissions normally.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirms they actually reproduced the lockout and used a genuinely global/system-admin path (not a project-level workaround, since none exists once permissions are fully stripped) to restore access.</p>
+      </div>
+    </article>
+    <article class="item" id="item-13" data-glean-id="item-13">
+      <div class="item-head">
+        <div class="item-title"><span class="num">13</span><h3>Find the first analysis date of every project using the Web API</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice calling the SonarQube Web API directly, and know which permission is required.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Using the Web API (documented at /web_api on the instance, or in official docs), an endpoint like api/project_analyses/search (or equivalent) returns a project's analysis history including timestamps; the earliest entry gives the first analysis date. This requires at minimum Browse permission on the project, and a valid token (project analysis token or user token) passed as the API credential; without sufficient permission the call returns a 403/permission error rather than data.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: names a plausible analysis-history endpoint, correctly identifies Browse as the minimum permission needed, and reports what error they got when testing without it.</p>
+      </div>
+    </article>
+    <article class="item" id="item-14" data-glean-id="item-14">
+      <div class="item-head">
+        <div class="item-title"><span class="num">14</span><h3>Stop live Portfolio calculation</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the setting that controls automatic Portfolio recomputation.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The Portfolio recomputation-hours setting controls how frequently Portfolios automatically refresh their aggregated metrics. Setting it to a very large interval, or in some versions disabling the schedule, stops live recomputation, so a Portfolio's dashboard numbers stay frozen even as underlying project analyses continue. An admin might want this to reduce compute load on a large instance, control costs, or deliberately freeze a snapshot for a specific reporting period (e.g. a quarterly business review) without values shifting underneath them.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: names the recomputation-hours setting and confirms observed behavior (dashboard stops updating), plus a plausible reason (load/cost control, or freezing a snapshot for reporting).</p>
+      </div>
+    </article>
+    <article class="item" id="item-15" data-glean-id="item-15">
+      <div class="item-head">
+        <div class="item-title"><span class="num">15</span><h3>Configure global test exclusions and try to override them at the project level</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that the GLOBAL exclusion settings are a deliberate exception to normal settings inheritance.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Global Test File Exclusions (and its sibling, Global Source File Exclusions) are explicitly documented as "forced global" parameters, an exception to SonarQube's normal settings inheritance where project-level settings override global ones. No project-level exclusion or scanner-side configuration can override or negate them, they must be changed at the global/UI level to take effect at all. This is the one class of setting purpose-built to be immune to project-level override.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly demonstrates the override attempt failed, and explains WHY: this specific setting is a documented exception to the usual global-then-project inheritance model, not a bug or a permissions issue.</p>
+      </div>
+    </article>
+    <article class="item" id="item-16" data-glean-id="item-16">
+      <div class="item-head">
+        <div class="item-title"><span class="num">16</span><h3>Install and use a community plugin</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how third-party plugins are installed and what an admin needs to acknowledge before using one.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Community plugins install either via the in-product Marketplace UI (where available) or by manually placing the plugin JAR into the extensions/plugins directory and restarting SonarQube. The most common real-world support issue is plugin incompatibility after a platform upgrade, a plugin built against an older SonarQube API breaking after an upgrade, since Sonar doesn't guarantee community plugin compatibility across versions. This means support should generally scope community plugin troubleshooting as "check compatibility with your version first," and be clear that third-party plugin bugs are outside Sonar's own support boundary.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: names both install paths (Marketplace and manual JAR drop) and cites a real, plausible failure pattern (post-upgrade incompatibility) as the reason community plugins carry different support expectations than core features.</p>
+      </div>
+    </article>
+    <article class="item" id="item-17" data-glean-id="item-17">
+      <div class="item-head">
+        <div class="item-title"><span class="num">17</span><h3>Export and import a project via the Web API or UI (project move)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what does and doesn't come along when a project is moved this way.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Exporting a project (via Web API or Administration UI) and importing it into a new project only carries branches/PRs that are marked to be kept when inactive; any inactive branch not explicitly flagged that way is excluded from the export, consistent with how housekeeping/dbcleaner would eventually purge that same branch anyway. In effect, export/import respects the same retention logic that housekeeping enforces, rather than being a full, unconditional snapshot of every branch that ever existed.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly connects the export/import behavior to the same retention logic as housekeeping (item 30), rather than treating it as an unrelated, separate quirk.</p>
+      </div>
+    </article>
+    <article class="item" id="item-18" data-glean-id="item-18">
+      <div class="item-head">
+        <div class="item-title"><span class="num">18</span><h3>Create Portfolios: manually, by regex, and by setting computation hours</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Study the different ways a Portfolio can be populated and scheduled.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A Portfolio can be populated manually (adding specific projects one by one) or via a regex pattern that automatically matches project keys, with a new matching project picked up on the next recomputation without manual action. The Portfolio recomputation-hours setting controls how often either type refreshes; both eventually reflect the same underlying project data, the difference is purely in maintenance overhead, a regex-based Portfolio scales without ongoing manual upkeep as new matching projects appear, while a manual one requires someone to remember to add them.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: built both a manual and regex-based Portfolio, and can articulate the maintenance-overhead tradeoff between them (manual = precise but requires upkeep, regex = automatic but only as good as the naming convention it relies on).</p>
+      </div>
+    </article>
+    <article class="item" id="item-19" data-glean-id="item-19">
+      <div class="item-head">
+        <div class="item-title"><span class="num">19</span><h3>Create a portfolio with sub-portfolios and applications (multi-level structure)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that Portfolios can be nested multiple levels deep, mixing sub-portfolios, Applications, and plain projects.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A multi-level structure (top Portfolio containing sub-portfolios, which contain a mix of plain projects and Applications) correctly rolls metrics up from every level to the top, an Application's own aggregated metrics feed into its parent Portfolio just like a plain project's would. Applications aggregate their own child projects' code, so a project counted inside an Application is not separately double-counted again at the Portfolio level beyond what the Application already aggregated, the rollup is designed to avoid double-counting LOC/issues across that hierarchy.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: successfully built at least a 2-level nested structure mixing sub-portfolios, an Application, and plain projects, and confirmed metrics rolled up correctly without obvious double-counting. If they found double-counting, that's worth flagging as a genuine edge case to verify against current docs rather than dismissing.</p>
+      </div>
+    </article>
+    <article class="item" id="item-20" data-glean-id="item-20">
+      <div class="item-head">
+        <div class="item-title"><span class="num">20</span><h3>Create a user token, a project token, and a global token, then analyze with each</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know where each token type is created and what actually differs when you use it.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>User tokens are created from a user's own account (My Account > Security), and give that token all the permissions of the issuing user (a global admin's user token has full instance rights). Project analysis tokens are scoped to a single project and can typically be created by anyone with Execute Analysis permission on that project; a leaked project token only exposes that one project's analysis capability. Global/organization tokens (where available, e.g. on Cloud) can trigger multi-project actions but are still narrower in blast radius than a highly-privileged user's own token. The practical takeaway: prefer project-scoped tokens over broad user tokens wherever the workflow allows it, since a leaked project token limits the damage.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly ranks blast radius from broadest (a privileged user's user token) to narrowest (a project-scoped token), and can name roughly where each token type is created. This is a genuinely important security-hygiene answer for support to give customers.</p>
+      </div>
+    </article>
+    <article class="item" id="item-21" data-glean-id="item-21">
+      <div class="item-head">
+        <div class="item-title"><span class="num">21</span><h3>Configure a project to notify you when its Quality Gate fails</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the notification mechanism end to end.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Project notification preferences live under each user's own account settings, scoped per project (not a single global admin toggle), letting a user subscribe to events like "my Quality Gate status changes" for specific projects they care about. After subscribing and triggering a failing analysis, the default delivery channel is email; without additional integration configured (e.g. a webhook to Slack), email is the only channel available out of the box.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly locates notification preferences as a per-user, per-project setting (not instance-wide), confirms delivery via email, and knows email is the default/only built-in channel absent further integration (webhooks) work.</p>
+      </div>
+    </article>
+    <article class="item" id="item-22" data-glean-id="item-22">
+      <div class="item-head">
+        <div class="item-title"><span class="num">22</span><h3>Download every kind of report available out of the box</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Find out what reporting formats SonarQube ships without any add-on.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>PDF export is available on individual projects, Applications, and Portfolios directly from their dashboards. Security reports and any Regulatory report (e.g. OWASP/PCI DSS style compliance mappings) are typically project-level features and are gated to specific editions (commercial editions, not Community). The reports differ meaningfully in content, a PDF dashboard export is a snapshot of the visual dashboard, while security/regulatory reports map findings against specific compliance frameworks, they are not just re-skinned copies of the same data.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: successfully found and downloaded PDF exports at multiple levels (project/Application/Portfolio) and identified Security/Regulatory reports as edition-gated and substantively different in content, not just different formatting of the same dashboard.</p>
+      </div>
+    </article>
+    <article class="item" id="item-23" data-glean-id="item-23">
+      <div class="item-head">
+        <div class="item-title"><span class="num">23</span><h3>Configure SonarQube to be accessible without authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Realize this non-default, discouraged configuration exists, and understand why it's a bad idea.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The setting that forces authentication (often called "Force user authentication") is on by default and can be turned off, at which point anonymous users can browse project data, issues, and potentially source code without logging in. The concrete risk: this exposes potentially sensitive source code, security findings, and configuration details to anyone who can reach the instance's URL, including public internet exposure if the instance isn't otherwise firewalled. Sonar's docs explicitly discourage this because most organizations underestimate how much sensitive detail is visible once authentication is bypassed.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: names the "force authentication" setting and articulates a concrete risk (exposure of source code/security findings/config, not just a vague "it's insecure"). This should only ever be tested on a disposable instance, flag if the new joiner didn't note that caution themselves.</p>
+      </div>
+    </article>
+    <article class="item" id="item-24" data-glean-id="item-24">
+      <div class="item-head">
+        <div class="item-title"><span class="num">24</span><h3>Create a conflict between analyzers using the same file suffix</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe what happens when two language analyzers are both configured to claim the same file extension.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Setting two analyzers' file-suffix configuration to both claim the same extension (e.g. .sql for both a T-SQL and a PL/SQL analyzer) causes analysis to behave unpredictably for files with that extension, commonly one analyzer silently "wins" and processes the file while the other ignores it, or the scanner logs a warning/error about an ambiguous language association. A support engineer should look in scanner logs for language-detection or file-association warnings mentioning the conflicting extension, that's the fingerprint of this exact misconfiguration.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually reproduced a real conflict and can describe what appeared in scanner output (a warning, unexpected language attribution, or files being skipped), rather than only describing the setup without observing the failure.</p>
+      </div>
+    </article>
+    <article class="item" id="item-25" data-glean-id="item-25">
+      <div class="item-head">
+        <div class="item-title"><span class="num">25</span><h3>Create a permission template and apply it to projects matching a regex</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how Permission Templates automatically apply to matching projects.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A Permission Template lets an admin pre-define a set of permission grants (users/groups mapped to specific permissions) plus a project-key regex pattern; any project whose key matches that pattern automatically receives those grants, without manual per-project assignment. Renaming or creating a project so its key matches the pattern applies the template's permissions immediately (or on next relevant trigger, depending on version); a non-matching project is unaffected and keeps whatever default/manual permissions it already had.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirmed a matching project received the template's permissions automatically, and separately confirmed a non-matching project did NOT, that negative test is what proves the regex-matching behavior rather than a coincidental default permission.</p>
+      </div>
+    </article>
+    <article class="item" id="item-26" data-glean-id="item-26">
+      <div class="item-head">
+        <div class="item-title"><span class="num">26</span><h3>Force the change of the Server ID</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand exactly what triggers a Server ID change.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The Server ID is derived from the database connection configuration (e.g. sonar.jdbc.url) combined with a value generated the first time the database was set up; changing the database connection string (switching a hostname to an IP even pointing at the same machine, or pointing at a different/fresh database) regenerates the Server ID. The real-world consequence: a changed Server ID invalidates the existing license, since commercial licenses are tied to a specific Server ID, requiring a new license to be issued. This makes Server ID changes a real risk during database migrations, DR failover, or any change to the JDBC connection string, even ones that don't change the actual data.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly identifies the DB connection string (not the application server itself) as the actual trigger, and names license invalidation as the concrete consequence. Common miss: assuming moving/upgrading the application server itself changes the Server ID, it doesn't, as long as the DB connection details are unchanged.</p>
+      </div>
+    </article>
+    <article class="item" id="item-27" data-glean-id="item-27">
+      <div class="item-head">
+        <div class="item-title"><span class="num">27</span><h3>"Cheat" a New Code Quality Gate by adjusting the New Code definition</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand exactly how the New Code definition drives Quality Gate evaluation, by deliberately gaming it.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Setting a project's New Code definition to a number of days shorter than how long ago a real Bug issue was introduced moves that issue outside the "new code" window the Quality Gate evaluates, so a Gate condition like "no new Bugs" no longer sees it and the Gate passes despite a real, known issue existing in the codebase. This is a genuine risk support should be aware of: a team could accidentally (through a misconfigured New Code period) or deliberately (to make a report look better) hide real problems from Quality Gate evaluation without actually fixing anything.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually reproduced the specific scenario (issue N days old, New Code window set to fewer than N days, Gate passes) and can articulate the risk in terms support would care about: a customer's Gate looking healthy while a known issue is invisible to it.</p>
+      </div>
+    </article>
+    <article class="item" id="item-28" data-glean-id="item-28">
+      <div class="item-head">
+        <div class="item-title"><span class="num">28</span><h3>Create a custom Quality Profile in a previous LTS and upgrade to the next LTS</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe the real impact an LTS upgrade can have on a custom Quality Profile.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Creating a custom Quality Profile in an older LTS, then upgrading to the next LTS, can change the profile's effective behavior even though no one edited it: rules can be deprecated, renamed, have default parameters changed, or be replaced by newer equivalents in a given LTS release. The correct way to assess impact is to diff the profile's rule set against that LTS's release notes for rule changes, rather than assuming a profile is frozen in time just because nobody touched it in the UI.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly frames the risk as coming from Sonar's own rule changes during an upgrade (not from any action the customer took), and describes checking release notes as the way to anticipate or explain differences, rather than only reporting whatever they happened to observe in one test.</p>
+      </div>
+    </article>
+    <article class="item" id="item-29" data-glean-id="item-29">
+      <div class="item-head">
+        <div class="item-title"><span class="num">29</span><h3>Configure Housekeeping so specific branches are ensured to be purged</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand sonar.projectDate and sonar.dbcleaner.daysBeforeDeletingInactiveBranchesAndPRs well enough to force a specific cleanup outcome.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>sonar.projectDate lets an analysis be submitted with a backdated timestamp, useful for importing historical data or, in this exercise, simulating that a branch's last analysis happened further in the past than it really did. daysBeforeDeletingInactiveBranchesAndPRs controls how many days of inactivity make a branch/PR eligible for automatic purging; setting it to 0 means effectively all non-exempt branches (any branch not explicitly marked "keep when inactive") are purged on the next housekeeping run, with no grace period. This setting can only be tuned in days/weeks, it cannot be fully disabled to "never purge."</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly used sonar.projectDate to simulate branch age, confirmed the 0-day setting purges non-exempt branches essentially immediately, and correctly notes the setting can't be turned off entirely, only tuned numerically.</p>
+      </div>
+    </article>
+    <article class="item" id="item-30" data-glean-id="item-30">
+      <div class="item-head">
+        <div class="item-title"><span class="num">30</span><h3>Create a custom Quality Gate that fails on any critical issue, on top of the default conditions</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how custom Quality Gates are built without accidentally dropping the built-in protections.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The default Quality Gate ('Sonar way') includes conditions like new/overall reliability, security, and maintainability ratings, and coverage/duplication thresholds on new code (exact condition set varies by version). Building a custom Gate that copies every one of those conditions and adds a new one (Critical issues > 0, or the closest current equivalent severity/rating condition) and then reproducing a Critical issue on a test project confirms the Gate fails specifically because of the new condition, not because one of the inherited default conditions also happened to fail. Isolating which condition triggered the failure (visible on the Quality Gate detail for that analysis) is the key verification step.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually listed the default Gate's real conditions (not a guess), built a Gate that includes all of them plus the new one, and specifically confirmed via the Gate failure detail that the NEW condition (not a coincidental default-condition failure) caused the fail.</p>
+      </div>
+    </article>
+    <article class="item" id="item-31" data-glean-id="item-31">
+      <div class="item-head">
+        <div class="item-title"><span class="num">31</span><h3>Identify the different ways to calculate licensed lines of code (ncloc) for an instance</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Become familiar with multiple methods of getting the same underlying number, and know when each is appropriate.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>There are at least three ways to get licensed ncloc: (1) a Web API call against a license-usage or measures endpoint that returns ncloc per project or instance-wide, (2) community-published scripts (for those without a commercial license/API access) that sum ncloc from logs or other Community-accessible data, and (3) a direct SQL query against the database's project measures tables, useful when API/UI access is unavailable or when cross-referencing at scale. Critically, ncloc for licensing purposes counts only the largest branch or PR per project (not necessarily the main branch), and excludes test code, unsupported-language code, comments/blank lines, and Application-level aggregation (to avoid double-counting the underlying projects).</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: named all three method categories (API, script, SQL) and correctly stated the "largest branch, not necessarily main" rule plus at least one exclusion category (test code, unsupported language, or Application double-counting avoidance). This rule is frequently the source of "why is my LOC count different from what I expected" tickets.</p>
+      </div>
+    </article>
+    <article class="item" id="item-32" data-glean-id="item-32">
+      <div class="item-head">
+        <div class="item-title"><span class="num">32</span><h3>SMTP configuration and notifications</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Learn the full notification pipeline, from SMTP server configuration through to a user actually receiving an email.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>SMTP settings (server, port, authentication, from-address) live under Administration > General > general/email settings; pointing them at a real or test SMTP relay (a local catcher like MailHog works well for testing without spamming real inboxes) enables outbound email. Triggering a subscribed notification (e.g. a Quality Gate failure from item 21) should then produce a real email at the configured relay. If it doesn't arrive, the troubleshooting order should be: confirm SMTP settings are saved and correct (test connection if that option exists), confirm the specific user actually has an active notification subscription for that project/event, and only then suspect something else (spam filtering, network/firewall blocking outbound SMTP).</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually configured SMTP against a real or test mail catcher and confirmed (or attempted and diagnosed) delivery, and gives a sensible troubleshooting order (SMTP config, then subscription, then everything else) rather than a random guess list.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+<script>
+document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+</script>
+</body></html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integration Onboarding Exercise: Teacher Key</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff;--red:#b42318;--red-soft:#fdecea}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--red);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--red-soft);color:var(--red)}.badge strong{display:block;margin-bottom:4px;font-size:13px}.badge span{font-size:13px;color:var(--ink)}.notice{padding:16px 20px;border-radius:12px;background:var(--red-soft);color:var(--red);font-size:14px;margin:26px 0 30px}.notice strong{display:block;margin-bottom:4px}.toolbar{display:flex;justify-content:flex-end;padding:0 0 20px}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700;font:inherit;cursor:pointer}.btn:hover{border-color:var(--blue);color:var(--blue)}.roadmap{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 24px;max-height:92px;overflow-y:auto;padding:2px}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 10px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:20px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px;white-space:nowrap}.tag.diff{background:var(--blue-soft);color:var(--blue)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.tag.cluster{background:var(--purple-soft);color:var(--purple)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.answer{margin:0 0 14px;padding:16px 18px;border-radius:10px;background:var(--green-soft);border:1px solid #bfe6d8}.answer strong{display:block;margin-bottom:6px;color:var(--green);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.answer p{margin:0;font-size:14px}.rubric{margin:0;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:13.5px}.rubric strong{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.rubric p{margin:0}@media print{.toolbar,.roadmap{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="integration-exercise-teacher-page">
+
+<section class="hero" data-glean-id="teacher-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="teacher-eyebrow">Sonar Support &middot; Onboarding exercise &middot; Teacher key</p>
+    <h1 data-glean-id="teacher-title">Integration: grading key</h1>
+    <p class="lead" data-glean-id="teacher-lead">Model answers and grading notes for all 21 items on the <a href="integration-exercise.html" target="_blank" rel="noopener">student exercise page</a>. Not for distribution to onboarders.</p>
+  </div>
+  <aside class="badge" data-glean-id="teacher-availability">
+    <strong>Restricted</strong>
+    <span>This page is not linked from any nav. Share the link only with people grading onboarding work.</span>
+  </aside>
+</section>
+
+<div class="notice" data-glean-id="teacher-confidential-warning">
+  <strong>Do not share this URL with new joiners</strong>
+  This page contains model answers for the Integration onboarding exercise. Send onboarders to <code>integration-exercise.html</code> instead. Treat the model answers as a grading aid, not a rigid rubric &mdash; a new joiner who reasons to a correct answer by a different path, or on a newer SonarQube/platform version with different exact UI labels, should still pass.
+</div>
+
+<div class="toolbar" data-glean-id="teacher-toolbar">
+  <button class="btn" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<nav class="roadmap" data-glean-id="teacher-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a><a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a><a href="#item-11">11</a><a href="#item-12">12</a><a href="#item-13">13</a><a href="#item-14">14</a><a href="#item-15">15</a><a href="#item-16">16</a><a href="#item-17">17</a><a href="#item-18">18</a><a href="#item-19">19</a><a href="#item-20">20</a><a href="#item-21">21</a></nav>
+
+<section data-glean-id="teacher-items">
+  <div class="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>Create a PR on one of the DevOps platforms</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know the Git basics (clone/pull/push/commit) and how repos/branches work, before layering any SonarQube integration on top.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The core Git flow is clone (get a local copy), create a branch, commit changes, push the branch, then open a pull request against the target branch on whichever platform (GitHub, GitLab, Bitbucket, or Azure DevOps) hosts the repo. Every later exercise in this catalog assumes this flow is already comfortable, since PR decoration, pipelines, and branch policies all operate on top of a real pull request.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually created a real PR (not just described the steps) and can name the platform and repo used. This is a gating prerequisite, not a deep exercise, don't over-scrutinize it.</p>
+      </div>
+    </article>
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>Set up a webhook (global or project level)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how a SonarQube webhook is triggered and what information it can carry.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A webhook is configured with a target URL (globally under Administration, or per-project) and fires an HTTP POST after an analysis completes, carrying the analysis/Quality Gate result as a JSON payload. Optional configuration includes a secret used to sign the payload (so the receiver can verify it really came from SonarQube) and, on some versions, additional custom properties. A receiving system typically uses this to trigger a downstream action, deploy, chat notification, or a custom dashboard update, based on the Quality Gate outcome without polling the API.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually triggered a webhook and inspected a real payload (not just read documentation about the shape), and can name at least one realistic downstream use case for the payload.</p>
+      </div>
+    </article>
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>Set up a Quality Gate wait step on top of your pipeline</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how a pipeline waits for the Quality Gate result, and how to troubleshoot the most common failure mode: timeouts.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A "wait for Quality Gate" step blocks the pipeline until SonarQube's background analysis task finishes and reports Pass/Fail, then the pipeline reflects that result. The most common cause of this step timing out is the background task taking longer than the step's configured wait window, often due to a busy Compute Engine queue, a large project taking longer to process, or a network path between the CI runner and SonarQube being slow or blocked. First things to check: the actual background task status/duration in SonarQube's own Background Tasks admin page, and whether the CI runner can reach SonarQube at all during that window.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly identifies that the wait step polls for the background task's completion (not the scan submission itself), and names background task processing time or network reachability as the two most likely timeout causes.</p>
+      </div>
+    </article>
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>PR analysis without a DevOps platform integration</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how PR analysis behaves differently when there's no DevOps platform integration configured, and see how that affects the resulting PR decoration.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Without a DevOps platform integration, PR analysis still runs and produces results visible in SonarQube's own UI (issues, Quality Gate status against the PR's code), but the PR decoration feature itself (inline annotations, a status check/comment on the PR in the DevOps platform's own interface) does not appear, since that's exactly what the platform integration exists to deliver. In other words, the analysis still happens; only the automatic surfacing of results back into the DevOps platform's own PR view is missing.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly separates "analysis still runs and is visible in SonarQube" from "decoration on the PR itself is what's missing," rather than assuming PR analysis entirely fails without an integration.</p>
+      </div>
+    </article>
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Set up pipelines on GitHub, GitLab, Azure DevOps, and Bitbucket</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to set up a working CI pipeline across multiple different CI platforms.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Each CI platform's pipeline definition differs mainly in YAML structure and how it references SonarQube: Azure DevOps pipelines reference a Service Connection and a dedicated SonarQube extension/task; GitHub Actions uses a marketplace Action (or the SonarScanner CLI directly) with secrets stored in repo/org settings; GitLab CI defines stages/jobs directly in .gitlab-ci.yml, often invoking the scanner as a script step; Bitbucket Pipelines uses bitbucket-pipelines.yml with a similar script-step pattern. The concept (checkout, build, scan) is the same everywhere; the syntax and credential-wiring mechanism is what genuinely differs.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: got a successful analysis from at least 2-3 platforms (doesn't need to be all four) and can articulate a specific syntax/mechanism difference rather than a vague "they're all a bit different."</p>
+      </div>
+    </article>
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>PR decoration for Azure DevOps</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe PR decoration working end to end on Azure DevOps, and know how to troubleshoot it via Compute Engine logs.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>With Compute Engine (CE) logs at INFO/DEBUG level, you can watch SonarQube retrieve the PR's metadata from Azure DevOps and post the decoration back, useful for pinpointing exactly where a failure occurs (auth, API call, payload). Azure DevOps pipelines come in two flavors: "classic" (built via the visual designer, stored as JSON internally) and YAML/Infrastructure-as-Code pipelines (defined directly in a checked-in .yml file); a classic pipeline's YAML-equivalent view can usually be exported/viewed from its own UI, useful when a customer only has a classic pipeline to share for troubleshooting.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually watched CE logs during a real PR decoration run on ADO, and correctly distinguishes classic (UI-designed, JSON-backed) from YAML/IaC pipelines, including how to get a YAML view of a classic one.</p>
+      </div>
+    </article>
+    <article class="item" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>PR decoration for Bitbucket Cloud</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe PR decoration working end to end on Bitbucket Cloud, including plan-tier limitations.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>With CE logs at INFO/DEBUG level during a Bitbucket Cloud PR analysis, you can trace the decoration request being posted. The Quality Gate/analysis result appears directly in the Bitbucket Cloud PR view as a build/check status. Bitbucket Cloud's free tier has a limited number of build minutes per month; a customer running frequent PR analyses on a free or lower-tier plan can exhaust this allotment, which would show up as pipeline runs failing to start or being throttled, not a SonarQube-side problem at all.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirms where the result surfaces in Bitbucket Cloud's own UI, and correctly frames the build-minute limitation as a Bitbucket plan constraint, not a SonarQube integration bug, an important distinction for triaging a real ticket.</p>
+      </div>
+    </article>
+    <article class="item" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>PR decoration for GitLab</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe PR (merge request) decoration working end to end on GitLab.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>With CE logs at INFO/DEBUG during a GitLab merge request analysis, you can trace the decoration call to GitLab's API. GitLab CI YAML defines stages and jobs in .gitlab-ci.yml, with merge-request-triggered jobs typically gated by rules: or only:/except: conditions. Build/job logs are downloadable directly from a pipeline's job view in GitLab's own UI, useful to cross-reference against SonarQube's CE logs for the same run when troubleshooting a discrepancy.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirms actual merge-request decoration was observed, correctly describes at least the basic YAML gating mechanism for MR-triggered jobs, and knows where to pull GitLab's own job logs from.</p>
+      </div>
+    </article>
+    <article class="item" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>PR decoration for GitHub</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe PR decoration working end to end on GitHub.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>With CE logs at INFO/DEBUG during a GitHub PR analysis, you can trace the decoration call to GitHub's API (creating/updating a check run or PR comment). GitHub Actions workflows are YAML files under .github/workflows/, typically triggered on pull_request events. Workflow run logs are downloadable directly from the Actions tab for that specific run.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirms actual PR decoration was observed on GitHub, and knows where Actions run logs live. This is one of the more heavily-documented platforms, so expect a smoother setup than ADO/Bitbucket/GitLab.</p>
+      </div>
+    </article>
+    <article class="item" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Set up SSO header authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand HTTP header-based SSO, where SonarQube trusts headers set by an upstream proxy instead of handling login itself.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>SSO header authentication has SonarQube trust specific HTTP headers (a login header, and optionally name/email headers) as proof of identity, assuming an upstream reverse proxy already authenticated the user and set those headers before the request reaches SonarQube. Since standing up a real proxy just for testing is overkill, a browser extension that injects custom request headers can simulate this: setting the configured login header (and name/email headers) causes SonarQube to treat the request as an authenticated session for that user. Without the headers present, the request falls back to SonarQube's normal login page/flow rather than being silently rejected.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually used a header-injecting extension to authenticate, and confirms the fallback behavior (normal login) when headers are absent, rather than assuming an error state. Bonus: notes the exact property names used, since these can shift slightly across versions.</p>
+      </div>
+    </article>
+    <article class="item" id="item-11" data-glean-id="item-11">
+      <div class="item-head">
+        <div class="item-title"><span class="num">11</span><h3>Set LDAP authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the LDAP authentication model and how SonarQube talks to an LDAP directory.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>LDAP authentication has SonarQube bind to an LDAP directory using configured server URL, bind credentials, and user/group search base settings, then validate a login attempt against that directory rather than SonarQube's own local user store. Group mapping (an LDAP group translating into a SonarQube group) generally requires additional group-mapping configuration beyond just the basic authentication settings, it isn't automatic just because authentication succeeds.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually connected to a real (even if disposable/test) LDAP server and successfully authenticated, and investigated group mapping as a separate configuration concern from basic auth rather than assuming it's automatic.</p>
+      </div>
+    </article>
+    <article class="item" id="item-12" data-glean-id="item-12">
+      <div class="item-head">
+        <div class="item-title"><span class="num">12</span><h3>Set GitHub authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how GitHub-based authentication works, including how GitHub teams/organizations map into SonarQube groups.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>GitHub authentication is configured via a registered GitHub OAuth App or GitHub App, with SonarQube's settings pointing at its client ID/secret; logging in via "Log in with GitHub" redirects through GitHub's OAuth flow and back into SonarQube as an authenticated user. GitHub org/team membership does not automatically sync into SonarQube group membership just from authentication alone, that requires the separate GitHub provisioning feature (see the provisioning item later in this exercise) to be explicitly enabled; authentication alone only proves identity.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly separates authentication (proving who you are) from provisioning/group-sync (a separate, additional feature), rather than assuming GitHub team membership flows into SonarQube automatically once login works.</p>
+      </div>
+    </article>
+    <article class="item" id="item-13" data-glean-id="item-13">
+      <div class="item-head">
+        <div class="item-title"><span class="num">13</span><h3>Set up SAML authentication using OKTA</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the SAML protocol well enough to wire up a real identity provider, using OKTA as a free, accessible option.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>SAML authentication involves configuring SonarQube as a Service Provider (SP) pointed at an Identity Provider's (IdP) metadata: entity ID, SSO URL, and signing certificate, plus attribute mappings so SonarQube knows which SAML assertion attributes map to username/email/groups. OKTA's free developer/Integrator plan is an easy, real IdP to test against: create a SAML app in OKTA, configure matching settings on the SonarQube side, and testing the full login redirect (SonarQube -> OKTA -> back to SonarQube authenticated) confirms the trust relationship is correctly established. A mismatched entity ID or wrong attribute name typically surfaces as a SAML validation error either on the IdP's side before redirect, or as a failed/incomplete login back on SonarQube.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually completed a full SAML login round-trip against a real OKTA instance, and can name at least the core fields involved (entity ID, SSO URL, certificate, attribute mapping).</p>
+      </div>
+    </article>
+    <article class="item" id="item-14" data-glean-id="item-14">
+      <div class="item-head">
+        <div class="item-title"><span class="num">14</span><h3>Set up SAML authentication using Azure AD (Entra ID)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span><span class="tag cluster">Pick one</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the SAML protocol using a second real-world identity provider, Azure AD/Entra ID, and compare the experience to OKTA.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The SAML concepts are identical to OKTA (entity ID, SSO URL, certificate, attribute mapping), but Azure AD/Entra ID's admin UI and terminology differ: it's registered as an "Enterprise application" with SAML SSO configured under that app's own SAML settings blade, and attribute/claim mapping uses Azure's claims configuration UI rather than OKTA's attribute statements screen. A free-tier personal Azure AD tenant is sufficient for this test, no paid subscription required.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually completed a SAML login against a real Azure AD tenant, and can articulate at least one concrete difference in setup experience from OKTA (terminology, UI location, or claims mapping) rather than saying "it's basically the same."</p>
+      </div>
+    </article>
+    <article class="item" id="item-15" data-glean-id="item-15">
+      <div class="item-head">
+        <div class="item-title"><span class="num">15</span><h3>Set up Jenkins and scan a project with it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand Jenkins well enough to connect it to a DevOps platform and run a real scan, including Jenkins' own architecture.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Jenkins connects to a DevOps platform by configuring source control credentials (SSH key or token) and, for PR-triggered builds, a plugin (GitHub/Bitbucket) that lets a job watch for and check out a specific PR/branch. A SonarQube scanner step is then added to that job (either the SonarScanner plugin's build step, or a CLI invocation), and a successful build reports analysis results back to SonarQube. On Windows specifically, scanning a C/C++ project introduces its own build-toolchain considerations (compiler availability, build-wrapper usage) distinct from a typical Linux/Java job. Jenkins pipeline jobs are defined as code (Jenkinsfile); freestyle jobs are configured via the UI form-by-form. Configuration (Java version, secrets/credentials store, executable paths, logs) lives in Jenkins' own system configuration and credentials store, separate from anything SonarQube-side. Jenkins' architecture separates a controller (formerly "master") that schedules and coordinates work from one or more agents that actually execute build steps, which matters for troubleshooting where a given job's environment/tools actually live.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually connected a real repo to Jenkins and got a successful scan, and can correctly distinguish pipeline vs. freestyle jobs and controller/agent (master/agent) architecture, these are foundational Jenkins concepts that come up constantly in support tickets regardless of the specific issue.</p>
+      </div>
+    </article>
+    <article class="item" id="item-16" data-glean-id="item-16">
+      <div class="item-head">
+        <div class="item-title"><span class="num">16</span><h3>Set up GitHub user/group provisioning</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 9/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand automatic user and group provisioning from GitHub, including exactly when sync happens.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>GitHub provisioning builds on top of GitHub authentication (must be configured first) and, once enabled, calls GitHub's organization/team membership APIs to keep SonarQube users and groups in sync automatically going forward. A user who already existed in SonarQube before provisioning was enabled is not automatically reconciled, they may need to be manually re-provisioned or will sync on their next relevant event, and removing a user/team on GitHub's side is reflected in SonarQube accordingly (though the exact trigger, real-time vs. next-login vs. scheduled, is version-dependent and worth confirming against current docs rather than assuming one behavior).</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly identifies GitHub authentication as a hard prerequisite, and investigated (rather than assumed) what happens to pre-existing users and the actual sync timing, since this is exactly the kind of detail that's easy to get wrong without testing.</p>
+      </div>
+    </article>
+    <article class="item" id="item-17" data-glean-id="item-17">
+      <div class="item-head">
+        <div class="item-title"><span class="num">17</span><h3>Set up GitLab user/group provisioning</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 9/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand automatic user and group provisioning from GitLab, including exactly when sync happens.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>GitLab provisioning similarly builds on top of GitLab authentication and calls GitLab's group/membership APIs to sync users and groups going forward. As with GitHub provisioning, pre-existing SonarQube users aren't automatically reconciled retroactively, and the exact sync trigger (real-time, on-login, or scheduled) should be verified hands-on rather than assumed. Comparing the two: both follow the same conceptual model (auth first, then a separate provisioning layer on top), though the specific API endpoints and UI configuration differ between GitHub and GitLab.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly identifies GitLab authentication as a prerequisite, and explicitly compares the model against GitHub provisioning (same underlying pattern, different platform-specific mechanics) rather than treating them as unrelated features.</p>
+      </div>
+    </article>
+    <article class="item" id="item-18" data-glean-id="item-18">
+      <div class="item-head">
+        <div class="item-title"><span class="num">18</span><h3>Set up SCIM provisioning on OKTA</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 9/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand SCIM as a provisioning protocol, distinct from SAML authentication, including its stricter network requirements.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>SCIM is a provisioning protocol distinct from SAML authentication, once enabled, OKTA pushes user/group changes to SonarQube via SCIM API calls rather than SonarQube pulling on login. Users/groups assigned in OKTA BEFORE SCIM was enabled are NOT automatically provisioned, they show an indicator in the UI and need to be manually provisioned once. Critically: fully deactivating or unassigning a user in OKTA deactivates their SonarQube account, but merely suspending a user in OKTA leaves their SonarQube account unchanged, a genuinely easy-to-miss distinction. Unlike SAML, SCIM requires a direct, reachable network path from the IdP to SonarQube; if SonarQube isn't reachable from the public internet, an on-premises provisioning agent is required as a workaround, this is a real deployment blocker for customers with locked-down networks.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly distinguishes SCIM (push-based provisioning) from SAML (pull/redirect-based authentication), correctly reproduces the deactivate-vs-suspend distinction with an actual test, and names the stricter network-reachability requirement versus SAML. This is one of the highest-value items in the whole exercise for real support tickets.</p>
+      </div>
+    </article>
+    <article class="item" id="item-19" data-glean-id="item-19">
+      <div class="item-head">
+        <div class="item-title"><span class="num">19</span><h3>Trigger code scanning alerts on GitHub</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 9/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand GitHub Code Scanning integration, where SonarQube's security findings surface as native GitHub Security alerts.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>GitHub Code Scanning integration requires the repository already imported/connected to SonarQube, plus specific GitHub App permissions (Code scanning alerts: Read and write) and a subscription to the Code scanning alert event. Once configured, security vulnerabilities found by SonarQube analysis appear as native GitHub Code Scanning alerts under the repo's Security tab, in addition to SonarQube's own UI. Status changes sync bidirectionally: changing an alert's status in GitHub sends a webhook to SonarQube that updates the corresponding issue's status, and vice versa.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually triggered a real vulnerability finding and confirmed it appeared in GitHub's Security tab, and tested the bidirectional sync in at least one direction, correctly identifying that it's webhook-driven rather than a simple one-time API push.</p>
+      </div>
+    </article>
+    <article class="item" id="item-20" data-glean-id="item-20">
+      <div class="item-head">
+        <div class="item-title"><span class="num">20</span><h3>Block the merge of a PR when the Quality Gate fails (ADO, GitHub, etc.)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand DevOps-platform-native branch policies and PR checks, and how they enforce a SonarQube Quality Gate result.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>On Azure DevOps, this is a branch policy: add the SonarQube/Quality Gate status check under "require approval from additional services" and set it to Required (Optional would let users merge anyway despite a failing gate). On GitHub, this is a branch protection rule requiring the SonarQube status check to pass before merging. In both cases, the check has to have successfully reported at least once before it becomes selectable in the policy UI, if it's missing from the dropdown entirely, the most likely causes are an incomplete platform integration binding, a pipeline that's never actually run a PR analysis with decoration, or the check name not matching what the policy UI expects.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually configured a Required (not just Optional) policy/rule and confirmed a failing Quality Gate genuinely blocked the merge button, and can name at least one plausible cause if the status check never appears as a selectable option, a very common real support scenario.</p>
+      </div>
+    </article>
+    <article class="item" id="item-21" data-glean-id="item-21">
+      <div class="item-head">
+        <div class="item-title"><span class="num">21</span><h3>Set up SAML authentication using Keycloak</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 10/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> See a third SAML identity provider option. The catalog itself flags this as very optional, self-hosted Keycloak is useful for testing but isn't widely used by real customers, so weigh the time investment before diving in.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Keycloak is a self-hosted, open-source identity provider; since it isn't a managed cloud service like OKTA or Azure AD, you first need to stand up your own Keycloak instance (a container image is the fastest path) before configuring anything. From there, the same SAML concepts apply: register a SAML client in Keycloak, configure matching settings in SonarQube, and test the login flow. The catalog itself explicitly flags this as low-value effort relative to the other SAML providers, since Keycloak isn't widely used by real customers, this is a reasonable one to skip or timebox strictly if OKTA and/or Azure AD are already done.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>This is explicitly optional and low-priority per the source catalog. Pass (if attempted): got a real login round-trip working against a self-hosted Keycloak instance. Pass (if skipped): gave a brief, reasoned explanation for skipping (time tradeoff, already covered SAML fundamentals via OKTA/Azure AD) rather than leaving it blank with no context, that's the actual signal this item is testing for.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+<script>
+document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+</script>
+</body></html>

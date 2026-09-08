@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administration Onboarding Exercise</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--blue-soft);color:var(--ink)}.badge strong{display:block;margin-bottom:4px;color:var(--blue);font-size:13px}.badge span{font-size:13px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 0;position:sticky;top:0;background:var(--bg);z-index:5}.progress-wrap{flex:1;min-width:180px;display:flex;align-items:center;gap:10px}.progress-track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-fill{height:100%;width:0%;background:var(--blue);border-radius:99px;transition:width .2s ease}#progress-label{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#1d4fd1;color:#fff}.notice{padding:16px 20px;border-radius:12px;background:var(--amber-soft);color:var(--amber);font-size:14px;margin:0 0 30px}.notice strong{display:block;margin-bottom:4px}.notice ul{margin:6px 0 0;padding-left:18px}.section-intro{margin:8px 0 22px;color:var(--muted)}.roadmap{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0;max-height:92px;overflow-y:auto;padding:2px}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 10px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px;margin-top:10px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:90px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px;white-space:nowrap}.tag.diff{background:var(--blue-soft);color:var(--blue)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.guidance{margin:0 0 16px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;color:var(--ink)}.guidance strong{display:block;margin-bottom:6px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.guidance ul{margin:0;padding-left:18px}.guidance li{margin:4px 0}.guidance a{color:var(--blue);font-weight:700;text-decoration:none}.guidance a:hover{text-decoration:underline}.guidance code{background:var(--blue-soft);color:var(--blue);padding:1px 6px;border-radius:6px;font-size:12.5px}label.answer-label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff}textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}.status-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}.status-row .saved{color:var(--green);font-weight:700;opacity:0;transition:opacity .3s}.status-row .saved.show{opacity:1}.footer-note{margin-top:44px;padding:20px 22px;border-radius:14px;background:var(--blue-soft);color:var(--ink);font-size:14px}.footer-note strong{display:block;margin-bottom:6px;color:var(--blue)}.teacher-link-row{position:fixed;left:14px;bottom:14px;z-index:10}.teacher-link{display:inline-flex;opacity:.1;transition:opacity .15s ease}.teacher-link:hover,.teacher-link:focus-visible{opacity:1}.teacher-link img{display:block}.print-only{display:none}@media print{.toolbar,.roadmap,.teacher-link-row{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}textarea{border:1px solid #999;min-height:70px}.print-only{display:block}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="administration-exercise-page">
+
+<section class="hero" data-glean-id="exercise-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="exercise-eyebrow">Sonar Support &middot; Onboarding exercise &middot; Student copy</p>
+    <h1 data-glean-id="exercise-title">Administration: figure it out</h1>
+    <p class="lead" data-glean-id="exercise-lead">32 hands-on administration exercises, ordered from easiest to hardest. Each one gives you a pointer, not the answer &mdash; use the official Sonar documentation, a test instance, and your own testing to work it out.</p>
+  </div>
+  <aside class="badge" data-glean-id="exercise-availability">
+    <strong>How to use this page</strong>
+    <span>Work through these roughly in order. Each item shows a difficulty from 1 (easiest) to 10 (hardest). Use a disposable test instance, not anything production.</span>
+  </aside>
+</section>
+
+<div class="teacher-link-row" data-glean-id="teacher-link-row"><a class="teacher-link" href="administration-exercise-teacher.html" target="_blank" rel="noopener" title="Grading key (mentors)" aria-label="Grading key (mentors)"><img src="../shared/img/545988.png" alt="" width="22" height="22"></a></div>
+
+<div class="toolbar" data-glean-id="exercise-toolbar">
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span id="progress-label">0 / 32 answered</span>
+  </div>
+  <button class="btn primary" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<div class="notice" data-glean-id="exercise-local-save-notice">
+  <strong>Answers save to this browser only</strong>
+  Your answers are kept in this browser's local storage on this device, so closing the tab, refreshing, or reopening the page days later will restore them. They are NOT backed up anywhere and will be lost if you clear this browser's site data, switch browsers or devices, or use a private/incognito window.
+  <ul>
+    <li>Use <b>Print / save as PDF</b> to keep a permanent copy, especially before switching browsers, devices, or clearing site data.</li>
+    <li>If this exercise is part of a tracked onboarding task, <b>commit your written answers to your onboarding notes in your GitHub repo</b> so the work is actually saved and visible to your manager or mentor.</li>
+  </ul>
+</div>
+
+<nav class="roadmap" data-glean-id="exercise-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a><a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a><a href="#item-11">11</a><a href="#item-12">12</a><a href="#item-13">13</a><a href="#item-14">14</a><a href="#item-15">15</a><a href="#item-16">16</a><a href="#item-17">17</a><a href="#item-18">18</a><a href="#item-19">19</a><a href="#item-20">20</a><a href="#item-21">21</a><a href="#item-22">22</a><a href="#item-23">23</a><a href="#item-24">24</a><a href="#item-25">25</a><a href="#item-26">26</a><a href="#item-27">27</a><a href="#item-28">28</a><a href="#item-29">29</a><a href="#item-30">30</a><a href="#item-31">31</a><a href="#item-32">32</a></nav>
+
+<section data-glean-id="exercise-items">
+  <div class="items" id="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>Understand the issue lifecycle, and how permission changes it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how an issue's status/resolution can change, and how the "Administer Issues" permission affects what you can do to it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Open a project's Issues page and look at what actions are available on an open issue (Confirm, Resolve, Reopen, Won't Fix, False Positive, etc.). Note the full set of transitions.</li>
+          <li>Try the same actions as a user who does NOT have the project's "Administer Issues" permission, versus one who does. What changes, and which specific transitions require that permission?</li>
+          <li>Write down the issue lifecycle as a simple state diagram in your own words: what states exist, and which transitions are permission-gated.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-1">Your answer</label>
+      <textarea id="answer-1" data-item="1" placeholder="Describe the issue lifecycle states and which transitions need Administer Issues permission..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>Understand the security hotspot lifecycle, and how permission changes it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how a security hotspot's status/resolution can change, and how the "Administer Security Hotspots" permission affects what you can do to it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Open a project with hotspots and review the review states (To Review, Acknowledged, Fixed, Safe). Note this is a different lifecycle model from regular issues, not just a renamed copy of it.</li>
+          <li>Compare what a user without "Administer Hotspots" permission can do to a hotspot versus a user with it.</li>
+          <li>Write down how this lifecycle differs from the issue lifecycle in item 1, since support tickets often confuse the two.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-2">Your answer</label>
+      <textarea id="answer-2" data-item="2" placeholder="Describe the hotspot review lifecycle and the permission-gated differences..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>Compare a Support Info File and a System Info File</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand there are effectively two names for closely related content, and which detail is available on which edition.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Go to Administration > System in a SonarQube instance and find the "Download System Info" button. Download it and open the resulting file.</li>
+          <li>Search Sonar's own support-facing documentation and community posts for the phrase "Support Info File" and see how it's used relative to "System Info." Are these actually two different downloadable artifacts, or the same one referred to differently by different audiences?</li>
+          <li>Identify which pieces of information on that System Info page (or actions available from it, like raw log downloads) depend on having a commercial support contract or a specific edition, versus what's available in Community.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-3">Your answer</label>
+      <textarea id="answer-3" data-item="3" placeholder="Explain the relationship between "Support Info File" and "System Info File", and what's edition/contract-gated..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>Go through a System Info File and check the configurations</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what's actually inside a System Info snapshot.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Using the file you downloaded in the previous item, open it and look at its structure (it's JSON). Identify the major sections: System, Database, settings/configuration, plugins, and any per-node info on a cluster.</li>
+          <li>Pick three settings you'd expect to find (e.g. a housekeeping value, a Quality Gate default, an LDAP/SSO config key) and locate them in the file.</li>
+          <li>Think about why a support engineer would ask for this file before troubleshooting almost anything, what does it save you from having to ask the customer directly?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-4">Your answer</label>
+      <textarea id="answer-4" data-item="4" placeholder="List what you found in the System Info file and why it's useful for troubleshooting..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Modify a Quality Profile by editing its backup XML file</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that a Quality Profile can be edited outside the UI by editing its exported backup.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Create or use a custom Quality Profile, then use "Back up" to export it as XML.</li>
+          <li>Open the XML file, remove one or more <rule> entries, and change the profile's name element.</li>
+          <li>Restore the edited file as a new profile and confirm the rule you removed is gone and the name changed. Note what this technique is useful for (bulk edits, cloning with tweaks, version control of profiles) versus doing the same thing by hand in the UI.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-5">Your answer</label>
+      <textarea id="answer-5" data-item="5" placeholder="Describe what you edited in the XML and what changed after restoring it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Display a login message</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Find the setting that lets an admin show a custom message on the login page.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Search Administration > General settings for anything related to login page customization. It's easy to miss since it's not under an obviously-named section.</li>
+          <li>Set a short message and log out to confirm it actually appears where you'd expect.</li>
+          <li>Think of a real use case for this, what would a customer actually want to communicate to everyone hitting the login page?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-6">Your answer</label>
+      <textarea id="answer-6" data-item="6" placeholder="Name the setting and where you found it, plus a realistic use case..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Display an announcement message</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Find the setting that lets an admin show a banner/announcement to logged-in users.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>This is a distinct setting from the login message in the previous item, don't assume they're the same toggle. Search Administration > General settings again with that in mind.</li>
+          <li>Set an announcement and confirm where and to whom it's visible (all users? just some?).</li>
+          <li>Note the difference in audience and placement between this and the login message, that distinction is worth remembering for a support answer.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-7">Your answer</label>
+      <textarea id="answer-7" data-item="7" placeholder="Name the setting, where it shows, and how it differs from the login message..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Segregate project configuration from project permissions</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand where project-level configuration management is separated from project-level permission management.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Open a project's Administration tab and look at the available sub-sections. Some deal with configuration (Quality Gate/Profile assignment, analysis settings, webhooks) and some deal with access (Permissions).</li>
+          <li>Find a role or permission that lets someone manage configuration WITHOUT being able to manage who has access, or vice versa. What's that permission called?</li>
+          <li>Think of a real scenario where a team would want this separation, why would you want someone able to change a Quality Gate but not able to grant themselves admin rights?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-8">Your answer</label>
+      <textarea id="answer-8" data-item="8" placeholder="Explain the separation and the permission that enables it, with a realistic scenario..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Delegate Quality Profile and Quality Gate permissions to a group or user</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the use case for delegating QP/QG management without full instance admin rights.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find where a Quality Profile or Quality Gate can be assigned specific administrators (separate from global SonarQube administrators).</li>
+          <li>Grant a non-admin user or group permission to edit one specific Quality Profile or Gate, then confirm as that user they can edit it but nothing else instance-wide.</li>
+          <li>Think about why a large organization would want this: which team would you delegate QG management to, and why not just make them a full admin?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-9">Your answer</label>
+      <textarea id="answer-9" data-item="9" placeholder="Explain how you delegated it and a realistic reason a team would want this..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Download logs from the UI</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand when and why to pull logs directly from the SonarQube UI instead of the filesystem.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Go to Administration > System and find the log download option (it's near the System Info download from earlier items).</li>
+          <li>Note what type(s) of logs are available this way (web, ce/compute engine, es/search, access) and whether this requires a support contract or edition, per what you found in the System Info items above.</li>
+          <li>Think about when this UI path is more useful than SSHing into the box to read logs directly, and when it wouldn't be (e.g. a clustered Data Center deployment).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-10">Your answer</label>
+      <textarea id="answer-10" data-item="10" placeholder="Explain what logs you can download from the UI and when this is the right approach vs. filesystem access..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-11" data-glean-id="item-11">
+      <div class="item-head">
+        <div class="item-title"><span class="num">11</span><h3>Create a custom Quality Profile, change a rule's severity, and fail an analysis</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how to create and edit a Quality Profile end to end.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Create a new Quality Profile (from scratch or copied from an existing one) for a language you have a test project in.</li>
+          <li>Change the severity of at least one rule so it becomes a Blocker, and make sure that rule is actually triggered by your test project's code.</li>
+          <li>Assign the profile to your project, run an analysis, and confirm it fails the way you expect. Note exactly which setting connects a severity change to a Quality Gate failure, it's not automatic just because you called it "Blocker."</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-11">Your answer</label>
+      <textarea id="answer-11" data-item="11" placeholder="Record what profile/rule you changed and how you confirmed the analysis failed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-12" data-glean-id="item-12">
+      <div class="item-head">
+        <div class="item-title"><span class="num">12</span><h3>Lock yourself out of a project's permissions, then fix it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that it's possible to remove all access to a private project, and how a system admin restores it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>On a private test project, remove every permission grant so nobody, including yourself, has any project-level permission.</li>
+          <li>Confirm you (and anyone else) can no longer see or manage the project through the normal Permissions UI.</li>
+          <li>As a system/instance administrator (not a project admin), find the path back in. What's the actual mechanism that lets a global admin restore project-level access when no project-level admin exists anymore?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-12">Your answer</label>
+      <textarea id="answer-12" data-item="12" placeholder="Describe how you locked it and the exact steps you used to restore access as a system admin..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-13" data-glean-id="item-13">
+      <div class="item-head">
+        <div class="item-title"><span class="num">13</span><h3>Find the first analysis date of every project using the Web API</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice calling the SonarQube Web API directly, and know which permission is required.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Using curl or Postman, explore the Web API documentation (usually linked from Administration or accessible at /web_api on the instance) to find an endpoint that returns a project's analysis history.</li>
+          <li>Call it for at least one project and extract the earliest analysis date from the response.</li>
+          <li>Note which token type and permission level you needed to make the call succeed, and what error you got when you tried without it.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-13">Your answer</label>
+      <textarea id="answer-13" data-item="13" placeholder="Name the endpoint you used, the earliest date you found, and the permission/token needed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-14" data-glean-id="item-14">
+      <div class="item-head">
+        <div class="item-title"><span class="num">14</span><h3>Stop live Portfolio calculation</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the setting that controls automatic Portfolio recomputation.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the setting related to Portfolio recomputation hours (it controls how often Portfolios refresh automatically).</li>
+          <li>Set it in a way that stops automatic recomputation, then confirm a Portfolio's numbers stop updating even after new project analyses land.</li>
+          <li>Think about why an admin might deliberately want to stop live recomputation, cost, load, or a need to freeze a snapshot for reporting?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-14">Your answer</label>
+      <textarea id="answer-14" data-item="14" placeholder="Name the setting, what you set it to, and a reason someone would want this..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-15" data-glean-id="item-15">
+      <div class="item-head">
+        <div class="item-title"><span class="num">15</span><h3>Configure global test exclusions and try to override them at the project level</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that the GLOBAL exclusion settings are a deliberate exception to normal settings inheritance.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the Global Test File Exclusions setting (distinct from the plain, non-global Test File Exclusions setting) and set a pattern that would exclude some real test files in your project.</li>
+          <li>At the project level, try to override or counteract that exclusion so those files would be scanned anyway.</li>
+          <li>Confirm the override has no effect, then explain why: what makes this specific setting different from almost every other SonarQube setting, which normally follow global-then-project inheritance where project wins?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-15">Your answer</label>
+      <textarea id="answer-15" data-item="15" placeholder="Explain what you tried to override and why the global setting won anyway..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-16" data-glean-id="item-16">
+      <div class="item-head">
+        <div class="item-title"><span class="num">16</span><h3>Install and use a community plugin</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how third-party plugins are installed and what an admin needs to acknowledge before using one.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Pick a community plugin (a language analyzer not natively supported, or a tool like a dependency checker) and find where SonarQube plugins are installed (Marketplace UI, or manual JAR drop into extensions/plugins).</li>
+          <li>Install it, restart if required, and confirm it actually appears and can analyze code.</li>
+          <li>Search Sonar's community forum or support docs for a real example of a community-plugin support issue, most commonly plugin incompatibility after a platform upgrade, or a third-party bug outside Sonar's control. What does that tell you about how support should be scoped for these plugins?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-16">Your answer</label>
+      <textarea id="answer-16" data-item="16" placeholder="Name the plugin, how you installed it, and the real-world issue pattern you found..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-17" data-glean-id="item-17">
+      <div class="item-head">
+        <div class="item-title"><span class="num">17</span><h3>Export and import a project via the Web API or UI (project move)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what does and doesn't come along when a project is moved this way.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the project export/import feature (Web API or Administration UI) and use it on a test project that has at least one inactive branch not marked to be kept.</li>
+          <li>Import the export into a new project location and compare: which branches/PRs made the trip and which didn't?</li>
+          <li>Explain why inactive branches not explicitly marked "keep when inactive" are excluded, connect this back to the housekeeping/dbcleaner behavior from later items if you've done them.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-17">Your answer</label>
+      <textarea id="answer-17" data-item="17" placeholder="Describe what transferred and what didn't, and why..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-18" data-glean-id="item-18">
+      <div class="item-head">
+        <div class="item-title"><span class="num">18</span><h3>Create Portfolios: manually, by regex, and by setting computation hours</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Study the different ways a Portfolio can be populated and scheduled.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Create one Portfolio and add projects to it manually (picking specific projects one at a time).</li>
+          <li>Create a second Portfolio and instead define a regex pattern that matches a set of project keys automatically.</li>
+          <li>Find the setting that controls how often the Portfolio recomputes, and set it to something short enough to observe a refresh happening. Compare the resulting dashboards between the manual and regex-based Portfolios.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-18">Your answer</label>
+      <textarea id="answer-18" data-item="18" placeholder="Describe both Portfolios you created and what changed in each dashboard..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-19" data-glean-id="item-19">
+      <div class="item-head">
+        <div class="item-title"><span class="num">19</span><h3>Create a portfolio with sub-portfolios and applications (multi-level structure)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that Portfolios can be nested multiple levels deep, mixing sub-portfolios, Applications, and plain projects.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Build a structure like: a top-level Portfolio containing two sub-portfolios (representing teams), where one sub-portfolio contains a mix of plain projects and an Application (itself aggregating other projects), and the other sub-portfolio contains only plain projects.</li>
+          <li>Confirm the top-level Portfolio's dashboard correctly rolls up metrics from every level beneath it, including the projects nested inside the Application.</li>
+          <li>Note any difference in how an Application's own metrics roll up compared to a plain project's, does an Application's LOC or issue count get double-counted anywhere?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-19">Your answer</label>
+      <textarea id="answer-19" data-item="19" placeholder="Describe the structure you built and confirm how metrics rolled up through each level..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-20" data-glean-id="item-20">
+      <div class="item-head">
+        <div class="item-title"><span class="num">20</span><h3>Create a user token, a project token, and a global token, then analyze with each</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know where each token type is created and what actually differs when you use it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find where each of the three token types is created (they're not all in the same place, and not all editions/roles can create every type).</li>
+          <li>Run an analysis against the same project three times, once with each token, if any of them fails, note the exact error and why.</li>
+          <li>Summarize the practical difference: what's the blast radius if each type of token leaks? This is the kind of question a support ticket asks in disguise.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-20">Your answer</label>
+      <textarea id="answer-20" data-item="20" placeholder="Describe where you created each token, what happened analyzing with each, and the blast-radius difference..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-21" data-glean-id="item-21">
+      <div class="item-head">
+        <div class="item-title"><span class="num">21</span><h3>Configure a project to notify you when its Quality Gate fails</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the notification mechanism end to end.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the notification settings for a project (usually under your own account's notification preferences, scoped per-project, not a global admin setting).</li>
+          <li>Subscribe to Quality Gate failure notifications for a test project, then trigger an analysis that fails the gate.</li>
+          <li>Confirm you actually receive the notification, and note what delivery channel it uses (email is the default, is anything else possible without extra configuration?).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-21">Your answer</label>
+      <textarea id="answer-21" data-item="21" placeholder="Describe where you configured the notification and confirm you received it, including delivery channel..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-22" data-glean-id="item-22">
+      <div class="item-head">
+        <div class="item-title"><span class="num">22</span><h3>Download every kind of report available out of the box</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Find out what reporting formats SonarQube ships without any add-on.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>On a project, an Application, and a Portfolio, look for a PDF export/report option and download each.</li>
+          <li>Separately, find where Security reports and any Regulatory report live (these are usually project-level, and often edition-gated).</li>
+          <li>Compare what's actually in each report, are they the same content in different wrappers, or genuinely different information? Note which ones require a specific edition.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-22">Your answer</label>
+      <textarea id="answer-22" data-item="22" placeholder="List each report type you downloaded and one notable difference in their content or availability..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-23" data-glean-id="item-23">
+      <div class="item-head">
+        <div class="item-title"><span class="num">23</span><h3>Configure SonarQube to be accessible without authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Realize this non-default, discouraged configuration exists, and understand why it's a bad idea.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the setting that forces authentication on every request (it's on by default) and turn it off in a disposable test instance only, never on anything real.</li>
+          <li>Confirm you can now browse project data without logging in.</li>
+          <li>Write down the concrete risks this introduces, think about what information becomes exposed and to whom, and why Sonar's docs explicitly recommend against this.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-23">Your answer</label>
+      <textarea id="answer-23" data-item="23" placeholder="Name the setting and explain the concrete risk of disabling it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-24" data-glean-id="item-24">
+      <div class="item-head">
+        <div class="item-title"><span class="num">24</span><h3>Create a conflict between analyzers using the same file suffix</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe what happens when two language analyzers are both configured to claim the same file extension.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the file-suffix settings for two analyzers that could plausibly overlap (the catalog specifically calls out T-SQL and PL/SQL both potentially claiming .sql).</li>
+          <li>Set both analyzers to claim the same suffix, then run an analysis on a project containing files with that extension.</li>
+          <li>Observe exactly how the analysis fails or misbehaves, and explain what a support engineer should look for in scanner logs to recognize this exact problem in the future.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-24">Your answer</label>
+      <textarea id="answer-24" data-item="24" placeholder="Describe the conflict you created and exactly what the analysis output looked like..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-25" data-glean-id="item-25">
+      <div class="item-head">
+        <div class="item-title"><span class="num">25</span><h3>Create a permission template and apply it to projects matching a regex</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how Permission Templates automatically apply to matching projects.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Create a Permission Template, grant a specific permission to a specific user or group within it.</li>
+          <li>Set a project-key regex pattern on the template so it applies automatically to projects matching that pattern.</li>
+          <li>Create or rename a test project so its key matches the pattern, and confirm the permission was applied automatically without manual assignment. Also test a project that does NOT match, to confirm it's unaffected.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-25">Your answer</label>
+      <textarea id="answer-25" data-item="25" placeholder="Describe the template, the regex, and confirm the automatic permission behavior on matching vs non-matching projects..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-26" data-glean-id="item-26">
+      <div class="item-head">
+        <div class="item-title"><span class="num">26</span><h3>Force the change of the Server ID</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand exactly what triggers a Server ID change.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find where the current Server ID is displayed (Administration > System / System Info).</li>
+          <li>The Server ID is generated from the database connection configuration plus a value generated when the database was first set up. On a test instance, change the database connection string (e.g. switch a hostname to its IP, or point at a different/fresh database) and restart.</li>
+          <li>Confirm the Server ID actually changed, and explain the real-world consequence: what does a changed Server ID break for a licensed instance, and why should admins be careful about this during infrastructure migrations?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-26">Your answer</label>
+      <textarea id="answer-26" data-item="26" placeholder="Describe what you changed and confirm the resulting Server ID change, plus the licensing consequence..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-27" data-glean-id="item-27">
+      <div class="item-head">
+        <div class="item-title"><span class="num">27</span><h3>"Cheat" a New Code Quality Gate by adjusting the New Code definition</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand exactly how the New Code definition drives Quality Gate evaluation, by deliberately gaming it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Introduce a Bug-severity issue into a test project and analyze it so it's flagged, then note how many days ago that issue was introduced.</li>
+          <li>Set the project's New Code definition to "number of days," using a day count SHORTER than how long ago the issue was introduced (e.g. issue is 5 days old, set New Code to 4 days).</li>
+          <li>Re-analyze and confirm the Quality Gate now passes, since the issue no longer falls inside the New Code window. Explain in your own words why this is a genuine risk for support to be aware of, teams could accidentally (or deliberately) misconfigure this to hide real problems.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-27">Your answer</label>
+      <textarea id="answer-27" data-item="27" placeholder="Describe your test issue's age, the New Code setting you used, and confirm the Quality Gate result before and after..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-28" data-glean-id="item-28">
+      <div class="item-head">
+        <div class="item-title"><span class="num">28</span><h3>Create a custom Quality Profile in a previous LTS and upgrade to the next LTS</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Observe the real impact an LTS upgrade can have on a custom Quality Profile.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>On an older LTS version, create a custom Quality Profile using at least one of the three creation methods (from scratch, extended from a built-in profile, or copied from another profile).</li>
+          <li>Perform (or simulate, if you can't run a real upgrade) an upgrade to the next LTS version.</li>
+          <li>Compare the profile before and after: are all rules still present and configured the same way? Check Sonar's release notes for that LTS for any rule deprecations, renames, or default changes that would explain any differences you see.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-28">Your answer</label>
+      <textarea id="answer-28" data-item="28" placeholder="Describe the profile, the upgrade path, and what changed (or would change per release notes)..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-29" data-glean-id="item-29">
+      <div class="item-head">
+        <div class="item-title"><span class="num">29</span><h3>Configure Housekeeping so specific branches are ensured to be purged</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand sonar.projectDate and sonar.dbcleaner.daysBeforeDeletingInactiveBranchesAndPRs well enough to force a specific cleanup outcome.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the Housekeeping settings under Administration > General (or project-level equivalents) and read what daysBeforeDeletingInactiveBranchesAndPRs actually controls.</li>
+          <li>On a test project with multiple branches, use sonar.projectDate on an analysis to simulate an old analysis date, effectively making a branch look inactive for longer than it really is.</li>
+          <li>Set daysBeforeDeletingInactiveBranchesAndPRs to 0 and observe what happens: which branches get purged, and are there any exemptions (e.g. a branch explicitly marked "keep when inactive")? Note that this setting can't be disabled entirely, only tuned in days/weeks.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-29">Your answer</label>
+      <textarea id="answer-29" data-item="29" placeholder="Describe what you set sonar.projectDate to, what happened at 0 days, and any exemptions you observed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-30" data-glean-id="item-30">
+      <div class="item-head">
+        <div class="item-title"><span class="num">30</span><h3>Create a custom Quality Gate that fails on any critical issue, on top of the default conditions</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how custom Quality Gates are built without accidentally dropping the built-in protections.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Look at the default Quality Gate ('Sonar way') and list every condition it includes.</li>
+          <li>Create a new custom Quality Gate that includes every one of those same conditions, PLUS an additional condition that fails when Critical-severity issues > 0 (or whatever the equivalent severity/rating condition is in current SonarQube).</li>
+          <li>Assign it to a test project, introduce a critical issue, analyze, and confirm the gate fails specifically because of your new condition (not one of the pre-existing ones).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-30">Your answer</label>
+      <textarea id="answer-30" data-item="30" placeholder="List the conditions you copied from the default gate, the one you added, and confirm which condition triggered the failure..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-31" data-glean-id="item-31">
+      <div class="item-head">
+        <div class="item-title"><span class="num">31</span><h3>Identify the different ways to calculate licensed lines of code (ncloc) for an instance</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Become familiar with multiple methods of getting the same underlying number, and know when each is appropriate.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Method 1: use the relevant Web API endpoint for license usage / measures (ncloc) and call it for a project or the whole instance.</li>
+          <li>Method 2: if you have Community Edition access, look for scripts the community has published to sum ncloc across projects directly from logs or the API.</li>
+          <li>Method 3: if you have database access, write a SQL query against the appropriate table(s) that stores ncloc per project/branch. Compare all three methods on the same test instance, and note the rule about which branch's LOC counts (hint: it's not always the main branch).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-31">Your answer</label>
+      <textarea id="answer-31" data-item="31" placeholder="Describe the three methods you tried, and confirm they produced the same (or explainably different) numbers..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-32" data-glean-id="item-32">
+      <div class="item-head">
+        <div class="item-title"><span class="num">32</span><h3>SMTP configuration and notifications</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Learn the full notification pipeline, from SMTP server configuration through to a user actually receiving an email.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the SMTP configuration settings under Administration > General (server, port, auth, from-address).</li>
+          <li>Point it at a real or test SMTP server (a local mail-catching tool like MailHog/Mailtrap works well for this without spamming anyone real).</li>
+          <li>Trigger a notification that should send an email (reuse your Quality Gate failure notification from an earlier item, or send a test email if that option exists), and confirm it arrives. If it doesn't, walk through what you'd check first: SMTP settings, user's own notification subscription, or something else.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-32">Your answer</label>
+      <textarea id="answer-32" data-item="32" placeholder="Describe your SMTP setup, the notification you triggered, and confirm delivery (or your troubleshooting steps if it failed)..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+  </div>
+</section>
+
+<div class="footer-note" data-glean-id="exercise-footer-note">
+  <strong>Your answers stay on this device</strong>
+  This page saves your answers in this browser's local storage, so they will still be here if you come back later, even after closing the browser. They are not synced anywhere else, so they will not follow you to another browser, another device, or survive clearing this site's data. Print this page (button above, or Cmd/Ctrl+P) for a permanent copy, and if this exercise is tracked as part of your onboarding, commit your written answers into your onboarding notes in your GitHub repo so the work isn't lost.
+</div>
+
+</main>
+<script>
+(function(){
+  var textareas=Array.from(document.querySelectorAll('textarea[data-item]'));
+  var fill=document.getElementById('progress-fill');
+  var label=document.getElementById('progress-label');
+  var total=textareas.length;
+  function storageKey(id){return 'administration-exercise-'+id;}
+  function updateProgress(){
+    var answered=textareas.filter(function(t){return t.value.trim().length>0;}).length;
+    fill.style.width=(total?Math.round(answered/total*100):0)+'%';
+    label.textContent=answered+' / '+total+' answered';
+  }
+  textareas.forEach(function(t){
+    try{
+      var saved=localStorage.getItem(storageKey(t.dataset.item));
+      if(saved)t.value=saved;
+    }catch(e){}
+    var statusEl=t.closest('.item').querySelector('.saved');
+    var timer;
+    t.addEventListener('input',function(){
+      try{localStorage.setItem(storageKey(t.dataset.item),t.value);}catch(e){}
+      updateProgress();
+      if(statusEl){
+        statusEl.classList.add('show');
+        clearTimeout(timer);
+        timer=setTimeout(function(){statusEl.classList.remove('show');},1200);
+      }
+    });
+  });
+  updateProgress();
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body></html>

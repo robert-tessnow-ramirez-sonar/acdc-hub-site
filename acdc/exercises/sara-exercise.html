@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SARA Onboarding Exercise</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--blue-soft);color:var(--ink)}.badge strong{display:block;margin-bottom:4px;color:var(--blue);font-size:13px}.badge span{font-size:13px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 0;position:sticky;top:0;background:var(--bg);z-index:5}.progress-wrap{flex:1;min-width:180px;display:flex;align-items:center;gap:10px}.progress-track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-fill{height:100%;width:0%;background:var(--blue);border-radius:99px;transition:width .2s ease}#progress-label{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#1d4fd1;color:#fff}.notice{padding:16px 20px;border-radius:12px;background:var(--amber-soft);color:var(--amber);font-size:14px;margin:0 0 30px}.notice strong{display:block;margin-bottom:4px}.notice ul{margin:6px 0 0;padding-left:18px}.section-intro{margin:8px 0 22px;color:var(--muted)}.roadmap{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px;margin-top:10px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:90px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item.task .num{background:var(--purple)}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px}.tag.question{background:var(--blue-soft);color:var(--blue)}.tag.task{background:var(--purple-soft);color:var(--purple)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.guidance{margin:0 0 16px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;color:var(--ink)}.guidance strong{display:block;margin-bottom:6px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.guidance ul{margin:0;padding-left:18px}.guidance li{margin:4px 0}.guidance a{color:var(--blue);font-weight:700;text-decoration:none}.guidance a:hover{text-decoration:underline}label.answer-label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff}textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}.status-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}.status-row .saved{color:var(--green);font-weight:700;opacity:0;transition:opacity .3s}.status-row .saved.show{opacity:1}.footer-note{margin-top:44px;padding:20px 22px;border-radius:14px;background:var(--blue-soft);color:var(--ink);font-size:14px}.footer-note strong{display:block;margin-bottom:6px;color:var(--blue)}.teacher-link-row{position:fixed;left:14px;bottom:14px;z-index:10}.teacher-link{display:inline-flex;opacity:.1;transition:opacity .15s ease}.teacher-link:hover,.teacher-link:focus-visible{opacity:1}.teacher-link img{display:block}.print-only{display:none}@media print{.toolbar,.roadmap,.teacher-link-row{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}textarea{border:1px solid #999;min-height:70px}.print-only{display:block}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="sara-exercise-page">
+
+<section class="hero" data-glean-id="exercise-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="exercise-eyebrow">AC/DC · Onboarding exercise · Student copy</p>
+    <h1 data-glean-id="exercise-title">SARA: figure it out</h1>
+    <p class="lead" data-glean-id="exercise-lead">Nine questions and hands-on tasks on the Sonar Agentic Readiness Assessment. Each one gives you a pointer, not the answer &mdash; use the <a href="../sara-onboarding.html" target="_blank" rel="noopener">SARA onboarding page</a> and your own testing to work it out.</p>
+  </div>
+  <aside class="badge" data-glean-id="exercise-availability">
+    <strong>Alpha, SonarSource-only</strong>
+    <span>SARA is currently limited to SonarSource-owned organizations and not yet generally available. Note that where these tasks ask you to "run" SARA, you'll need access inside a SonarSource org, if you don't have that yet, complete the reading tasks and note that as a blocker.</span>
+  </aside>
+</section>
+
+<div class="teacher-link-row" data-glean-id="teacher-link-row"><a class="teacher-link" href="sara-exercise-teacher.html" target="_blank" rel="noopener" title="Grading key (mentors)" aria-label="Grading key (mentors)"><img src="../../shared/img/545988.png" alt="" width="22" height="22"></a></div>
+
+<div class="toolbar" data-glean-id="exercise-toolbar">
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span id="progress-label">0 / 9 answered</span>
+  </div>
+  <button class="btn primary" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<div class="notice" data-glean-id="exercise-local-save-notice">
+  <strong>Answers save to this browser only</strong>
+  Your answers are kept in this browser's local storage on this device, so closing the tab, refreshing, or reopening the page days later will restore them. They are NOT backed up anywhere and will be lost if you clear this browser's site data, switch browsers or devices, or use a private/incognito window.
+  <ul>
+    <li>Use <b>Print / save as PDF</b> to keep a permanent copy, especially before switching browsers, devices, or clearing site data.</li>
+    <li>If this exercise is part of a tracked onboarding task, <b>commit your written answers to your onboarding notes in your GitHub repo</b> so the work is actually saved and visible to your manager or mentor.</li>
+  </ul>
+</div>
+
+<nav class="roadmap" data-glean-id="exercise-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a>
+  <a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a>
+</nav>
+
+<section data-glean-id="exercise-items">
+  <div class="items" id="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>What does SARA actually measure, and what is it explicitly not evaluating?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what SARA is a benchmark of, so you can correctly frame it to a customer or teammate.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the "What SARA measures" section on the <a href="../sara-onboarding.html" target="_blank" rel="noopener">SARA onboarding page</a>.</li>
+          <li>There's a specific, easy-to-miss distinction here: SARA scores something about the environment, not something about a specific AI model's capability. Find the exact phrase that draws this line.</li>
+          <li>Think of an example: could two different repositories score very differently on SARA even if a customer used the exact same AI agent on both? What does that tell you about what's actually being measured?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-1">Your answer</label>
+      <textarea id="answer-1" data-item="1" placeholder="Explain what SARA measures and what it deliberately doesn't..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>What are the eight pillars, and how do they map to the three AC/DC stages?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know the pillar model well enough to explain a low score in one pillar without looking it up every time.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the "The eight-pillar model" section on the <a href="../sara-onboarding.html" target="_blank" rel="noopener">SARA onboarding page</a>. Each pillar is tagged with a stage, Guide, Verify, or Solve.</li>
+          <li>Don't just list the eight names, group them by stage. Notice the stages aren't evenly split, one stage has more pillars under it than the others. Which one, and does that surprise you?</li>
+          <li>For at least two pillars, be able to restate the underlying question in your own words rather than quoting the page verbatim, that's the real test of whether you understood it.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-2">Your answer</label>
+      <textarea id="answer-2" data-item="2" placeholder="List the eight pillars grouped by AC/DC stage..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>What are the five maturity levels, and what's the practical difference between adjacent levels?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Be able to tell a customer what it would actually take to move from one level to the next.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the "The five levels of maturity" section on the <a href="../sara-onboarding.html" target="_blank" rel="noopener">SARA onboarding page</a>.</li>
+          <li>Don't just copy the five labels (Pre-agentic, Basic, and so on). For at least one pair of adjacent levels, describe a concrete change to a repository that would plausibly move it from the lower level to the higher one.</li>
+          <li>Notice that a project's overall level and a single pillar's level are two different numbers, if a project is "L2 overall," does that mean every pillar is at L2? Check the runbook step that mentions reviewing "each pillar" for the answer.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-3">Your answer</label>
+      <textarea id="answer-3" data-item="3" placeholder="List the five levels and describe one level-to-level jump concretely..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>What do you need before you can run a SARA assessment?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know the prerequisite gates, including the ones that are easy to overlook because SARA is still alpha.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the "Readiness checklist" on the <a href="../sara-onboarding.html" target="_blank" rel="noopener">SARA onboarding page</a>.</li>
+          <li>There's an organizational-scope gate here that doesn't apply to most other AC/DC features onboarded in this hub, identify it and explain why it exists given SARA's current release stage.</li>
+          <li>Separate the prerequisites needed for a person clicking "Run assessment" in the UI from the prerequisites needed for an agent to trigger an assessment itself, are they the same, or does the agent path need something extra?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-4">Your answer</label>
+      <textarea id="answer-4" data-item="4" placeholder="List the prerequisites and note the alpha-specific one..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>What exactly does a SARA assessment evaluate, the working tree or something else?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Avoid a common support mistake: someone re-runs SARA expecting it to reflect local changes that were never pushed.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the callout notice on the <a href="../sara-onboarding.html" target="_blank" rel="noopener">SARA onboarding page</a> just after the runbook.</li>
+          <li>Walk through a concrete scenario: a developer makes changes locally, doesn't push or merge them, and immediately re-runs the assessment expecting a better score. What will actually happen, and why?</li>
+          <li>What's the correct sequence someone should follow if they want a re-run to reflect their fixes?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-5">Your answer</label>
+      <textarea id="answer-5" data-item="5" placeholder="Explain what SARA evaluates and the correct workflow to see improvement..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>What are the three finding categories a SARA report groups results into, and how should they change what you do first?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how to prioritize a report instead of reading it top to bottom.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read runbook step 3 ("Review the report") on the <a href="../sara-onboarding.html" target="_blank" rel="noopener">SARA onboarding page</a>, and the "Definition of a successful onboarding" section for how this connects to prioritization.</li>
+          <li>Name all three categories, and for each one, say in a sentence what a project team should actually do about a finding in that category.</li>
+          <li>Which category should be triaged first, and why does that ordering make sense given what SARA is trying to measure?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-6">Your answer</label>
+      <textarea id="answer-6" data-item="6" placeholder="Name the three categories and how you'd prioritize them..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Run a SARA assessment on a project you have access to</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get hands-on with the actual run, not just the documentation.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Follow the "Run the first assessment" steps on the <a href="../sara-onboarding.html" target="_blank" rel="noopener">SARA onboarding page</a> against a project bound to SonarQube Cloud inside a SonarSource organization.</li>
+          <li>If you don't currently have access to a qualifying organization or project, note that as a blocker here rather than skipping the task silently, ask your onboarding buddy how to get access.</li>
+          <li>Once you have a report, note the overall level and at least one pillar-level score, you'll use this in the next task.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-7">Notes (project used, overall level, or blocker encountered)</label>
+      <textarea id="answer-7" data-item="7" placeholder="Record what you ran and what came back, or what blocked you..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Pick one Blocker or Negative finding from your report and work through the recommended action</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice the close-the-gap loop, not just reading a report and moving on.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Using the report from task 7, pick a Blocker finding if you have one, or a Negative finding if you don't. Read its recommended action.</li>
+          <li>Actually attempt the fix, even a small, partial one, on a branch, don't just describe what you would do.</li>
+          <li>If you have access to re-run the assessment after merging, do so and note whether the specific pillar or finding actually cleared. If you can't merge and re-run within this exercise, that's fine, just say so.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-8">Notes (finding chosen, action taken, result if re-run)</label>
+      <textarea id="answer-8" data-item="8" placeholder="Record the finding, what you did, and the outcome..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Review the SARA onboarding reference page in full</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get a complete, end-to-end read of the onboarding page after having worked through it piecemeal in the questions above.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the <a href="../sara-onboarding.html" target="_blank" rel="noopener">SARA onboarding page</a> from top to bottom in one pass, including the "Definition of a successful onboarding" section, which ties the pillars, levels, and report categories together into one workflow.</li>
+          <li>Compare it against your own earlier answers, does anything change or sharpen what you wrote, especially your understanding of how "baselined, actioned, trending up" relates to what you actually did in tasks 7 and 8?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-9">One or two things this full read clarified or changed about your earlier answers</label>
+      <textarea id="answer-9" data-item="9" placeholder="Note what stood out or what you'd revise..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+  </div>
+</section>
+
+<div class="footer-note" data-glean-id="exercise-footer-note">
+  <strong>Your answers stay on this device</strong>
+  This page saves your answers in this browser's local storage, so they will still be here if you come back later, even after closing the browser. They are not synced anywhere else, so they will not follow you to another browser, another device, or survive clearing this site's data. Print this page (button above, or Cmd/Ctrl+P) for a permanent copy, and if this exercise is tracked as part of your onboarding, commit your written answers into your onboarding notes in your GitHub repo so the work isn't lost.
+</div>
+</main>
+<script>
+(function(){
+  var textareas=Array.from(document.querySelectorAll('textarea[data-item]'));
+  var fill=document.getElementById('progress-fill');
+  var label=document.getElementById('progress-label');
+  var total=textareas.length;
+  function storageKey(id){return 'sara-exercise-'+id;}
+  function updateProgress(){
+    var answered=textareas.filter(function(t){return t.value.trim().length>0;}).length;
+    fill.style.width=(total?Math.round(answered/total*100):0)+'%';
+    label.textContent=answered+' / '+total+' answered';
+  }
+  textareas.forEach(function(t){
+    try{
+      var saved=localStorage.getItem(storageKey(t.dataset.item));
+      if(saved)t.value=saved;
+    }catch(e){}
+    var statusEl=t.closest('.item').querySelector('.saved');
+    var timer;
+    t.addEventListener('input',function(){
+      try{localStorage.setItem(storageKey(t.dataset.item),t.value);}catch(e){}
+      updateProgress();
+      if(statusEl){
+        statusEl.classList.add('show');
+        clearTimeout(timer);
+        timer=setTimeout(function(){statusEl.classList.remove('show');},1200);
+      }
+    });
+  });
+  updateProgress();
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body></html>

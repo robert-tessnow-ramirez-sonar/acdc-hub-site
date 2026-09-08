@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonar Vortex Onboarding Exercise</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--blue-soft);color:var(--ink)}.badge strong{display:block;margin-bottom:4px;color:var(--blue);font-size:13px}.badge span{font-size:13px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 0;position:sticky;top:0;background:var(--bg);z-index:5}.progress-wrap{flex:1;min-width:180px;display:flex;align-items:center;gap:10px}.progress-track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-fill{height:100%;width:0%;background:var(--blue);border-radius:99px;transition:width .2s ease}#progress-label{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#1d4fd1;color:#fff}.notice{padding:16px 20px;border-radius:12px;background:var(--amber-soft);color:var(--amber);font-size:14px;margin:0 0 30px}.notice strong{display:block;margin-bottom:4px}.notice ul{margin:6px 0 0;padding-left:18px}.section-intro{margin:8px 0 22px;color:var(--muted)}.roadmap{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px;margin-top:10px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:90px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item.task .num{background:var(--purple)}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px}.tag.question{background:var(--blue-soft);color:var(--blue)}.tag.task{background:var(--purple-soft);color:var(--purple)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.guidance{margin:0 0 16px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;color:var(--ink)}.guidance strong{display:block;margin-bottom:6px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.guidance ul{margin:0;padding-left:18px}.guidance li{margin:4px 0}.guidance a{color:var(--blue);font-weight:700;text-decoration:none}.guidance a:hover{text-decoration:underline}.guidance code{background:var(--blue-soft);color:var(--blue);padding:1px 6px;border-radius:6px;font-size:12.5px}label.answer-label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff}textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}.status-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}.status-row .saved{color:var(--green);font-weight:700;opacity:0;transition:opacity .3s}.status-row .saved.show{opacity:1}.footer-note{margin-top:44px;padding:20px 22px;border-radius:14px;background:var(--blue-soft);color:var(--ink);font-size:14px}.footer-note strong{display:block;margin-bottom:6px;color:var(--blue)}.teacher-link-row{position:fixed;left:14px;bottom:14px;z-index:10}.teacher-link{display:inline-flex;opacity:.1;transition:opacity .15s ease}.teacher-link:hover,.teacher-link:focus-visible{opacity:1}.teacher-link img{display:block}.print-only{display:none}@media print{.toolbar,.roadmap,.teacher-link-row{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}textarea{border:1px solid #999;min-height:70px}.print-only{display:block}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="vortex-exercise-page">
+
+<section class="hero" data-glean-id="exercise-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="exercise-eyebrow">AC/DC · Onboarding exercise · Student copy</p>
+    <h1 data-glean-id="exercise-title">Sonar Vortex: figure it out</h1>
+    <p class="lead" data-glean-id="exercise-lead">Six questions and hands-on tasks on Sonar Vortex, focused on the context augmentation half of the product. Each one gives you a pointer, not the answer &mdash; use the linked docs, the <a href="../vortex-onboarding.html" target="_blank" rel="noopener">Vortex onboarding page</a>, and your own testing to work it out.</p>
+  </div>
+  <aside class="badge" data-glean-id="exercise-availability">
+    <strong>A note on terminology</strong>
+    <span>You may see older docs, tickets, or teammates use "CAG" (Context Augmentation) and "AA" (Agentic Analysis). These were the beta names for what's now unified under the Sonar Vortex product name.</span>
+  </aside>
+</section>
+
+<div class="teacher-link-row" data-glean-id="teacher-link-row"><a class="teacher-link" href="vortex-exercise-teacher.html" target="_blank" rel="noopener" title="Grading key (mentors)" aria-label="Grading key (mentors)"><img src="../../shared/img/545988.png" alt="" width="22" height="22"></a></div>
+
+<div class="toolbar" data-glean-id="exercise-toolbar">
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span id="progress-label">0 / 6 answered</span>
+  </div>
+  <button class="btn primary" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<div class="notice" data-glean-id="exercise-local-save-notice">
+  <strong>Answers save to this browser only</strong>
+  Your answers are kept in this browser's local storage on this device, so closing the tab, refreshing, or reopening the page days later will restore them. They are NOT backed up anywhere and will be lost if you clear this browser's site data, switch browsers or devices, or use a private/incognito window.
+  <ul>
+    <li>Use <b>Print / save as PDF</b> to keep a permanent copy, especially before switching browsers, devices, or clearing site data.</li>
+    <li>If this exercise is part of a tracked onboarding task, <b>commit your written answers to your onboarding notes in your GitHub repo</b> so the work is actually saved and visible to your manager or mentor.</li>
+  </ul>
+</div>
+
+<nav class="roadmap" data-glean-id="exercise-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a><a href="#item-6">6</a>
+</nav>
+
+<section data-glean-id="exercise-items">
+  <div class="items" id="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>What are the use cases for context augmentation and agentic analysis?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Determine realistic use cases for Vortex's two capabilities. Optional, but a good warm-up before the core questions below.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the "What Vortex delivers" section on the <a href="../vortex-onboarding.html" target="_blank" rel="noopener">Vortex onboarding page</a>, and the official <a href="https://docs.sonarsource.com/agent-centric-development-cycle/guide/sonar-vortex-context-augmentation" target="_blank" rel="noopener">Sonar Vortex: context augmentation</a> and <a href="https://docs.sonarsource.com/agent-centric-development-cycle/verify/sonar-vortex-agentic-analysis" target="_blank" rel="noopener">Sonar Vortex: agentic analysis</a> pages.</li>
+          <li>Think of a concrete scenario for each: when would a team specifically want an agent to know the repo's architecture and conventions <i>before</i> writing code (context augmentation), versus when would they want fast, in-loop verification <i>after</i> each edit (agentic analysis)?</li>
+          <li>Note that context augmentation and agentic analysis are two separate capabilities under the Vortex name, not one feature, your use cases for each should look different.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-1">Your answer</label>
+      <textarea id="answer-1" data-item="1" placeholder="Give a concrete use case for each capability..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>Where does context augmentation occur?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand context augmentation's architecture, specifically where the work actually happens.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>This question is explicitly flagged in the source material as needing review, since Sonar Context Augmentation (CAG) and SonarQube Agentic Analysis (AA) were later folded into the unified Sonar Vortex product. If you find older material that still says "CAG," treat it as describing the same underlying mechanism under a different name.</li>
+          <li>Read the setup requirements on <a href="https://docs.sonarsource.com/agent-centric-development-cycle/guide/sonar-vortex-context-augmentation" target="_blank" rel="noopener">Sonar Vortex: context augmentation</a>. Pay close attention to the specific phrase about what kind of MCP server this requires, local versus hosted, and why a hosted MCP server (Cloud-hosted or Server-hosted) is explicitly called out as insufficient.</li>
+          <li>Ask: does the actual context-building/injection work happen on Sonar's servers, or on the machine running the agent? What clue in the setup requirements (filesystem mount, local process) tells you this?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-2">Your answer</label>
+      <textarea id="answer-2" data-item="2" placeholder="Explain where the work happens and how you know..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>What do you need to enable context augmentation for your project?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know the full prerequisite list for context augmentation, not just the licensing gate.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Start with the "Readiness checklist" on the <a href="../vortex-onboarding.html" target="_blank" rel="noopener">Vortex onboarding page</a>, then check the prerequisites list on <a href="https://docs.sonarsource.com/agent-centric-development-cycle/guide/sonar-vortex-context-augmentation" target="_blank" rel="noopener">Sonar Vortex: context augmentation</a> for anything more specific.</li>
+          <li>There's more than one layer here: an entitlement/plan gate, an org-level enablement step, a project-level analysis requirement, and something specific about tokens and MCP configuration. Try to identify all four layers rather than stopping at the first one you find.</li>
+          <li>Notice the project-level requirement in particular: what does the project need to have already happened to it before context augmentation is useful, and why would that matter for a brand-new project with no history?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-3">Your answer</label>
+      <textarea id="answer-3" data-item="3" placeholder="List each prerequisite layer..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>What does context augmentation add to the MCP server?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the value and features context augmentation contributes on top of a plain MCP server setup.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>If you've done the MCP Server exercise, revisit what the base MCP server gives an agent (data retrieval tools) before answering this one, this question is really asking "what's new beyond that."</li>
+          <li>Read the capability breakdown on <a href="https://docs.sonarsource.com/agent-centric-development-cycle/guide/sonar-vortex-context-augmentation" target="_blank" rel="noopener">Sonar Vortex: context augmentation</a>. There are several distinct categories of capability described, try to name more than one rather than a single generic answer like "more context."</li>
+          <li>Distinguish tools that help the agent understand code it hasn't written yet (navigation, architecture) from tools that shape what it's about to write (guidelines, dependency checks). Which category does each capability fall into?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-4">Your answer</label>
+      <textarea id="answer-4" data-item="4" placeholder="List the capabilities context augmentation adds..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Use context augmentation with an existing test project</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get hands-on with context augmentation instead of only reading about it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Reuse a project you already have analyzed in SonarQube Cloud on a long-lived branch (this is a prerequisite you should have surfaced in question 3).</li>
+          <li>Follow the "Install and run" steps on the <a href="../vortex-onboarding.html" target="_blank" rel="noopener">Vortex onboarding page</a>, or the walkthrough at <a href="https://docs.sonarsource.com/agent-centric-development-cycle/guide/add-context-to-generate-better-code" target="_blank" rel="noopener">Add context to generate better code</a>.</li>
+          <li>Give your agent a real coding task on that project and look for direct evidence it used injected context, cite specific architecture facts, follow a coding convention it couldn't have guessed, or flag a dependency, rather than just producing generic code.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-5">Notes (project used, agent used, evidence context was actually applied)</label>
+      <textarea id="answer-5" data-item="5" placeholder="Record what you set up and observed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Review the Vortex onboarding reference page</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get a quick, high-level overview of Vortex at a glance before or after working through the rest of this exercise.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Visit the <a href="../vortex-onboarding.html" target="_blank" rel="noopener">Vortex onboarding page</a> in this hub and read it end to end, including the "How the loop works" section, which covers the full Guide-Write-Verify-Self-correct cycle, not just context augmentation on its own.</li>
+          <li>Compare it against your own answers above &mdash; does anything on that page change or sharpen what you wrote earlier, especially around how context augmentation and agentic analysis relate to each other? Feel free to go back and revise.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-6">One or two things this reference page clarified or changed about your earlier answers</label>
+      <textarea id="answer-6" data-item="6" placeholder="Note what stood out or what you'd revise..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+  </div>
+</section>
+
+<div class="footer-note" data-glean-id="exercise-footer-note">
+  <strong>Your answers stay on this device</strong>
+  This page saves your answers in this browser's local storage, so they will still be here if you come back later, even after closing the browser. They are not synced anywhere else, so they will not follow you to another browser, another device, or survive clearing this site's data. Print this page (button above, or Cmd/Ctrl+P) for a permanent copy, and if this exercise is tracked as part of your onboarding, commit your written answers into your onboarding notes in your GitHub repo so the work isn't lost.
+</div>
+
+</main>
+<script>
+(function(){
+  var textareas=Array.from(document.querySelectorAll('textarea[data-item]'));
+  var fill=document.getElementById('progress-fill');
+  var label=document.getElementById('progress-label');
+  var total=textareas.length;
+  function storageKey(id){return 'vortex-exercise-'+id;}
+  function updateProgress(){
+    var answered=textareas.filter(function(t){return t.value.trim().length>0;}).length;
+    fill.style.width=(total?Math.round(answered/total*100):0)+'%';
+    label.textContent=answered+' / '+total+' answered';
+  }
+  textareas.forEach(function(t){
+    try{
+      var saved=localStorage.getItem(storageKey(t.dataset.item));
+      if(saved)t.value=saved;
+    }catch(e){}
+    var statusEl=t.closest('.item').querySelector('.saved');
+    var timer;
+    t.addEventListener('input',function(){
+      try{localStorage.setItem(storageKey(t.dataset.item),t.value);}catch(e){}
+      updateProgress();
+      if(statusEl){
+        statusEl.classList.add('show');
+        clearTimeout(timer);
+        timer=setTimeout(function(){statusEl.classList.remove('show');},1200);
+      }
+    });
+  });
+  updateProgress();
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body></html>

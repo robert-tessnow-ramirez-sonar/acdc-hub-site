@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis Onboarding Exercise: Teacher Key</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff;--red:#b42318;--red-soft:#fdecea}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--red);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--red-soft);color:var(--red)}.badge strong{display:block;margin-bottom:4px;font-size:13px}.badge span{font-size:13px;color:var(--ink)}.notice{padding:16px 20px;border-radius:12px;background:var(--red-soft);color:var(--red);font-size:14px;margin:26px 0 30px}.notice strong{display:block;margin-bottom:4px}.toolbar{display:flex;justify-content:flex-end;padding:0 0 20px}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700;font:inherit;cursor:pointer}.btn:hover{border-color:var(--blue);color:var(--blue)}.roadmap{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 24px;max-height:92px;overflow-y:auto;padding:2px}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 10px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:20px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px;white-space:nowrap}.tag.diff{background:var(--blue-soft);color:var(--blue)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.answer{margin:0 0 14px;padding:16px 18px;border-radius:10px;background:var(--green-soft);border:1px solid #bfe6d8}.answer strong{display:block;margin-bottom:6px;color:var(--green);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.answer p{margin:0;font-size:14px}.rubric{margin:0;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:13.5px}.rubric strong{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.rubric p{margin:0}@media print{.toolbar,.roadmap{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="analysis-exercise-teacher-page">
+
+<section class="hero" data-glean-id="teacher-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="teacher-eyebrow">Sonar Support &middot; Onboarding exercise &middot; Teacher key</p>
+    <h1 data-glean-id="teacher-title">Analysis: grading key</h1>
+    <p class="lead" data-glean-id="teacher-lead">Model answers and grading notes for all 33 items on the <a href="analysis-exercise.html" target="_blank" rel="noopener">student exercise page</a>. Not for distribution to onboarders.</p>
+  </div>
+  <aside class="badge" data-glean-id="teacher-availability">
+    <strong>Restricted</strong>
+    <span>This page is not linked from any nav. Share the link only with people grading onboarding work.</span>
+  </aside>
+</section>
+
+<div class="notice" data-glean-id="teacher-confidential-warning">
+  <strong>Do not share this URL with new joiners</strong>
+  This page contains model answers for the Analysis onboarding exercise. Send onboarders to <code>analysis-exercise.html</code> instead. A few answers here are explicitly flagged as reasonable inference rather than officially confirmed Sonar documentation, treat those with extra scrutiny before stating them as settled fact to a customer.
+</div>
+
+<div class="toolbar" data-glean-id="teacher-toolbar">
+  <button class="btn" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<nav class="roadmap" data-glean-id="teacher-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a><a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a><a href="#item-11">11</a><a href="#item-12">12</a><a href="#item-13">13</a><a href="#item-14">14</a><a href="#item-15">15</a><a href="#item-16">16</a><a href="#item-17">17</a><a href="#item-18">18</a><a href="#item-19">19</a><a href="#item-20">20</a><a href="#item-21">21</a><a href="#item-22">22</a><a href="#item-23">23</a><a href="#item-24">24</a><a href="#item-25">25</a><a href="#item-26">26</a><a href="#item-27">27</a><a href="#item-28">28</a><a href="#item-29">29</a><a href="#item-30">30</a><a href="#item-31">31</a><a href="#item-32">32</a><a href="#item-33">33</a></nav>
+
+<section data-glean-id="teacher-items">
+  <div class="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>Scan a JS/TS project with and without sonar-project.properties</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand basic analysis of a small project and what's actually required for JS/TS analysis to work at all.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Without a sonar-project.properties file, a scan still works if all required parameters (project key, sources) are passed on the command line; the file just provides a persistent, checked-in place to store those settings instead of retyping them every time. For JS/TS specifically, very little is strictly required beyond a project key and source location, JS/TS analysis doesn't need a build step or compiled artifacts the way Java does.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually ran both variants and can articulate that the properties file is a convenience/persistence layer, not a hard requirement, for this language family.</p>
+      </div>
+    </article>
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>Clone sonar-scanning-examples and sonar-training-examples with git</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get comfortable with basic git operations before layering analysis exercises on top.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Standard git clone workflow, nothing SonarQube-specific here; this item exists purely to make sure both example repos are on hand for later items in this exercise that reference them directly.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirms both repos were actually cloned. This is a light prerequisite item, don't over-scrutinize it.</p>
+      </div>
+    </article>
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>Create a git repository and scan it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand git add/commit/checkout, and notice exactly how commit authorship and dates flow into SonarQube.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Commit author and date come from git metadata at commit time (git config user.name/user.email, and the commit's authored/committed date) and are picked up by SonarQube's SCM integration during analysis, they drive issue auto-assignment (attributing an issue to whoever's commit introduced it) and backdating (deciding when an issue was actually introduced, for New Code calculations), rather than being tied to who ran the scan.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: varied a commit's author/date and observed the corresponding change in SonarQube's blame/assignment data, confirming it's genuinely git-metadata-driven rather than scan-time-driven.</p>
+      </div>
+    </article>
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>Create a local git branch and scan it in SonarQube</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand branch analysis as a distinct concept from analyzing the main/default branch.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Branch analysis requires passing a branch-name parameter (so the scan lands as its own branch entity in SonarQube instead of overwriting main), and the resulting branch appears with its own independent analysis history, issues, and Quality Gate status, separate from the branch it was created from.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually confirmed two independent branches exist in the UI with separate histories, not just that the scan command ran without error.</p>
+      </div>
+    </article>
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Scan a branch with changes as a Pull Request from the command line</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how PR analysis is triggered purely from scanner parameters, without any CI/DevOps platform integration.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>PR analysis is triggered by passing PR-specific parameters directly (PR key, source branch, target/base branch) rather than a plain branch name, entirely from the command line with no CI or DevOps platform involved. The result is scoped differently from branch analysis: only issues introduced by the changeset (relative to the target branch) are reported, intended to feed a merge-gating Quality Gate rather than represent the full state of a long-lived branch.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: named the correct PR-specific parameters (not branch parameters) and correctly describes the changeset-scoped reporting behavior as the key difference from branch analysis.</p>
+      </div>
+    </article>
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Read and explain INFO/DEBUG scanner logs</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get comfortable reading a scanner's own log output well enough to narrate what's happening at each step.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>This is a comprehension exercise more than a lookup one: a DEBUG-level scanner log walks through language/file detection, plugin loading, the actual analysis pass, and report submission to the server. There's no single "correct" answer here beyond actually being able to narrate what's happening at each stage, and knowing when to ask a mentor rather than guess at an unclear log line.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: demonstrates genuine comprehension of log phases (not just pasted the log), and is honest about anything they had to ask someone else to clarify, that honesty is itself the right behavior this item is testing for.</p>
+      </div>
+    </article>
+    <article class="item" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Run an analysis that includes only one specific file</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the inclusion and exclusion pattern mechanism.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>sonar.inclusions (or the equivalent narrowing exclusion pattern) set to match only the target file scopes the entire analysis down to that file; everything else in the project is skipped, and the UI shows metrics/issues only for that one file. This demonstrates that inclusion/exclusion patterns operate at the file-discovery stage, before any language-specific analysis runs.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually confirmed only the target file's issues/metrics appeared in the UI, not just that the scan completed without error.</p>
+      </div>
+    </article>
+    <article class="item" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Configure Global Exclusions and confirm they override project-level inclusions</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that Global Exclusions are a forced setting that cannot be overridden at the project level, even by an explicit inclusion.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Global Exclusions (and Global Test File Exclusions) are documented as "forced global" parameters, they apply to every project instance-wide and cannot be overridden by any project-level setting, including an explicit project-level inclusion attempting to bring the file back in. This is an intentional, documented exception to SonarQube's normal settings hierarchy, where project-level settings otherwise generally win over global ones; it also can't be set via a config file, only through the UI.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually attempted the override and confirmed it failed, and correctly identifies this as a deliberate, documented exception rather than a bug or a settings-precedence mistake on their part.</p>
+      </div>
+    </article>
+    <article class="item" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Obtain analysis parameters set for a scan via Scanner Context</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get familiar with the SonarQube UI well enough to locate the Scanner Context for a specific analysis.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Scanner Context is found on a specific analysis's background task entry (via an action menu, "Show Scanner Context" or "Show SonarScanner Context" depending on version) and shows the actual parameters that run used. It is not populated if the analysis report itself failed to process, only successful analyses have a queryable context this way.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually located and opened the Scanner Context for a real analysis, and knows the failed-analysis caveat rather than assuming it's always available.</p>
+      </div>
+    </article>
+    <article class="item" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Understand the precedence of analysis parameters across levels</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know exactly which setting wins when the same parameter is set at multiple levels.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>General precedence, highest wins: command line / scanner arguments, then the scanner config file (sonar-project.properties), then project-level UI settings, then global-level UI settings. A key nuance: only values set through the UI are persisted to the database; anything set via command line or config file only applies to that specific analysis run and isn't "remembered" as the project's configured setting afterward.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: determined the precedence experimentally (not just recited it), and separately notes the UI-persistence nuance, that only UI-set values show up as the project's stored configuration afterward.</p>
+      </div>
+    </article>
+    <article class="item" id="item-11" data-glean-id="item-11">
+      <div class="item-head">
+        <div class="item-title"><span class="num">11</span><h3>Use sonar.scanner.internal.dumpToFile to capture analysis parameters</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how this debugging parameter dumps the full, actual list of properties a scan is using.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>sonar.scanner.internal.dumpToFile writes the scanner's full resolved property list (explicit and implicit) to a file at the given path, useful for debugging exactly what a scan actually used, similar in purpose to the Scanner Context UI view but generated client-side at scan time rather than pulled from the server afterward. Note: an older, deprecated sonar.scanner.dumpToFile (without .internal.) exists too, the .internal. variant is the current one to use.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually inspected a real dump file and correctly notes the deprecated non-.internal. variant as an older name for essentially the same debugging mechanism.</p>
+      </div>
+    </article>
+    <article class="item" id="item-12" data-glean-id="item-12">
+      <div class="item-head">
+        <div class="item-title"><span class="num">12</span><h3>Scan a Maven project from the command line</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get familiar with pom.xml, experiment with parameter precedence, and understand project key overrides and sonar-maven-plugin version pinning.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The Maven scanner plugin (invoked via mvn sonar:sonar) runs inside Maven's own build lifecycle and reads the project model (pom.xml) directly, so it automatically fills in parameters like compiled classes location, dependency classpath, and source/target Java version. Overriding the generated project key is possible via a scanner property; pinning a specific sonar-maven-plugin version is done the normal Maven way, an explicit <version> in the plugin declaration, to avoid silently picking up a newer plugin release.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually tried a project key override and a version pin, and can describe what the plugin auto-populates from pom.xml that a generic scan wouldn't know about.</p>
+      </div>
+    </article>
+    <article class="item" id="item-13" data-glean-id="item-13">
+      <div class="item-head">
+        <div class="item-title"><span class="num">13</span><h3>Analyze a Maven project without building it first</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the impact of missing compiled bytecode on Java analysis accuracy.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>For a Java project with more than a trivial single file, missing compiled bytecode causes analysis to either fail outright (with an explicit error pointing at sonar.java.binaries) or proceed in a visibly degraded mode with class-not-accessible warnings, depending on whether bytecode is fully or partially absent. Either way, type resolution, cross-class semantic analysis, and dataflow-based bug/vulnerability detection all suffer, since they depend on knowing real types and method signatures, not just parsing syntax.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually compared issue output between an unbuilt and a properly built scan, and correctly attributes the difference to type-resolution-dependent rules specifically, not a vague "fewer issues happened."</p>
+      </div>
+    </article>
+    <article class="item" id="item-14" data-glean-id="item-14">
+      <div class="item-head">
+        <div class="item-title"><span class="num">14</span><h3>Pass sonar.sources=. to a Maven analysis</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that Maven analysis always has a module hierarchy, even in a seemingly single-module project, and why overriding sonar.sources breaks that assumption.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Maven analysis always has an implicit module hierarchy driven by each module's own pom.xml and standard directory layout; forcing sonar.sources=. at the root flattens that hierarchy, causing the scanner to recursively treat everything from the root as one flat source set. In a multi-module project this leads to duplicate analysis, issues attributed to the wrong module, and inclusion of files that shouldn't be scanned at all (build output, sibling module files).</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually reproduced the breakage on a multi-module project (a single-module project may not show an obvious problem) and can describe at least one concrete symptom (duplication, wrong attribution, or unwanted file inclusion).</p>
+      </div>
+    </article>
+    <article class="item" id="item-15" data-glean-id="item-15">
+      <div class="item-head">
+        <div class="item-title"><span class="num">15</span><h3>Reproduce a scanner out-of-memory issue in Maven analysis</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Determine why an analysis fails due to insufficient memory, and know how to allocate more to the right process.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The affected process is the scanner's own JVM (the process running the analysis, invoked by Maven), not the SonarQube server. For scanner version 6.0+, memory is increased via the SONAR_SCANNER_JAVA_OPTS environment variable (e.g. -Xmx2048m); older scanner versions use SONAR_SCANNER_OPTS. This is a genuinely common point of confusion: MAVEN_OPTS governs the Maven build process itself, and sonar.ce.javaOpts governs the server's Compute Engine, neither of those fixes a scanner-side OOM.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly identifies the scanner process (not the server, and not plain Maven) as what needed more memory, and names the correct environment variable for their scanner version. This exact confusion (MAVEN_OPTS vs SONAR_SCANNER_OPTS vs sonar.ce.javaOpts) is a real, recurring support pattern.</p>
+      </div>
+    </article>
+    <article class="item" id="item-16" data-glean-id="item-16">
+      <div class="item-head">
+        <div class="item-title"><span class="num">16</span><h3>Scan a Gradle project</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand Gradle project structure and how it differs from Maven's.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Gradle projects are configured via build.gradle applying the SonarQube Gradle plugin, which (similar to Maven's plugin) reads the Gradle project model to auto-populate most Java-specific analysis parameters, generally with less manual configuration than the generic CLI scanner would need.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: got a real scan working and can describe at least one concrete difference in setup experience (build.gradle vs pom.xml, or Gradle's plugin auto-detection behavior) versus Maven.</p>
+      </div>
+    </article>
+    <article class="item" id="item-17" data-glean-id="item-17">
+      <div class="item-head">
+        <div class="item-title"><span class="num">17</span><h3>Scan a single-module Maven Java project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to generate coverage and import it into a single-module Maven project's analysis.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The general mechanism for all Java coverage import is: a coverage tool (JaCoCo) generates an XML report during the build, and sonar.coverage.jacoco.xmlReportPaths points the scanner at that file. Binary .exec-format JaCoCo reports are deprecated in favor of XML. For a single-module Maven project this is typically produced under target/site/jacoco/jacoco.xml via the jacoco:prepare-agent and jacoco:report goals.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually generated a real coverage report and confirmed the percentage appeared correctly in SonarQube's UI, not just that the scan ran without error.</p>
+      </div>
+    </article>
+    <article class="item" id="item-18" data-glean-id="item-18">
+      <div class="item-head">
+        <div class="item-title"><span class="num">18</span><h3>Scan a single-module Gradle Java project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to generate coverage and import it into a single-module Gradle project's analysis.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Gradle's JaCoCo integration is more automated than Maven's for a single module: applying the JaCoCo Gradle plugin alongside the SonarQube Gradle plugin generally auto-detects the report at build/reports/jacoco with little to no additional scanner configuration needed.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirms coverage appeared correctly, and notes the reduced manual configuration compared to the equivalent Maven single-module setup.</p>
+      </div>
+    </article>
+    <article class="item" id="item-19" data-glean-id="item-19">
+      <div class="item-head">
+        <div class="item-title"><span class="num">19</span><h3>Scan a multi-module Maven Java project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand coverage aggregation across multiple Maven modules.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Multi-module Maven coverage requires an aggregated report, since JaCoCo by default only attributes coverage to the "current" module being built, undercounting any cross-module test coverage. The common approach is a dedicated report-aggregate module that produces a combined report (commonly at target/site/jacoco-aggregate/jacoco.xml) which the scanner is then pointed at, rather than pointing at each module's individual, incomplete report.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually set up (or at minimum correctly describes) the aggregation step, and understands why pointing at individual per-module reports alone would undercount coverage.</p>
+      </div>
+    </article>
+    <article class="item" id="item-20" data-glean-id="item-20">
+      <div class="item-head">
+        <div class="item-title"><span class="num">20</span><h3>Scan a multi-module Gradle Java project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand coverage aggregation across multiple Gradle modules.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Multi-project Gradle coverage has a similar aggregation need as multi-module Maven, but it's less automated: Gradle doesn't universally auto-merge coverage across subprojects, this is a documented rough edge, and typically requires an explicit merge/aggregation task to combine subproject reports before the scanner can see a complete picture.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: recognizes the aggregation problem exists for multi-project Gradle (not assuming it "just works" the way single-project Gradle coverage does), even if the exact task setup varies by project.</p>
+      </div>
+    </article>
+    <article class="item" id="item-21" data-glean-id="item-21">
+      <div class="item-head">
+        <div class="item-title"><span class="num">21</span><h3>Scan a VB6 (Visual Basic) project and resolve a language/extension conflict</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how the scanner detects language by file extension, and how extension conflicts can happen and be resolved.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The scanner determines a file's language from its extension, mapped via language-specific file-suffix settings configurable at both global and project level. A conflict arises when two different language analyzers are both configured to claim the same extension (for example .vb potentially ambiguous in some setups); resolving it means adjusting one analyzer's configured suffix list so the extension maps unambiguously to the intended language.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually scanned a real VB6 sample and can describe how they created and then resolved a genuine extension conflict, not just a description of the mapping mechanism in the abstract.</p>
+      </div>
+    </article>
+    <article class="item" id="item-22" data-glean-id="item-22">
+      <div class="item-head">
+        <div class="item-title"><span class="num">22</span><h3>Scan a project using the sonar-scanner-cli Docker image</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the Docker-based way of running the SonarScanner CLI.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Running the scanner via its official Docker image requires mounting the project source directory into the container (typically to /usr/src) and passing the SonarQube URL/token as environment variables or scanner arguments, rather than relying on a locally-installed scanner binary. The main practical differences from a native install are volume-mount paths (making sure the container can actually see your source) and network reachability from inside the container to your SonarQube server.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually ran a real docker run command against a real project, and can describe the mounting/networking adjustment they needed to make it work.</p>
+      </div>
+    </article>
+    <article class="item" id="item-23" data-glean-id="item-23">
+      <div class="item-head">
+        <div class="item-title"><span class="num">23</span><h3>Analyze with the wrong token type and observe the failure</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the different token types (global/user/project) and what actually breaks when the wrong one is used.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>There are three token types: user tokens (inherit the full permission set of the issuing user), project analysis tokens (scoped to run analysis on one specific project only), and global analysis tokens (can run analysis across multiple projects). Using a token that lacks Execute Analysis rights on the target project (or one that's the wrong type for the context, e.g. an analysis token where a user token is required) produces an authentication or authorization error, typically a 401 for an invalid/unrecognized token or a 403 ("Insufficient privileges"/similar) for a valid but under-permissioned one.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually captured a real error message from a deliberately-wrong token and can correctly categorize which of the three token types they used and why it failed.</p>
+      </div>
+    </article>
+    <article class="item" id="item-24" data-glean-id="item-24">
+      <div class="item-head">
+        <div class="item-title"><span class="num">24</span><h3>Scan a JS/TS project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to generate coverage and import it for a JavaScript/TypeScript project.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The mechanism is the same as Java coverage: a JS/TS test runner (commonly Jest, or Istanbul/nyc-based tooling) produces an LCOV-format report, and sonar.javascript.lcov.reportPaths (the unified property covering both JS and TS; the older separate TypeScript-specific property is deprecated) points the scanner at it. A real gotcha worth knowing: in a monorepo, if multiple workspaces produce coverage reports with identical relative file paths, coverage can collide and silently show as 0% for affected files unless the scan is run from a path that keeps them unique.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: confirmed a real LCOV report imported correctly, and bonus points for surfacing the monorepo path-collision gotcha if they hit or researched it.</p>
+      </div>
+    </article>
+    <article class="item" id="item-25" data-glean-id="item-25">
+      <div class="item-head">
+        <div class="item-title"><span class="num">25</span><h3>Analyze a repo cloned as a shallow clone</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the impact of a shallow git clone on analysis, particularly blame information and New Code detection.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A shallow clone (git clone --depth 1) causes the scanner to log an explicit warning that blame information will be skipped; running git fetch --unshallow converts it to a full clone and blame/authorship data becomes available again on the next scan. Full clone depth matters beyond just blame: it also affects New Code detection accuracy and the ability to find a common commit ancestor for PR analysis on long-lived branches.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually reproduced the warning on a shallow clone and confirmed the difference after converting to a full clone via git fetch --unshallow, not just read about the behavior.</p>
+      </div>
+    </article>
+    <article class="item" id="item-26" data-glean-id="item-26">
+      <div class="item-head">
+        <div class="item-title"><span class="num">26</span><h3>Scan a Maven project with the SonarScanner CLI instead of the Maven plugin</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what the Maven-specific scanner plugin does automatically that the generic CLI scanner does not.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The Maven plugin automatically supplies parameters the generic CLI scanner has no way to know on its own: compiled bytecode location, the full dependency classpath, and Java source/target version, all read directly from Maven's project model. Configuring the generic CLI scanner to replicate this by hand is explicitly described as error-prone, which is why the Maven (or Gradle) plugin is the recommended path for those build tools rather than the generic CLI.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: ran the same project both ways and specifically named at least one parameter (bytecode path, classpath, or Java version) that the Maven plugin supplied automatically and the CLI run required manually.</p>
+      </div>
+    </article>
+    <article class="item" id="item-27" data-glean-id="item-27">
+      <div class="item-head">
+        <div class="item-title"><span class="num">27</span><h3>Configure a database connection for PL/SQL analysis</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> See that some PL/SQL rules only raise issues when a data dictionary (live DB connection) is provided during analysis.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>PL/SQL's data dictionary feature lets the analyzer resolve schema objects (tables, views, synonyms) that aren't explicitly prefixed in the code, by querying a live Oracle database via a configured JDBC connection (URL and user); sonar.plsql.defaultSchema controls which schema unprefixed references are assumed to belong to. Certain rules can only fire with this schema-aware access, so the same code can show more issues with the DB connection configured than without it, this is intentional, not a bug.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually compared issue counts with and without a real DB connection configured, and correctly frames the difference as intentional schema-aware rule behavior rather than a defect.</p>
+      </div>
+    </article>
+    <article class="item" id="item-28" data-glean-id="item-28">
+      <div class="item-head">
+        <div class="item-title"><span class="num">28</span><h3>Scan COBOL code with syntax not yet supported by an older analyzer version</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how an unsupported syntax construct causes a parse error on an older analyzer version, and why a newer version handles it.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>An older analyzer version may not yet support a specific syntax construct (the catalog references a documented case involving an AFTER...START clause) and throws a parse error on encountering it, while a newer version that added support for that construct analyzes the same code cleanly. This is a real, recurring support pattern: a customer's scan failure is sometimes not a bug but a documented language-support gap that's already fixed in a later release.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually reproduced the same reproducer against two real analyzer versions and observed the parse error appear on the older one and not the newer one, rather than only reading about the reported case.</p>
+      </div>
+    </article>
+    <article class="item" id="item-29" data-glean-id="item-29">
+      <div class="item-head">
+        <div class="item-title"><span class="num">29</span><h3>Write a good Discuss forum post</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what makes a support/community post effective, and how to communicate clearly with other teams.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A good Discuss post includes a clear reproducer (minimal code sample), exact version information, and a precise statement of expected versus actual behavior; a weak post tends to be a vague one-line description with no reproduction steps, forcing a long back-and-forth just to understand the problem. The skill being practiced here is communicating an issue efficiently enough that another team or engineer can act on it without a lengthy clarification cycle.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: found and can articulate the concrete difference between a genuinely good and bad real forum post, and produced their own draft that follows the good pattern (reproducer, version, expected vs. actual).</p>
+      </div>
+    </article>
+    <article class="item" id="item-30" data-glean-id="item-30">
+      <div class="item-head">
+        <div class="item-title"><span class="num">30</span><h3>Get a taste of "New Issues on Old Code" caused by missing bytecode</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how missing bytecode can cause SonarQube to falsely flag unchanged code as containing new issues.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>There's a documented corner case where new issues can be detected on code outside the current New Code period; missing or incomplete bytecode is a plausible contributing cause, since degraded type resolution can change how or when certain rules fire on a given analysis, causing an issue that should have existed all along to instead compute for the first time on a later run and get miscategorized as new. This causal link (bytecode gap specifically causing this) is inference connecting two separately documented facts, not a single official statement, worth flagging as understood-but-not-officially-confirmed if asked to justify it further.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: reproduced a real instance of an unchanged line being flagged as a new issue under degraded (unbuilt) bytecode conditions, and is appropriately careful about stating the exact causal mechanism as inference rather than confirmed fact.</p>
+      </div>
+    </article>
+    <article class="item" id="item-31" data-glean-id="item-31">
+      <div class="item-head">
+        <div class="item-title"><span class="num">31</span><h3>Scan a real project with both branch analysis and PR analysis (without DevOps platform integration)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the fundamental difference between branch analysis and PR analysis as mechanisms, on a real (not toy) project.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>See item 5's model answer, the same underlying mechanism (manual PR parameters, no DevOps decoration) applies here on a real project rather than a toy one. The main value of repeating it on a real project is seeing the difference at realistic scale: how many issues get scoped to a genuine changeset versus how many exist across the whole branch.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: ran this on an actual non-trivial project (not the same tiny repo from item 5) and can speak to how the changeset-scoped PR results differed in scale/content from the full branch analysis.</p>
+      </div>
+    </article>
+    <article class="item" id="item-32" data-glean-id="item-32">
+      <div class="item-head">
+        <div class="item-title"><span class="num">32</span><h3>Review real support tickets about coverage reports and community plugins</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand where support can help and where it genuinely cannot, using real examples.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Real tickets involving coverage report or community plugin issues typically fall into one of two buckets: something SonarQube-side that support can genuinely fix (a misconfigured report path, a documented setting), or a third-party tool/plugin bug entirely outside Sonar's support boundary (a broken coverage tool export, an incompatible community plugin). Recognizing which bucket a new ticket falls into quickly is the actual skill this item is testing.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: reviewed real or example tickets and can articulate the distinguishing pattern between "we can fix this" and "this is a third-party issue," rather than treating every ticket as equally within scope.</p>
+      </div>
+    </article>
+    <article class="item" id="item-33" data-glean-id="item-33">
+      <div class="item-head">
+        <div class="item-title"><span class="num">33</span><h3>Simulate analyzing a project out of chronological order with sonar.projectDate</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 10/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the constraint that SonarQube can only "rebuild the past" in chronological order, and what breaks if you violate it.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>SonarQube enforces that analysis reports must be submitted in strictly chronological order for a given project/branch; using sonar.projectDate to submit an analysis dated earlier than the most recently stored analysis triggers a hard validation failure (an explicit error that the date cannot be older than the last known analysis), not a silent acceptance or soft warning. There's also a genuine, less-precisely-documented gap: there's no built-in API to simply list every background task's history/timestamps to help spot this kind of ordering problem after the fact, you'd have to reconstruct it by querying individual tasks via api/ce/task?id=....</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually reproduced the validation failure by submitting an out-of-order analysis, and separately notes the missing "list all background tasks" API as a real, current limitation rather than assuming a workaround exists.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+<script>
+document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+</script>
+</body></html>

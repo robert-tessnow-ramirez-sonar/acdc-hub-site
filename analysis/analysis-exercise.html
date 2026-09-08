@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis Onboarding Exercise</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--blue-soft);color:var(--ink)}.badge strong{display:block;margin-bottom:4px;color:var(--blue);font-size:13px}.badge span{font-size:13px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 0;position:sticky;top:0;background:var(--bg);z-index:5}.progress-wrap{flex:1;min-width:180px;display:flex;align-items:center;gap:10px}.progress-track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-fill{height:100%;width:0%;background:var(--blue);border-radius:99px;transition:width .2s ease}#progress-label{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#1d4fd1;color:#fff}.notice{padding:16px 20px;border-radius:12px;background:var(--amber-soft);color:var(--amber);font-size:14px;margin:0 0 30px}.notice strong{display:block;margin-bottom:4px}.notice ul{margin:6px 0 0;padding-left:18px}.section-intro{margin:8px 0 22px;color:var(--muted)}.roadmap{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0;max-height:92px;overflow-y:auto;padding:2px}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 10px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px;margin-top:10px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:90px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px;white-space:nowrap}.tag.diff{background:var(--blue-soft);color:var(--blue)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.guidance{margin:0 0 16px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;color:var(--ink)}.guidance strong{display:block;margin-bottom:6px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.guidance ul{margin:0;padding-left:18px}.guidance li{margin:4px 0}.guidance a{color:var(--blue);font-weight:700;text-decoration:none}.guidance a:hover{text-decoration:underline}.guidance code{background:var(--blue-soft);color:var(--blue);padding:1px 6px;border-radius:6px;font-size:12.5px}label.answer-label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff}textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}.status-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}.status-row .saved{color:var(--green);font-weight:700;opacity:0;transition:opacity .3s}.status-row .saved.show{opacity:1}.footer-note{margin-top:44px;padding:20px 22px;border-radius:14px;background:var(--blue-soft);color:var(--ink);font-size:14px}.footer-note strong{display:block;margin-bottom:6px;color:var(--blue)}.teacher-link-row{position:fixed;left:14px;bottom:14px;z-index:10}.teacher-link{display:inline-flex;opacity:.1;transition:opacity .15s ease}.teacher-link:hover,.teacher-link:focus-visible{opacity:1}.teacher-link img{display:block}.print-only{display:none}@media print{.toolbar,.roadmap,.teacher-link-row{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}textarea{border:1px solid #999;min-height:70px}.print-only{display:block}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="analysis-exercise-page">
+
+<section class="hero" data-glean-id="exercise-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="exercise-eyebrow">Sonar Support &middot; Onboarding exercise &middot; Student copy</p>
+    <h1 data-glean-id="exercise-title">Analysis: figure it out</h1>
+    <p class="lead" data-glean-id="exercise-lead">33 hands-on analysis exercises, ordered from easiest to hardest: scanning basics, branches and PRs, inclusions/exclusions, Maven/Gradle, coverage import, tokens, and edge-case languages.</p>
+  </div>
+  <aside class="badge" data-glean-id="exercise-availability">
+    <strong>How to use this page</strong>
+    <span>Work through these roughly in order. Use a disposable test instance and test projects, not anything production.</span>
+  </aside>
+</section>
+
+<div class="teacher-link-row" data-glean-id="teacher-link-row"><a class="teacher-link" href="analysis-exercise-teacher.html" target="_blank" rel="noopener" title="Grading key (mentors)" aria-label="Grading key (mentors)"><img src="../shared/img/545988.png" alt="" width="22" height="22"></a></div>
+
+<div class="toolbar" data-glean-id="exercise-toolbar">
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span id="progress-label">0 / 33 answered</span>
+  </div>
+  <button class="btn primary" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<div class="notice" data-glean-id="exercise-local-save-notice">
+  <strong>Answers save to this browser only</strong>
+  Your answers are kept in this browser's local storage on this device, so closing the tab, refreshing, or reopening the page days later will restore them. They are NOT backed up anywhere and will be lost if you clear this browser's site data, switch browsers or devices, or use a private/incognito window.
+  <ul>
+    <li>Use <b>Print / save as PDF</b> to keep a permanent copy, especially before switching browsers, devices, or clearing site data.</li>
+    <li>If this exercise is part of a tracked onboarding task, <b>commit your written answers to your onboarding notes in your GitHub repo</b> so the work is actually saved and visible to your manager or mentor.</li>
+  </ul>
+</div>
+
+<nav class="roadmap" data-glean-id="exercise-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a><a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a><a href="#item-11">11</a><a href="#item-12">12</a><a href="#item-13">13</a><a href="#item-14">14</a><a href="#item-15">15</a><a href="#item-16">16</a><a href="#item-17">17</a><a href="#item-18">18</a><a href="#item-19">19</a><a href="#item-20">20</a><a href="#item-21">21</a><a href="#item-22">22</a><a href="#item-23">23</a><a href="#item-24">24</a><a href="#item-25">25</a><a href="#item-26">26</a><a href="#item-27">27</a><a href="#item-28">28</a><a href="#item-29">29</a><a href="#item-30">30</a><a href="#item-31">31</a><a href="#item-32">32</a><a href="#item-33">33</a></nav>
+
+<section data-glean-id="exercise-items">
+  <div class="items" id="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>Scan a JS/TS project with and without sonar-project.properties</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand basic analysis of a small project and what's actually required for JS/TS analysis to work at all.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Pick a small JS or TS project (or any non-compiled language) and run a scan with no sonar-project.properties file at all, just command-line parameters.</li>
+          <li>Then add a minimal sonar-project.properties and re-run, comparing what changed.</li>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/javascript-typescript-css/" target="_blank" rel="noopener">Analyzing source code: JavaScript/TypeScript/CSS</a> for what's actually required versus optional for this language.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-1">Your answer</label>
+      <textarea id="answer-1" data-item="1" placeholder="Describe what worked with and without the properties file, and what's genuinely required..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>Clone sonar-scanning-examples and sonar-training-examples with git</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get comfortable with basic git operations before layering analysis exercises on top.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Clone both example repositories locally (they're referenced throughout several later items in this exercise as ready-made test projects).</li>
+          <li>Browse their structure so you know what's available in each, you'll likely reuse one of these repos for a later item rather than building your own from scratch.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-2">Your answer</label>
+      <textarea id="answer-2" data-item="2" placeholder="Confirm you cloned both repos and note what you found useful in each..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>Create a git repository and scan it</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand git add/commit/checkout, and notice exactly how commit authorship and dates flow into SonarQube.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Initialize a fresh git repo, add some files, commit them (paying attention to the author and date on each commit), then scan it.</li>
+          <li>In the SonarQube UI, find where commit authorship and dates show up, issue assignment, blame information, "new code" backdating.</li>
+          <li>Try varying the commit author or date on a follow-up commit and re-scanning, to directly observe how that data is picked up.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-3">Your answer</label>
+      <textarea id="answer-3" data-item="3" placeholder="Describe what you committed and where the author/date data appeared in SonarQube..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>Create a local git branch and scan it in SonarQube</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand branch analysis as a distinct concept from analyzing the main/default branch.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Create a new local branch, make a change, and scan it with the appropriate branch parameter so it appears as its own branch in SonarQube rather than overwriting the main branch's analysis.</li>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/branches/branch-analysis/#branch-analysis" target="_blank" rel="noopener">Setting up branch analysis</a>.</li>
+          <li>Confirm in the UI that both branches now exist independently with their own analysis history.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-4">Your answer</label>
+      <textarea id="answer-4" data-item="4" placeholder="Describe the branch you created and confirm it appeared as a separate branch in the UI..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Scan a branch with changes as a Pull Request from the command line</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how PR analysis is triggered purely from scanner parameters, without any CI/DevOps platform integration.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Using the branch from the previous item, make an additional change and run the scan again, this time passing the PR-specific analysis parameters (PR key, branch, base branch) directly on the command line.</li>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/pull-request-analysis/#analysis-parameters" target="_blank" rel="noopener">Pull request analysis: Analysis parameters</a> for the exact property names.</li>
+          <li>Confirm the result appears in SonarQube as PR analysis (not a regular branch), and compare what's different about how issues are scoped compared to branch analysis.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-5">Your answer</label>
+      <textarea id="answer-5" data-item="5" placeholder="List the PR parameters you passed and confirm how the result differed from branch analysis..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Read and explain INFO/DEBUG scanner logs</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get comfortable reading a scanner's own log output well enough to narrate what's happening at each step.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Run a scan with logging set to DEBUG (or at least INFO) and read through the full output.</li>
+          <li>Try to narrate each major phase out loud or in writing: what's being detected, what's being sent, what's the scanner waiting on.</li>
+          <li>If anything in the log output is genuinely unclear, that's expected, discuss it with a mentor or another support engineer rather than guessing silently.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-6">Your answer</label>
+      <textarea id="answer-6" data-item="6" placeholder="Summarize the major phases you saw in the log output, and note anything you needed to ask about..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Run an analysis that includes only one specific file</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the inclusion and exclusion pattern mechanism.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/project-administration/analysis-scope/#file-exclusion-and-inclusion" target="_blank" rel="noopener">File exclusion and inclusion</a>.</li>
+          <li>Using sonar.inclusions (or the equivalent exclusion pattern that achieves the same narrowing), scope an analysis down to exactly one file in a multi-file project.</li>
+          <li>Confirm in the UI that only that one file's issues/metrics appear, nothing else from the project.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-7">Your answer</label>
+      <textarea id="answer-7" data-item="7" placeholder="Describe the pattern you used and confirm only the target file was analyzed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Configure Global Exclusions and confirm they override project-level inclusions</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that Global Exclusions are a forced setting that cannot be overridden at the project level, even by an explicit inclusion.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set a Global Exclusion pattern (instance-wide, in Administration) that would exclude a specific file or path.</li>
+          <li>At the project level, explicitly try to include that same file via sonar.inclusions, attempting to override the global exclusion.</li>
+          <li>Confirm the global exclusion wins regardless, and connect this to the same "forced global" behavior documented for sonar.global.test.exclusions, this applies to plain Global Exclusions too, not just the test-specific variant.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-8">Your answer</label>
+      <textarea id="answer-8" data-item="8" placeholder="Describe what you tried to override and confirm the global exclusion still won..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Obtain analysis parameters set for a scan via Scanner Context</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get familiar with the SonarQube UI well enough to locate the Scanner Context for a specific analysis.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Run any analysis, then find its corresponding background task in the UI and open the "Show SonarScanner Context" option (usually under a three-dot menu on the background task).</li>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/background-tasks/#background-task" target="_blank" rel="noopener">Background tasks</a>, particularly the diagnosing-a-failing-task section.</li>
+          <li>Note that this view is only populated if the analysis report actually succeeded, a failed report won't have a Scanner Context to inspect this way.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-9">Your answer</label>
+      <textarea id="answer-9" data-item="9" placeholder="Describe what you found in the Scanner Context and confirm the failed-analysis caveat..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Understand the precedence of analysis parameters across levels</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know exactly which setting wins when the same parameter is set at multiple levels.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set sonar.inclusions to different, conflicting values at each of: the command line, sonar-project.properties, the project-level UI setting, and the global-level UI setting.</li>
+          <li>Run the analysis and determine experimentally which value actually took effect, rather than assuming a precedence order from memory.</li>
+          <li>Note explicitly: settings applied only via command line or file are not stored in the database, only UI-set values persist there, which matters when you're trying to see what's "configured" for a project versus what was passed for one specific run.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-10">Your answer</label>
+      <textarea id="answer-10" data-item="10" placeholder="Describe the precedence order you observed experimentally, and note the UI-storage caveat..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-11" data-glean-id="item-11">
+      <div class="item-head">
+        <div class="item-title"><span class="num">11</span><h3>Use sonar.scanner.internal.dumpToFile to capture analysis parameters</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how this debugging parameter dumps the full, actual list of properties a scan is using.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Add sonar.scanner.internal.dumpToFile=<path> to a scan and inspect the resulting file after the scan completes.</li>
+          <li>Compare its contents against what you'd get from the Scanner Context in the previous item, are they showing the same information in a different form, or genuinely different data?</li>
+          <li>Note that this is the current, non-deprecated parameter name, an older sonar.scanner.dumpToFile (without .internal.) exists too but is deprecated.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-11">Your answer</label>
+      <textarea id="answer-11" data-item="11" placeholder="Describe what was in the dump file and how it compared to the Scanner Context view..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-12" data-glean-id="item-12">
+      <div class="item-head">
+        <div class="item-title"><span class="num">12</span><h3>Scan a Maven project from the command line</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get familiar with pom.xml, experiment with parameter precedence, and understand project key overrides and sonar-maven-plugin version pinning.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/scanners/sonarscanner-for-maven/" target="_blank" rel="noopener">SonarScanner for Maven</a>.</li>
+          <li>Run mvn sonar:sonar against a real Maven project and read pom.xml alongside the scan output to see how project structure translates into analysis parameters.</li>
+          <li>Try overriding the default Maven-generated project key, and try pinning a specific sonar-maven-plugin version explicitly rather than letting Maven resolve the latest.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-12">Your answer</label>
+      <textarea id="answer-12" data-item="12" placeholder="Describe your pom.xml experiments, the project key override, and the plugin version you pinned..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-13" data-glean-id="item-13">
+      <div class="item-head">
+        <div class="item-title"><span class="num">13</span><h3>Analyze a Maven project without building it first</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the impact of missing compiled bytecode on Java analysis accuracy.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Run mvn sonar:sonar against a Java project WITHOUT running mvn compile or mvn package first, so no .class files exist.</li>
+          <li>Compare the resulting issues against a normal scan of the same project after a real build.</li>
+          <li>Note which categories of issues depend on bytecode (type resolution, certain semantic checks) and disappear or misbehave without it, versus purely syntactic issues that still work fine.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-13">Your answer</label>
+      <textarea id="answer-13" data-item="13" placeholder="Describe the difference in results between the unbuilt and built scans..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-14" data-glean-id="item-14">
+      <div class="item-head">
+        <div class="item-title"><span class="num">14</span><h3>Pass sonar.sources=. to a Maven analysis</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that Maven analysis always has a module hierarchy, even in a seemingly single-module project, and why overriding sonar.sources breaks that assumption.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>On a Maven project, explicitly set sonar.sources=. (overriding whatever Maven would normally infer) and run the scan.</li>
+          <li>Observe what breaks or behaves unexpectedly, particularly if the project has more than one module.</li>
+          <li>Explain in your own words why Maven's module structure needs to be respected rather than flattened by a manual sonar.sources override.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-14">Your answer</label>
+      <textarea id="answer-14" data-item="14" placeholder="Describe what happened when you overrode sonar.sources and why..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-15" data-glean-id="item-15">
+      <div class="item-head">
+        <div class="item-title"><span class="num">15</span><h3>Reproduce a scanner out-of-memory issue in Maven analysis</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Determine why an analysis fails due to insufficient memory, and know how to allocate more to the right process.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Deliberately constrain the memory available to the Maven-invoked scanner process (not the SonarQube server itself) until you reproduce an OutOfMemoryError during analysis.</li>
+          <li>Identify exactly which JVM process this is (the Maven build's own JVM running the sonar-maven-plugin, distinct from the SonarQube server's JVM), and find the correct mechanism to give it more heap (typically an environment variable or Maven-level JVM argument, not a SonarQube server setting).</li>
+          <li>Confirm increasing memory resolves it.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-15">Your answer</label>
+      <textarea id="answer-15" data-item="15" placeholder="Describe how you constrained memory, reproduced the OOM, and what you changed to fix it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-16" data-glean-id="item-16">
+      <div class="item-head">
+        <div class="item-title"><span class="num">16</span><h3>Scan a Gradle project</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand Gradle project structure and how it differs from Maven's.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Use one of the Gradle example projects from <a href="https://github.com/SonarSource/sonar-scanning-examples/tree/master/sonar-scanner-gradle/gradle-basic" target="_blank" rel="noopener">sonar-scanning-examples</a> if you don't have your own.</li>
+          <li>Run the SonarQube Gradle plugin task and compare the setup experience (build.gradle configuration) against what you did for Maven's pom.xml.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-16">Your answer</label>
+      <textarea id="answer-16" data-item="16" placeholder="Describe your Gradle scan and note the setup differences versus Maven..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-17" data-glean-id="item-17">
+      <div class="item-head">
+        <div class="item-title"><span class="num">17</span><h3>Scan a single-module Maven Java project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to generate coverage and import it into a single-module Maven project's analysis.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/test-coverage/java-test-coverage/#single-module-maven-project" target="_blank" rel="noopener">Add coverage in a single-module Maven project</a> and follow it end to end on a real or example project.</li>
+          <li>Generate the coverage report with whatever tool the guide specifies, then confirm the resulting coverage percentage actually appears in SonarQube's UI for that project.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-17">Your answer</label>
+      <textarea id="answer-17" data-item="17" placeholder="Describe your coverage tool, the report format, and confirm coverage appeared in the UI..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-18" data-glean-id="item-18">
+      <div class="item-head">
+        <div class="item-title"><span class="num">18</span><h3>Scan a single-module Gradle Java project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to generate coverage and import it into a single-module Gradle project's analysis.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/test-coverage/java-test-coverage/#gradle-project" target="_blank" rel="noopener">Add coverage in a Gradle project</a> and follow it end to end.</li>
+          <li>Compare the coverage-tool and report-path configuration against the Maven version of this exercise, note what's genuinely different versus just relabeled.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-18">Your answer</label>
+      <textarea id="answer-18" data-item="18" placeholder="Describe your Gradle coverage setup and how it compared to Maven's..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-19" data-glean-id="item-19">
+      <div class="item-head">
+        <div class="item-title"><span class="num">19</span><h3>Scan a multi-module Maven Java project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand coverage aggregation across multiple Maven modules.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/test-coverage/java-test-coverage/#multi-module-maven-project" target="_blank" rel="noopener">Add coverage in a multi-module Maven project</a> and follow it end to end.</li>
+          <li>Confirm coverage rolls up correctly to the parent/aggregate view, not just to each individual module.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-19">Your answer</label>
+      <textarea id="answer-19" data-item="19" placeholder="Describe your multi-module setup and confirm coverage rolled up correctly..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-20" data-glean-id="item-20">
+      <div class="item-head">
+        <div class="item-title"><span class="num">20</span><h3>Scan a multi-module Gradle Java project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand coverage aggregation across multiple Gradle modules.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the coverage section of the <a href="https://github.com/SonarSource/sonar-scanning-examples/tree/master/sonar-scanner-gradle/gradle-multimodule-coverage" target="_blank" rel="noopener">Gradle multi-module coverage example</a> and follow it end to end.</li>
+          <li>Confirm coverage rolls up correctly across modules, same check as the Maven version.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-20">Your answer</label>
+      <textarea id="answer-20" data-item="20" placeholder="Describe your setup and confirm multi-module coverage rolled up correctly..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-21" data-glean-id="item-21">
+      <div class="item-head">
+        <div class="item-title"><span class="num">21</span><h3>Scan a VB6 (Visual Basic) project and resolve a language/extension conflict</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how the scanner detects language by file extension, and how extension conflicts can happen and be resolved.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Use a sample VB6 project (a public example exists on GitHub with .vb files) and scan it.</li>
+          <li>Investigate how file-extension-to-language mapping is configured, both at the global and project level, and deliberately create a conflict where two languages claim the same extension.</li>
+          <li>Resolve the conflict and explain what setting you changed to fix it.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-21">Your answer</label>
+      <textarea id="answer-21" data-item="21" placeholder="Describe the conflict you created, how you diagnosed it, and how you resolved it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-22" data-glean-id="item-22">
+      <div class="item-head">
+        <div class="item-title"><span class="num">22</span><h3>Scan a project using the sonar-scanner-cli Docker image</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the Docker-based way of running the SonarScanner CLI.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/scanners/sonarscanner/#sonarscanner-from-docker-image" target="_blank" rel="noopener">Running SonarScanner from the Docker image</a>.</li>
+          <li>Adjust the example docker run command for your project (mounting the right source directory, passing the right token/URL) and execute it.</li>
+          <li>Note what's different about volume mounting and networking compared to running the scanner as a locally-installed binary.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-22">Your answer</label>
+      <textarea id="answer-22" data-item="22" placeholder="Describe your docker run command and any mounting/networking adjustments you needed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-23" data-glean-id="item-23">
+      <div class="item-head">
+        <div class="item-title"><span class="num">23</span><h3>Analyze with the wrong token type and observe the failure</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the different token types (global/user/project) and what actually breaks when the wrong one is used.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube-server/latest/user-guide/managing-tokens/#types-of-tokens" target="_blank" rel="noopener">Types of tokens</a>.</li>
+          <li>Create at least two different token types, then deliberately run an analysis using a token that doesn't have the right scope for that action (for example, a token without Execute Analysis rights on the target project).</li>
+          <li>Capture the exact error message, this is genuinely useful to recognize quickly in a real support ticket.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-23">Your answer</label>
+      <textarea id="answer-23" data-item="23" placeholder="Describe the token types you created and the exact error from using the wrong one..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-24" data-glean-id="item-24">
+      <div class="item-head">
+        <div class="item-title"><span class="num">24</span><h3>Scan a JS/TS project with coverage</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to generate coverage and import it for a JavaScript/TypeScript project.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/test-coverage/javascript-typescript-test-coverage/" target="_blank" rel="noopener">JavaScript/TypeScript test coverage</a> and follow it end to end.</li>
+          <li>Note the report format expected (typically LCOV) and confirm coverage appears correctly in the UI once imported.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-24">Your answer</label>
+      <textarea id="answer-24" data-item="24" placeholder="Describe your coverage tool, report format, and confirm coverage appeared correctly..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-25" data-glean-id="item-25">
+      <div class="item-head">
+        <div class="item-title"><span class="num">25</span><h3>Analyze a repo cloned as a shallow clone</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the impact of a shallow git clone on analysis, particularly blame information and New Code detection.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Create a shallow clone (git clone --depth 1) of a repo with real history, and scan it.</li>
+          <li>Look for the specific warning the scanner logs about shallow clones and blame information.</li>
+          <li>Then run git fetch --unshallow (converting to a full clone) and re-scan, comparing the difference in blame/authorship data and New Code behavior between the two runs.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-25">Your answer</label>
+      <textarea id="answer-25" data-item="25" placeholder="Describe the warning you saw, and the difference between the shallow and full-clone scan results..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-26" data-glean-id="item-26">
+      <div class="item-head">
+        <div class="item-title"><span class="num">26</span><h3>Scan a Maven project with the SonarScanner CLI instead of the Maven plugin</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what the Maven-specific scanner plugin does automatically that the generic CLI scanner does not.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/languages/java/#analysis-and-bytecode" target="_blank" rel="noopener">Java analysis and bytecode</a>.</li>
+          <li>Scan the same Maven project two ways: once via mvn sonar:sonar (the plugin), and once via the generic SonarScanner CLI pointed at the same directory.</li>
+          <li>Compare the results, and specifically identify what parameters (classpath, bytecode location, source/binary directories) the Maven plugin passes automatically that you'd have to supply manually with the CLI.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-26">Your answer</label>
+      <textarea id="answer-26" data-item="26" placeholder="Describe the two runs and exactly what the Maven plugin handled automatically that the CLI didn't..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-27" data-glean-id="item-27">
+      <div class="item-head">
+        <div class="item-title"><span class="num">27</span><h3>Configure a database connection for PL/SQL analysis</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> See that some PL/SQL rules only raise issues when a data dictionary (live DB connection) is provided during analysis.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Get access to an Oracle database (a local Oracle XE container works for this) and configure the PL/SQL data dictionary connection properties (JDBC URL, user) for a PL/SQL analysis.</li>
+          <li>Run the same PL/SQL project's analysis with and without the DB connection configured, and compare the resulting issue count.</li>
+          <li>Explain why certain rules can only fire with schema-aware access to the actual database: they need to resolve schema objects (tables, views, synonyms) that aren't explicitly prefixed in the code.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-27">Your answer</label>
+      <textarea id="answer-27" data-item="27" placeholder="Describe your DB connection setup and the issue-count difference with vs. without it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-28" data-glean-id="item-28">
+      <div class="item-head">
+        <div class="item-title"><span class="num">28</span><h3>Scan COBOL code with syntax not yet supported by an older analyzer version</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how an unsupported syntax construct causes a parse error on an older analyzer version, and why a newer version handles it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find a real reproducer (search Sonar's community Discuss forum for a COBOL parse-error report, there's a documented case involving an AFTER...START clause).</li>
+          <li>Run the same reproducer against two different analyzer versions (an older one where it was reported to fail, and the latest) and observe exactly how the parse error manifests on the older version versus succeeding on the newer one.</li>
+          <li>This is good practice for a real, common support pattern: a customer reports a scan failure that turns out to be a language-support gap fixed in a later release.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-28">Your answer</label>
+      <textarea id="answer-28" data-item="28" placeholder="Describe the reproducer, the versions you tested, and how the parse error manifested..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-29" data-glean-id="item-29">
+      <div class="item-head">
+        <div class="item-title"><span class="num">29</span><h3>Write a good Discuss forum post</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what makes a support/community post effective, and how to communicate clearly with other teams.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Browse Sonar's community Discuss forum and find both a well-written post and a poorly-written one, compare what separates them (a reproducer, clear version info, expected vs. actual behavior, versus a vague one-liner).</li>
+          <li>Write your own draft post (doesn't need to be actually submitted) describing a real or hypothetical issue you've hit during this exercise, using what you learned from the good example.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-29">Your answer</label>
+      <textarea id="answer-29" data-item="29" placeholder="Describe the good vs. bad post you found, and paste or summarize your own draft post..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-30" data-glean-id="item-30">
+      <div class="item-head">
+        <div class="item-title"><span class="num">30</span><h3>Get a taste of "New Issues on Old Code" caused by missing bytecode</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how missing bytecode can cause SonarQube to falsely flag unchanged code as containing new issues.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Reuse the "Maven project without building it" scenario from an earlier item: scan an unbuilt Java project across two analyses (representing an old and new state) with no actual code changes between them in some file.</li>
+          <li>Look for issues appearing as "new" against unchanged lines specifically because of missing bytecode-dependent resolution, compare against a properly-built scan of the same two states.</li>
+          <li>Explain why this happens: without bytecode, certain issue detection becomes less precise and can shift which lines get attributed as changed/new.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-30">Your answer</label>
+      <textarea id="answer-30" data-item="30" placeholder="Describe the scenario you set up and the false "new issue" you observed on unchanged code..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-31" data-glean-id="item-31">
+      <div class="item-head">
+        <div class="item-title"><span class="num">31</span><h3>Scan a real project with both branch analysis and PR analysis (without DevOps platform integration)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the fundamental difference between branch analysis and PR analysis as mechanisms, on a real (not toy) project.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Using a real, non-trivial project, run a normal branch analysis on its main branch, then run a PR analysis (manually, without any DevOps platform integration configured) representing a feature branch.</li>
+          <li>Compare what each mode actually reports: branch analysis evaluates the full branch state against a New Code period; PR analysis only reports issues introduced by that specific changeset, scoped for merge-gating.</li>
+          <li>Since there's no DevOps integration here, note that PR-specific parameters (base branch, PR key) had to be set manually rather than auto-detected from CI context, and that no decoration appears anywhere outside SonarQube's own UI.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-31">Your answer</label>
+      <textarea id="answer-31" data-item="31" placeholder="Describe your branch analysis vs. PR analysis runs and exactly how the reported results differed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-32" data-glean-id="item-32">
+      <div class="item-head">
+        <div class="item-title"><span class="num">32</span><h3>Review real support tickets about coverage reports and community plugins</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand where support can help and where it genuinely cannot, using real examples.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Pull up a few real, closed support tickets involving coverage report issues or community plugin problems (ask your mentor for access/examples if you don't have ticket-system access yet).</li>
+          <li>For each, identify: was this something support could actually fix, or was it fundamentally a third-party tool/plugin issue outside Sonar's support boundary?</li>
+          <li>Write down the pattern you'd use to quickly recognize which category a similar future ticket falls into.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-32">Your answer</label>
+      <textarea id="answer-32" data-item="32" placeholder="Summarize the tickets you reviewed and the pattern you'd use to categorize similar future ones..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-33" data-glean-id="item-33">
+      <div class="item-head">
+        <div class="item-title"><span class="num">33</span><h3>Simulate analyzing a project out of chronological order with sonar.projectDate</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 10/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the constraint that SonarQube can only "rebuild the past" in chronological order, and what breaks if you violate it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Run a normal analysis today, then run a SECOND analysis using sonar.projectDate set to a date BEFORE the first one, deliberately going out of order.</li>
+          <li>Observe exactly what happens, does it fail outright, silently produce misleading history, or something else?</li>
+          <li>Note a genuine current limitation while you're at it: there's no built-in API method to simply list every background task's timestamp/history to help spot this kind of ordering problem after the fact, you'd have to reconstruct it from individual api/ce/task?id=... calls.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-33">Your answer</label>
+      <textarea id="answer-33" data-item="33" placeholder="Describe what happened when you analyzed out of order, and the API limitation you ran into..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+  </div>
+</section>
+
+<div class="footer-note" data-glean-id="exercise-footer-note">
+  <strong>Your answers stay on this device</strong>
+  This page saves your answers in this browser's local storage, so they will still be here if you come back later, even after closing the browser. They are not synced anywhere else, so they will not follow you to another browser, another device, or survive clearing this site's data. Print this page (button above, or Cmd/Ctrl+P) for a permanent copy, and if this exercise is tracked as part of your onboarding, commit your written answers into your onboarding notes in your GitHub repo so the work isn't lost.
+</div>
+
+</main>
+<script>
+(function(){
+  var textareas=Array.from(document.querySelectorAll('textarea[data-item]'));
+  var fill=document.getElementById('progress-fill');
+  var label=document.getElementById('progress-label');
+  var total=textareas.length;
+  function storageKey(id){return 'analysis-exercise-'+id;}
+  function updateProgress(){
+    var answered=textareas.filter(function(t){return t.value.trim().length>0;}).length;
+    fill.style.width=(total?Math.round(answered/total*100):0)+'%';
+    label.textContent=answered+' / '+total+' answered';
+  }
+  textareas.forEach(function(t){
+    try{
+      var saved=localStorage.getItem(storageKey(t.dataset.item));
+      if(saved)t.value=saved;
+    }catch(e){}
+    var statusEl=t.closest('.item').querySelector('.saved');
+    var timer;
+    t.addEventListener('input',function(){
+      try{localStorage.setItem(storageKey(t.dataset.item),t.value);}catch(e){}
+      updateProgress();
+      if(statusEl){
+        statusEl.classList.add('show');
+        clearTimeout(timer);
+        timer=setTimeout(function(){statusEl.classList.remove('show');},1200);
+      }
+    });
+  });
+  updateProgress();
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body></html>

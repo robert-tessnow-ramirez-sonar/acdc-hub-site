@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operations Onboarding Exercise</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--blue-soft);color:var(--ink)}.badge strong{display:block;margin-bottom:4px;color:var(--blue);font-size:13px}.badge span{font-size:13px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 0;position:sticky;top:0;background:var(--bg);z-index:5}.progress-wrap{flex:1;min-width:180px;display:flex;align-items:center;gap:10px}.progress-track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-fill{height:100%;width:0%;background:var(--blue);border-radius:99px;transition:width .2s ease}#progress-label{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#1d4fd1;color:#fff}.notice{padding:16px 20px;border-radius:12px;background:var(--amber-soft);color:var(--amber);font-size:14px;margin:0 0 30px}.notice strong{display:block;margin-bottom:4px}.notice ul{margin:6px 0 0;padding-left:18px}.section-intro{margin:8px 0 22px;color:var(--muted)}.roadmap{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0;max-height:92px;overflow-y:auto;padding:2px}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 10px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px;margin-top:10px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:90px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px;white-space:nowrap}.tag.diff{background:var(--blue-soft);color:var(--blue)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.guidance{margin:0 0 16px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;color:var(--ink)}.guidance strong{display:block;margin-bottom:6px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.guidance ul{margin:0;padding-left:18px}.guidance li{margin:4px 0}.guidance a{color:var(--blue);font-weight:700;text-decoration:none}.guidance a:hover{text-decoration:underline}.guidance code{background:var(--blue-soft);color:var(--blue);padding:1px 6px;border-radius:6px;font-size:12.5px}label.answer-label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff}textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}.status-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}.status-row .saved{color:var(--green);font-weight:700;opacity:0;transition:opacity .3s}.status-row .saved.show{opacity:1}.footer-note{margin-top:44px;padding:20px 22px;border-radius:14px;background:var(--blue-soft);color:var(--ink);font-size:14px}.footer-note strong{display:block;margin-bottom:6px;color:var(--blue)}.teacher-link-row{position:fixed;left:14px;bottom:14px;z-index:10}.teacher-link{display:inline-flex;opacity:.1;transition:opacity .15s ease}.teacher-link:hover,.teacher-link:focus-visible{opacity:1}.teacher-link img{display:block}.print-only{display:none}@media print{.toolbar,.roadmap,.teacher-link-row{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}textarea{border:1px solid #999;min-height:70px}.print-only{display:block}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="operations-exercise-page">
+
+<section class="hero" data-glean-id="exercise-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="exercise-eyebrow">Sonar Support &middot; Onboarding exercise &middot; Student copy</p>
+    <h1 data-glean-id="exercise-title">Operations: figure it out</h1>
+    <p class="lead" data-glean-id="exercise-lead">36 hands-on operations exercises, ordered from easiest to hardest: databases, upgrades, Docker/Helm/DCE deployment, monitoring, logging, and housekeeping.</p>
+  </div>
+  <aside class="badge" data-glean-id="exercise-availability">
+    <strong>How to use this page</strong>
+    <span>Work through these roughly in order. Some items explicitly say a real support ticket or a mentor conversation is the best way to complete them, that's intentional, not a shortcut you're missing.</span>
+  </aside>
+</section>
+
+<div class="teacher-link-row" data-glean-id="teacher-link-row"><a class="teacher-link" href="operations-exercise-teacher.html" target="_blank" rel="noopener" title="Grading key (mentors)" aria-label="Grading key (mentors)"><img src="../shared/img/545988.png" alt="" width="22" height="22"></a></div>
+
+<div class="toolbar" data-glean-id="exercise-toolbar">
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span id="progress-label">0 / 36 answered</span>
+  </div>
+  <button class="btn primary" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<div class="notice" data-glean-id="exercise-local-save-notice">
+  <strong>Answers save to this browser only</strong>
+  Your answers are kept in this browser's local storage on this device, so closing the tab, refreshing, or reopening the page days later will restore them. They are NOT backed up anywhere and will be lost if you clear this browser's site data, switch browsers or devices, or use a private/incognito window.
+  <ul>
+    <li>Use <b>Print / save as PDF</b> to keep a permanent copy, especially before switching browsers, devices, or clearing site data.</li>
+    <li>If this exercise is part of a tracked onboarding task, <b>commit your written answers to your onboarding notes in your GitHub repo</b> so the work is actually saved and visible to your manager or mentor.</li>
+  </ul>
+</div>
+
+<nav class="roadmap" data-glean-id="exercise-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a><a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a><a href="#item-11">11</a><a href="#item-12">12</a><a href="#item-13">13</a><a href="#item-14">14</a><a href="#item-15">15</a><a href="#item-16">16</a><a href="#item-17">17</a><a href="#item-18">18</a><a href="#item-19">19</a><a href="#item-20">20</a><a href="#item-21">21</a><a href="#item-22">22</a><a href="#item-23">23</a><a href="#item-24">24</a><a href="#item-25">25</a><a href="#item-26">26</a><a href="#item-27">27</a><a href="#item-28">28</a><a href="#item-29">29</a><a href="#item-30">30</a><a href="#item-31">31</a><a href="#item-32">32</a><a href="#item-33">33</a><a href="#item-34">34</a><a href="#item-35">35</a><a href="#item-36">36</a></nav>
+
+<section data-glean-id="exercise-items">
+  <div class="items" id="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>Find release upgrade notes</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how to find release/upgrade notes, why customers often struggle to find them, and how customers are notified of releases and bugfixes.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find where SonarQube publishes release/upgrade notes for a given version, and separately, where hotfix release announcements live (these are easy to miss since they're not always in the same place as major release notes).</li>
+          <li>Think about why a customer might genuinely struggle to find this information, is it discoverability, terminology, or scattered locations?</li>
+          <li>Investigate how customers are actually notified when a release or a specific dev ticket they're waiting on ships, is this push (email/changelog subscription) or pull (they have to go check)?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-1">Your answer</label>
+      <textarea id="answer-1" data-item="1" placeholder="Describe where you found release/upgrade notes, hotfix announcements, and how customers get notified..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>Check the System Info File</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the configuration parameters visible in a System Info File, and how to use it to debug OOMs or performance issues.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Download a System Info File from a real instance (Administration > System) and read through its configuration section.</li>
+          <li>Specifically look for JVM/memory-related settings and think through what values would indicate a customer is undersized versus healthy.</li>
+          <li>Connect this to any earlier debugging you've done, this file is often the first thing to pull when triaging an out-of-memory or slow-performance ticket.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-2">Your answer</label>
+      <textarea id="answer-2" data-item="2" placeholder="Describe what memory/config settings you found and how you'd use them to spot an OOM/performance risk..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>Review and understand logs and different logging levels</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how to get INFO, DEBUG, and TRACE level logging, both instance-wide and for individual JVM processes, and how to modify log rolling policy.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find where logging level is configured, and test setting it to INFO, DEBUG, and TRACE for all processes at once, then for one specific process (web, ce, or es) independently.</li>
+          <li>Find and modify the log rolling policy (how logs get rotated/archived) and confirm your change takes effect.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-3">Your answer</label>
+      <textarea id="answer-3" data-item="3" placeholder="Describe how you changed logging levels (all processes and individually) and the rolling policy you modified..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>Review and set the platform prerequisite parameters</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand SonarQube's platform-level prerequisites before even attempting an install.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read <a href="https://docs.sonarqube.org/latest/requirements/prerequisites-and-overview/#platform-notes" target="_blank" rel="noopener">Prerequisites and overview: platform notes</a>.</li>
+          <li>Go through each prerequisite (OS-level settings like max map count, file descriptor limits, Java version) on a real test machine and set/verify each one explicitly, rather than just reading about them.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-4">Your answer</label>
+      <textarea id="answer-4" data-item="4" placeholder="List the prerequisites you checked and confirm you actually set/verified each one on a real machine..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Clear Elasticsearch indexes and observe the impact</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand where Elasticsearch indexes live, and why/how they get rebuilt.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Watch Joe's SKS video on this topic if you have access to it (ask your mentor if you can't find it), or search internal documentation for the equivalent walkthrough.</li>
+          <li>Locate where the Elasticsearch indexes actually live on disk, then trigger a clear/rebuild and confirm what breaks in the interim (search, issue lists) and what self-heals once reindexing completes.</li>
+          <li>Explain why an admin would need to do this, index corruption, a version upgrade requiring reindex, or troubleshooting inconsistent search results.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-5">Your answer</label>
+      <textarea id="answer-5" data-item="5" placeholder="Describe where the ES indexes are, what you did to rebuild them, and what was affected while they were being rebuilt..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Pause the Compute Engine queue with api/ce/pause and observe the impact</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand why pausing CE task processing is a genuinely useful operational tool, not just a curiosity.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Call the api/ce/pause endpoint (and its resume counterpart) and submit a few analyses while paused, watch what happens to the Background Tasks queue.</li>
+          <li>Confirm tasks queue up but don't process while paused, and that they resume processing once you unpause.</li>
+          <li>Think of real scenarios where this matters: troubleshooting CE performance without new tasks interfering, or performing a step-wise upgrade where you want to control exactly when task processing resumes.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-6">Your answer</label>
+      <textarea id="answer-6" data-item="6" placeholder="Describe what happened to the queue while paused, and a real scenario where you'd use this..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Tune memory settings for a SonarQube instance</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the diagnostic approach for judging whether a customer's JVM memory settings are healthy, without needing to invent specific numbers.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Review Compute Engine performance documentation and general JVM memory-tuning guidance for SonarQube's separate processes (web, ce, search).</li>
+          <li>Rather than memorizing specific heap values (which vary hugely by instance size), focus on the diagnostic approach: which logs or metrics actually indicate memory pressure (GC pauses, OOM errors, slow background tasks)?</li>
+          <li>If you have access to real support tickets involving memory tuning, review one or two with a mentor to see how a real diagnosis was reasoned through, this is explicitly hard to fully simulate locally.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-7">Your answer</label>
+      <textarea id="answer-7" data-item="7" placeholder="Describe the diagnostic signals you'd look for to judge memory health, not specific numbers..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Link a request's UUID across the Web, CE, Search, and Access logs</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that a single request/task can be traced across multiple separate log files using a shared correlation ID.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Trigger an action that spans multiple SonarQube processes (for example, an analysis submission that gets picked up by CE and touches the search index), and find the UUID or trace ID that appears consistently across the Web, CE, Search, and Access logs for that one event.</li>
+          <li>Practice actually cross-referencing the same UUID across at least two of those log files for a single request.</li>
+          <li>Explain why this matters for troubleshooting: a problem might only show a partial picture in one log file, but the full story requires following the same ID across all of them.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-8">Your answer</label>
+      <textarea id="answer-8" data-item="8" placeholder="Describe the UUID you traced and which log files you found it in..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Set SonarQube to run as a service</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Test running SonarQube as a service on both Windows and Linux, and understand the difference between a service and a single foreground process.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set up SonarQube to run as a Windows service, then separately (or on a different machine/VM) as a Linux service (e.g. via systemd).</li>
+          <li>Understand what a "service" actually gives you over just running the startup script in a terminal (auto-start on boot, process supervision/restart).</li>
+          <li>Investigate how you'd modify the service configuration to run more than one SonarQube version/instance at once on the same machine, without them conflicting.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-9">Your answer</label>
+      <textarea id="answer-9" data-item="9" placeholder="Describe your Windows and Linux service setups, and how you'd run multiple versions at once..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Reindex a single project via the Web API</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand when reindexing one specific project is appropriate versus a full Elasticsearch reindex.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find the specific Web API call for reindexing a single project's issues (hint: it's a POST to an endpoint under api/issues/).</li>
+          <li>Call it against a real project and confirm the reindex completes without needing to touch anything else on the instance.</li>
+          <li>Explain when you'd reach for this narrow, single-project reindex instead of a full instance-wide ES reindex, and why a full reindex might actually be the better choice in some situations despite being more disruptive.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-10">Your answer</label>
+      <textarea id="answer-10" data-item="10" placeholder="Name the API endpoint, confirm you reindexed one project, and explain when you'd choose this over a full reindex..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-11" data-glean-id="item-11">
+      <div class="item-head">
+        <div class="item-title"><span class="num">11</span><h3>Back up and restore a database</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice a real database backup and restore cycle for SonarQube's own database.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Using whichever database SonarQube is backed by (Postgres is the most common for local testing), perform a full backup (e.g. pg_dump) of a real SonarQube database.</li>
+          <li>Restore it into a fresh, separate database instance (e.g. pg_restore) and confirm the restored instance actually comes up and shows the same data.</li>
+          <li>Note any gotchas you hit (version mismatches, missing extensions, permission issues), these are exactly the kind of thing a customer would hit too.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-11">Your answer</label>
+      <textarea id="answer-11" data-item="11" placeholder="Describe your backup/restore process and any gotchas you ran into..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-12" data-glean-id="item-12">
+      <div class="item-head">
+        <div class="item-title"><span class="num">12</span><h3>Trigger housekeeping</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand why housekeeping matters and how to trigger it on demand.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Explain in your own words why housekeeping (the dbcleaner) exists: what would happen to a SonarQube database over years of continuous use without it.</li>
+          <li>Find out how housekeeping is actually triggered, is it purely automatic on each analysis, or is there also a way to force it on demand?</li>
+          <li>If you've done the Administration exercise's housekeeping item already, this is a good chance to connect the two: how does routine housekeeping relate to the sonar.projectDate/daysBeforeDeletingInactiveBranchesAndPRs behavior you tested there?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-12">Your answer</label>
+      <textarea id="answer-12" data-item="12" placeholder="Explain why housekeeping matters and how you triggered it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-13" data-glean-id="item-13">
+      <div class="item-head">
+        <div class="item-title"><span class="num">13</span><h3>Configure notifications for a Quality Profile update during an upgrade</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the notification that fires when a built-in Quality Profile is updated during a SonarQube upgrade, and the setting that suppresses it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set up email notifications, then perform (or simulate) a SonarQube upgrade that includes a built-in Quality Profile update.</li>
+          <li>Observe the resulting notification about the Quality Profile change.</li>
+          <li>Investigate the sonar.builtInQualityProfiles.disableNotificationOnUpdate setting, what it suppresses specifically, and think of a real reason an admin managing many instances might want to turn this off (notification fatigue across many customers/instances during a routine upgrade).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-13">Your answer</label>
+      <textarea id="answer-13" data-item="13" placeholder="Describe the notification you observed and why an admin might disable it via that setting..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-14" data-glean-id="item-14">
+      <div class="item-head">
+        <div class="item-title"><span class="num">14</span><h3>Set up PostgreSQL as SonarQube's database</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how straightforward PostgreSQL setup is compared to other supported databases.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Stand up a fresh PostgreSQL instance (locally or via Docker) and point a fresh SonarQube instance at it.</li>
+          <li>Note exactly how few steps this took, this is useful context for later items on Oracle and MS SQL, which are noticeably more involved.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-14">Your answer</label>
+      <textarea id="answer-14" data-item="14" placeholder="Describe your PostgreSQL setup steps and how long it took..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-15" data-glean-id="item-15">
+      <div class="item-head">
+        <div class="item-title"><span class="num">15</span><h3>Clone a database to run multiple SonarQube versions against the same data</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Have multiple SonarQube instances running against a copy of the same data, without needing to repopulate it each time.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Take a backup/clone of a populated SonarQube database (reuse the backup/restore item if you've done it) and stand up a second SonarQube instance, potentially a different version, pointed at the cloned copy.</li>
+          <li>Confirm both instances show the same underlying data independently.</li>
+          <li>Think about why this is useful for testing (e.g. validating an upgrade against real-shaped data without touching the original).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-15">Your answer</label>
+      <textarea id="answer-15" data-item="15" placeholder="Describe your cloning approach and confirm both instances worked independently..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-16" data-glean-id="item-16">
+      <div class="item-head">
+        <div class="item-title"><span class="num">16</span><h3>Clear a pending or in-progress background task</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand which background tasks can actually be cancelled, and which can't.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Submit a few analyses to build up a queue, then try to cancel a task that's still Pending versus one that's already In Progress.</li>
+          <li>Note any difference in what's possible: can you cancel a task actively being processed, or only ones still waiting in the queue?</li>
+          <li>Think about why a task that's actively writing to the database might not be safely cancellable mid-flight.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-16">Your answer</label>
+      <textarea id="answer-16" data-item="16" placeholder="Describe what you were able to cancel and what you weren't, and why..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-17" data-glean-id="item-17">
+      <div class="item-head">
+        <div class="item-title"><span class="num">17</span><h3>Create a Portfolio structure with the same Portfolio nested twice and observe the recomputation failure</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that a Portfolio hierarchy has to be a genuine tree, and see what happens when that assumption is violated by nesting the same Portfolio under two different parents (or under itself).</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Build a Portfolio structure where the same Portfolio appears twice in the tree, for example nested under two separate parent Portfolios, or nested under one of its own descendants.</li>
+          <li>Trigger a recomputation and observe exactly how it fails or misbehaves (an error, a stuck computation, incorrect rolled-up numbers).</li>
+          <li>Explain why this breaks recomputation logically: what would "correct" behavior even mean if the same node appears in the tree more than once?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-17">Your answer</label>
+      <textarea id="answer-17" data-item="17" placeholder="Describe the structure you built and exactly how recomputation failed or misbehaved..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-18" data-glean-id="item-18">
+      <div class="item-head">
+        <div class="item-title"><span class="num">18</span><h3>Configure SonarQube with MS SQL using SQL Authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the advantage of Windows Authentication (Integrated Security) versus plain SQL Authentication for MS SQL Server.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set up SonarQube against an MS SQL Server database using standard SQL Authentication (username/password in the connection string).</li>
+          <li>Compare this to the Windows Authentication approach from another item: what's the practical security/operational advantage of Integrated Security (no plaintext password stored in a config file, credentials tied to the Windows account running the process)?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-18">Your answer</label>
+      <textarea id="answer-18" data-item="18" placeholder="Describe your SQL Auth setup and the tradeoff versus Windows Authentication..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-19" data-glean-id="item-19">
+      <div class="item-head">
+        <div class="item-title"><span class="num">19</span><h3>Debug a SonarQube server performance problem via logs</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice going through web, CE, and Elasticsearch logs to diagnose a performance issue the way a real support ticket would require.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>If you have access to real performance-related support tickets, review one or two with a mentor as a model for what "good log triage" looks like.</li>
+          <li>On a real or test instance, deliberately generate some load or a slow scenario, then walk through the web, ce, and es logs together to piece together where time is actually being spent.</li>
+          <li>Write down the order you checked things in, and why that order made sense.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-19">Your answer</label>
+      <textarea id="answer-19" data-item="19" placeholder="Describe the logs you reviewed, in what order, and what you concluded..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-20" data-glean-id="item-20">
+      <div class="item-head">
+        <div class="item-title"><span class="num">20</span><h3>Add plugins to a SonarQube Helm chart deployment</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how plugin persistence works in a Kubernetes Helm chart deployment, as opposed to a simple binary install.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Deploy SonarQube via Helm (reuse an earlier Helm item if you've done one) and figure out how to add a custom or community plugin to that deployment.</li>
+          <li>Investigate what happens to the plugin across a pod restart or redeploy, does it persist, or do you need a specific volume/init-container approach to make it durable?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-20">Your answer</label>
+      <textarea id="answer-20" data-item="20" placeholder="Describe how you added a plugin to the Helm deployment and whether it survived a restart..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-21" data-glean-id="item-21">
+      <div class="item-head">
+        <div class="item-title"><span class="num">21</span><h3>Monitor SonarQube with JMX mBeans</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the official JMX monitoring method, and its real limitations compared to better alternatives.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Use jconsole (or a similar JMX-capable tool) to connect to a running SonarQube JVM process and browse the exposed mBeans.</li>
+          <li>Read what SonarQube's own documentation says about this monitoring method, and identify specifically what it does NOT give you visibility into compared to more modern monitoring approaches.</li>
+          <li>If you can find a real support ticket referencing JMX/mBean monitoring, review it for context on how this comes up in practice.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-21">Your answer</label>
+      <textarea id="answer-21" data-item="21" placeholder="Describe what you saw via jconsole, and the specific limitations of this monitoring approach..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-22" data-glean-id="item-22">
+      <div class="item-head">
+        <div class="item-title"><span class="num">22</span><h3>Install SonarQube on Docker</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand local Docker deployment, memory settings, and Docker Compose.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Deploy SonarQube locally using Docker, then again using a Docker Compose file (find Sonar's example compose files rather than writing one from scratch).</li>
+          <li>Adjust memory settings for the containerized instance and confirm the change actually took effect.</li>
+          <li>Note where the official example Docker Compose files live, this is worth remembering since it comes up often.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-22">Your answer</label>
+      <textarea id="answer-22" data-item="22" placeholder="Describe your Docker and Docker Compose deployments and the memory setting you adjusted..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-23" data-glean-id="item-23">
+      <div class="item-head">
+        <div class="item-title"><span class="num">23</span><h3>Project import and export</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> See exactly what does and doesn't come along when a project is exported and re-imported via the Web API.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Use the project export/import Web API on a test project that has issue assignees, multiple branches, and at least one PR.</li>
+          <li>Import the export into a new project location and check specifically: did issue assignees carry over? Which branches/PRs made the trip and which didn't?</li>
+          <li>Connect this to the housekeeping/branch-retention behavior from other exercises, branches not marked to be kept when inactive are excluded from export for the same underlying reason they'd eventually be purged.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-23">Your answer</label>
+      <textarea id="answer-23" data-item="23" placeholder="Describe what carried over (assignees, branches, PRs) and what didn't, and why..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-24" data-glean-id="item-24">
+      <div class="item-head">
+        <div class="item-title"><span class="num">24</span><h3>Experiment with Server ID changes</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand exactly how a Server ID is generated and in which situations it actually changes.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>If you've done the equivalent item in the Administration exercise, treat this as reinforcement rather than duplicate work, focus on connecting it to the operational context here (upgrades, DB migrations, DR failover).</li>
+          <li>Change the database connection configuration on a test instance and confirm the Server ID changes as a result, then restore the original configuration and confirm it changes back (or doesn't, depending on whether the underlying DB's first-setup value is preserved).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-24">Your answer</label>
+      <textarea id="answer-24" data-item="24" placeholder="Describe what you changed and observed about Server ID behavior, and connect it to a real operational scenario..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-25" data-glean-id="item-25">
+      <div class="item-head">
+        <div class="item-title"><span class="num">25</span><h3>Use cloud services to deploy SonarQube</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get hands-on experience deploying SonarQube to a cloud VM.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Use a cloud provider (Azure is a common internal example) to provision a VM and deploy SonarQube on it, following whatever internal quick-provisioning guide is available.</li>
+          <li>Note what's genuinely different about a cloud deployment versus local: networking/firewall rules, persistent storage, and how you'd reach the instance externally.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-25">Your answer</label>
+      <textarea id="answer-25" data-item="25" placeholder="Describe your cloud deployment and what was different from a local setup..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-26" data-glean-id="item-26">
+      <div class="item-head">
+        <div class="item-title"><span class="num">26</span><h3>Upgrade from LTS to LTS</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the upgrade process end to end, not just "download the new version."</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set up an older LTS instance with some real data, then perform a full upgrade to the next LTS following the official upgrade guide.</li>
+          <li>Pay attention to every step beyond just swapping the binary/image: database migration, plugin compatibility checks, configuration changes required by the new version.</li>
+          <li>Note anything that surprised you or that you'd expect a customer to get wrong.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-26">Your answer</label>
+      <textarea id="answer-26" data-item="26" placeholder="Describe your upgrade path and anything that surprised you or would trip up a customer..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-27" data-glean-id="item-27">
+      <div class="item-head">
+        <div class="item-title"><span class="num">27</span><h3>Upgrade between editions</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what changes when moving between SonarQube editions, beyond just a license key swap.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Starting from a lower edition (e.g. Community or Developer), upgrade the license/edition to a higher one (e.g. Enterprise) and observe exactly what new features and settings become available.</li>
+          <li>Note whether this required more than just applying a new license, any configuration or restart steps.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-27">Your answer</label>
+      <textarea id="answer-27" data-item="27" placeholder="Describe the edition upgrade and exactly what became newly available..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-28" data-glean-id="item-28">
+      <div class="item-head">
+        <div class="item-title"><span class="num">28</span><h3>Encrypt Elasticsearch inter-node communication in a DCE cluster</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand why enterprises want ALL network traffic encrypted, including internal cluster traffic between search nodes, not just client-facing traffic.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>If you have access to an internal tutorial on this (ask your mentor), follow it to configure TLS between Elasticsearch nodes in a DCE deployment.</li>
+          <li>Explain why a customer with strict security/compliance requirements would insist on this even for traffic that never leaves their own internal network, think about defense-in-depth and compliance frameworks that don't distinguish "internal" from "external" traffic.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-28">Your answer</label>
+      <textarea id="answer-28" data-item="28" placeholder="Describe your ES encryption setup and the compliance/security rationale for it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-29" data-glean-id="item-29">
+      <div class="item-head">
+        <div class="item-title"><span class="num">29</span><h3>Deploy the non-DCE SonarQube Helm chart</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the structure of a standard (non-Data-Center-Edition) Kubernetes deployment via Helm.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Deploy the standard, non-DCE Helm chart locally (Minikube is a reasonable local target) and separately try deploying it to a managed Kubernetes service like AKS if you have access.</li>
+          <li>Note the difference in complexity/structure between this and the DCE Helm chart (a separate item), non-DCE is a simpler, single-deployment topology without the multiple node pools and shared-storage requirements DCE needs.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-29">Your answer</label>
+      <textarea id="answer-29" data-item="29" placeholder="Describe your non-DCE Helm deployment and how it compared structurally to DCE..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-30" data-glean-id="item-30">
+      <div class="item-head">
+        <div class="item-title"><span class="num">30</span><h3>Deploy the DCE SonarQube Helm chart</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the structure of a Data Center Edition Kubernetes deployment via Helm, and how it differs from the non-DCE chart.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Deploy the DCE-specific Helm chart, ideally to a managed Kubernetes service like AKS, since DCE's multi-node-pool, shared-storage requirements are harder to fully replicate locally.</li>
+          <li>Identify the structural pieces non-DCE doesn't need: separate application node pools, separate search node pools, and shared storage across nodes.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-30">Your answer</label>
+      <textarea id="answer-30" data-item="30" placeholder="Describe your DCE Helm deployment and the structural pieces that don't exist in the non-DCE chart..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-31" data-glean-id="item-31">
+      <div class="item-head">
+        <div class="item-title"><span class="num">31</span><h3>Configure SonarQube with MS SQL using Windows Authentication (Integrated Security)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the advantage of Windows Authentication (Integrated Security) over plain SQL Authentication for MS SQL Server.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Set up SonarQube against an MS SQL Server database using Integrated Security (following the instructions specifically called out in sonar.properties for this mode).</li>
+          <li>Confirm sonar.jdbc.username and sonar.jdbc.password are NOT set, SonarQube falls back to SQL auth if they are, even with Integrated Security otherwise configured.</li>
+          <li>Note the practical advantage: no plaintext SQL credential stored in a config file at all, authentication is delegated to the Windows account already running the SonarQube service.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-31">Your answer</label>
+      <textarea id="answer-31" data-item="31" placeholder="Describe your Integrated Security setup and the concrete credential-management advantage over SQL auth..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-32" data-glean-id="item-32">
+      <div class="item-head">
+        <div class="item-title"><span class="num">32</span><h3>Configure SonarQube with Oracle DB (local setup)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to set up an Oracle database locally for SonarQube, a noticeably heavier lift than PostgreSQL.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Stand up a local Oracle database (a Docker-based Oracle image is the most practical path) and point a fresh SonarQube instance at it.</li>
+          <li>Compare the setup effort and gotchas against the PostgreSQL item, driver requirements, connection string format, licensing considerations for Oracle itself.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-32">Your answer</label>
+      <textarea id="answer-32" data-item="32" placeholder="Describe your Oracle setup and how it compared in effort to PostgreSQL..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-33" data-glean-id="item-33">
+      <div class="item-head">
+        <div class="item-title"><span class="num">33</span><h3>Configure SonarQube with an Azure-hosted PostgreSQL database</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get familiar with a managed cloud database offering as SonarQube's backing store.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Provision a managed PostgreSQL instance on Azure and point a SonarQube instance at it instead of a local/self-hosted database.</li>
+          <li>Note what's different about connecting to a managed cloud DB versus a local one, network/firewall rules on the DB side, connection string differences, any managed-service-specific settings.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-33">Your answer</label>
+      <textarea id="answer-33" data-item="33" placeholder="Describe your Azure Postgres setup and what was different from a local DB connection..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-34" data-glean-id="item-34">
+      <div class="item-head">
+        <div class="item-title"><span class="num">34</span><h3>Use the DB Copy Tool between different database engines</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to migrate SonarQube's data between different database engines using Sonar's DB Copy Tool.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Find and set up Sonar's DB Copy Tool, and specifically work out how to add the Oracle JDBC driver to it if Oracle is either your source or target engine (this driver isn't bundled by default for licensing reasons).</li>
+          <li>Run a copy between two different database engines (e.g. Postgres to Oracle, or vice versa) and confirm the target ends up with the same data.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-34">Your answer</label>
+      <textarea id="answer-34" data-item="34" placeholder="Describe your DB Copy Tool run, including the Oracle driver step if relevant, and confirm the migration worked..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-35" data-glean-id="item-35">
+      <div class="item-head">
+        <div class="item-title"><span class="num">35</span><h3>Install SonarQube Data Center Edition (DCE) locally, all on one machine</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand DCE's architecture using "DCE in a box": multiple application nodes plus shared database and shared Elasticsearch, for high availability, and see the limitations of trying to replicate this with plain Enterprise Edition instances instead.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Follow the internal "DCE in a box" guide to run a full DCE topology (multiple app nodes, shared search, shared DB) on a single machine for learning purposes.</li>
+          <li>Separately, try setting it up with docker-compose if a compose-based path exists.</li>
+          <li>Explain clearly why simply running multiple separate Enterprise Edition instances is NOT the same as true DCE, EE instances don't share a coordinated search cluster or a properly clustered CE task-processing layer the way DCE does, so a customer attempting this workaround would be missing real HA guarantees.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-35">Your answer</label>
+      <textarea id="answer-35" data-item="35" placeholder="Describe your DCE-in-a-box setup and explain what a multi-EE-instance workaround would actually be missing..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+    <article class="item" id="item-36" data-glean-id="item-36">
+      <div class="item-head">
+        <div class="item-title"><span class="num">36</span><h3>Set up a proxy</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 8/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand proxy and network setup for a SonarQube instance that needs to reach the internet (or specific external services) through a proxy.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Configure SonarQube (or a scanner) to route traffic through a proxy, and use a tool like ngrok to create a controllable tunnel/target to test against.</li>
+          <li>Confirm traffic actually flows through the proxy as expected, and that removing the proxy config breaks connectivity again (a good way to prove the config is actually doing something, not just coincidentally working).</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-36">Your answer</label>
+      <textarea id="answer-36" data-item="36" placeholder="Describe your proxy setup, how you tested it with ngrok, and confirmed it was actually in effect..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+  </div>
+</section>
+
+<div class="footer-note" data-glean-id="exercise-footer-note">
+  <strong>Your answers stay on this device</strong>
+  This page saves your answers in this browser's local storage, so they will still be here if you come back later, even after closing the browser. They are not synced anywhere else, so they will not follow you to another browser, another device, or survive clearing this site's data. Print this page (button above, or Cmd/Ctrl+P) for a permanent copy, and if this exercise is tracked as part of your onboarding, commit your written answers into your onboarding notes in your GitHub repo so the work isn't lost.
+</div>
+
+</main>
+<script>
+(function(){
+  var textareas=Array.from(document.querySelectorAll('textarea[data-item]'));
+  var fill=document.getElementById('progress-fill');
+  var label=document.getElementById('progress-label');
+  var total=textareas.length;
+  function storageKey(id){return 'operations-exercise-'+id;}
+  function updateProgress(){
+    var answered=textareas.filter(function(t){return t.value.trim().length>0;}).length;
+    fill.style.width=(total?Math.round(answered/total*100):0)+'%';
+    label.textContent=answered+' / '+total+' answered';
+  }
+  textareas.forEach(function(t){
+    try{
+      var saved=localStorage.getItem(storageKey(t.dataset.item));
+      if(saved)t.value=saved;
+    }catch(e){}
+    var statusEl=t.closest('.item').querySelector('.saved');
+    var timer;
+    t.addEventListener('input',function(){
+      try{localStorage.setItem(storageKey(t.dataset.item),t.value);}catch(e){}
+      updateProgress();
+      if(statusEl){
+        statusEl.classList.add('show');
+        clearTimeout(timer);
+        timer=setTimeout(function(){statusEl.classList.remove('show');},1200);
+      }
+    });
+  });
+  updateProgress();
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body></html>

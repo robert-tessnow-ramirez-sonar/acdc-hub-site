@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI CodeFix Onboarding Exercise</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--blue-soft);color:var(--ink)}.badge strong{display:block;margin-bottom:4px;color:var(--blue);font-size:13px}.badge span{font-size:13px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 0;position:sticky;top:0;background:var(--bg);z-index:5}.progress-wrap{flex:1;min-width:180px;display:flex;align-items:center;gap:10px}.progress-track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-fill{height:100%;width:0%;background:var(--blue);border-radius:99px;transition:width .2s ease}#progress-label{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#1d4fd1;color:#fff}.notice{padding:16px 20px;border-radius:12px;background:var(--amber-soft);color:var(--amber);font-size:14px;margin:0 0 30px}.notice strong{display:block;margin-bottom:4px}.notice ul{margin:6px 0 0;padding-left:18px}.section-intro{margin:8px 0 22px;color:var(--muted)}.roadmap{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px;margin-top:10px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:90px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item.task .num{background:var(--purple)}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px}.tag.question{background:var(--blue-soft);color:var(--blue)}.tag.task{background:var(--purple-soft);color:var(--purple)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.guidance{margin:0 0 16px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;color:var(--ink)}.guidance strong{display:block;margin-bottom:6px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.guidance ul{margin:0;padding-left:18px}.guidance li{margin:4px 0}.guidance a{color:var(--blue);font-weight:700;text-decoration:none}.guidance a:hover{text-decoration:underline}.note{margin:10px 0 0;font-size:12.5px;color:var(--amber)}label.answer-label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff}textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}.status-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}.status-row .saved{color:var(--green);font-weight:700;opacity:0;transition:opacity .3s}.status-row .saved.show{opacity:1}.footer-note{margin-top:44px;padding:20px 22px;border-radius:14px;background:var(--blue-soft);color:var(--ink);font-size:14px}.footer-note strong{display:block;margin-bottom:6px;color:var(--blue)}.teacher-link-row{position:fixed;left:14px;bottom:14px;z-index:10}.teacher-link{display:inline-flex;opacity:.1;transition:opacity .15s ease}.teacher-link:hover,.teacher-link:focus-visible{opacity:1}.teacher-link img{display:block}.print-only{display:none}@media print{.toolbar,.roadmap,.teacher-link-row{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}textarea{border:1px solid #999;min-height:70px}.print-only{display:block}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="ai-codefix-exercise-page">
+
+<section class="hero" data-glean-id="exercise-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="exercise-eyebrow">AC/DC · Onboarding exercise · Student copy</p>
+    <h1 data-glean-id="exercise-title">AI CodeFix: figure it out</h1>
+    <p class="lead" data-glean-id="exercise-lead">Ten questions and hands-on tasks that build your working knowledge of AI CodeFix. Each one gives you a pointer, not the answer &mdash; use the linked docs, the <a href="../ai-codefix-onboarding.html" target="_blank" rel="noopener">AI CodeFix onboarding page</a>, and your own testing to work it out.</p>
+  </div>
+  <aside class="badge" data-glean-id="exercise-availability">
+    <strong>How to use this page</strong>
+    <span>Read the goal, follow the guidance, then write your answer in your own words in the box provided.</span>
+  </aside>
+</section>
+
+<div class="teacher-link-row" data-glean-id="teacher-link-row"><a class="teacher-link" href="ai-codefix-exercise-teacher.html" target="_blank" rel="noopener" title="Grading key (mentors)" aria-label="Grading key (mentors)"><img src="../../shared/img/545988.png" alt="" width="22" height="22"></a></div>
+
+<div class="toolbar" data-glean-id="exercise-toolbar">
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span id="progress-label">0 / 10 answered</span>
+  </div>
+  <button class="btn primary" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<div class="notice" data-glean-id="exercise-local-save-notice">
+  <strong>Answers save to this browser only</strong>
+  Your answers are kept in this browser's local storage on this device, so closing the tab, refreshing, or reopening the page days later will restore them. They are NOT backed up anywhere and will be lost if you clear this browser's site data, switch browsers or devices, or use a private/incognito window.
+  <ul>
+    <li>Use <b>Print / save as PDF</b> to keep a permanent copy, especially before switching browsers, devices, or clearing site data.</li>
+    <li>If this exercise is part of a tracked onboarding task, <b>commit your written answers to your onboarding notes in your GitHub repo</b> so the work is actually saved and visible to your manager or mentor.</li>
+  </ul>
+</div>
+
+<nav class="roadmap" data-glean-id="exercise-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a>
+  <a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a>
+</nav>
+
+<section data-glean-id="exercise-items">
+  <div class="items" id="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>What's the difference between AI CodeFix, Sonar Vortex agentic analysis, the Remediation Agent, and Vortex context augmentation?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the differences between Sonar's AI features so you can point a customer to the right one.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Start with this repo's own onboarding pages: <a href="../ai-codefix-onboarding.html" target="_blank" rel="noopener">AI CodeFix</a>, <a href="../vortex-onboarding.html" target="_blank" rel="noopener">Vortex</a>, <a href="../remediation-agent-onboarding.html" target="_blank" rel="noopener">Remediation Agent</a>. Each has a "What the feature delivers" section &mdash; read all three back to back.</li>
+          <li>For each feature, ask yourself: which stage of the Agent Centric Development Cycle does it sit in (Guide, Verify, or Solve)? Is it triggered on demand, or does it run automatically?</li>
+          <li>Sonar docs: <a href="https://docs.sonarsource.com/agent-centric-development-cycle/solve/ai-codefix" target="_blank" rel="noopener">AI CodeFix</a>, <a href="https://docs.sonarsource.com/agent-centric-development-cycle/inside-your-agent-the-agentic-loop/sonar-vortex" target="_blank" rel="noopener">Sonar Vortex</a>, <a href="https://docs.sonarsource.com/agent-centric-development-cycle/solve/remediation-agent" target="_blank" rel="noopener">Remediation Agent</a>.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-1">Your answer</label>
+      <textarea id="answer-1" data-item="1" placeholder="Summarize what makes each feature distinct in your own words..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>What does each of these products/features do, and where does each one operate?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand AI product functionality and where in the stack each one runs (UI, IDE, CI, agent loop).</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>This builds directly on question 1. For each feature, identify: does it run in the Issues page, the IDE, a pull request, or inside a coding agent's own loop?</li>
+          <li>Check the "How a suggestion reaches a developer" or equivalent flow diagram on each onboarding page &mdash; they show the trigger point and where the result lands.</li>
+          <li>Try to place each feature on a simple diagram: who or what triggers it, and where does the output show up?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-2">Your answer</label>
+      <textarea id="answer-2" data-item="2" placeholder="For each feature, note what it does and where it runs..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>Have a project with issues scanned into SonarQube or SonarQube Cloud</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core &middot; Prerequisite</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get a real project analyzed and producing issues, since every later task depends on having one.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Use an existing SonarQube Cloud organization if you have access, or scan a small repo of your own with the SonarScanner CLI.</li>
+          <li>The support repo referenced in task 8 below is a good candidate if you don't already have a project handy &mdash; ask your onboarding buddy or team channel where it lives if you're not sure.</li>
+          <li>Confirm you can see at least a handful of open issues on the project's Issues page before moving on.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-3">Notes / evidence (project name, org, issue count, link, screenshot description, etc.)</label>
+      <textarea id="answer-3" data-item="3" placeholder="Record what project you used and confirm issues are showing up..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>What are common issues setting up AI CodeFix?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Build a mental checklist for troubleshooting AI CodeFix setup problems.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the "Readiness checklist" on the <a href="../ai-codefix-onboarding.html" target="_blank" rel="noopener">AI CodeFix onboarding page</a> &mdash; every unmet item on that list is a plausible setup failure.</li>
+          <li>Think about the difference between Cloud and Server here: plan/edition gates, who has admin rights to enable it, and LLM choice all differ. Which of those would actually cause a customer ticket?</li>
+          <li>Try enabling AI CodeFix yourself in a test org (task 6) and pay attention to any step that isn't obvious &mdash; that's usually where support tickets come from.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-4">Your answer</label>
+      <textarea id="answer-4" data-item="4" placeholder="List the setup issues you'd check for first..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Why do you need to allow communication to the AI CodeFix service if you have a locally hosted LLM?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the architectural requirement behind this, not just recite it.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>This is a genuinely subtle point &mdash; even the source catalog for this exercise flags it as needing further review. Don't assume the first explanation you find is complete.</li>
+          <li>Start from the Server requirements: "Network path confirmed" on the <a href="../ai-codefix-onboarding.html" target="_blank" rel="noopener">AI CodeFix onboarding page</a> and the AI CodeFix row on <a href="../cloud-server-requirements.html" target="_blank" rel="noopener">Cloud &amp; Server requirements</a>.</li>
+          <li>Ask: even with a self-hosted or BYO-LLM, is there anything else in the AI CodeFix flow (licensing checks, rule metadata, telemetry, orchestration) that might still call out to a Sonar-hosted endpoint?</li>
+          <li>If you can't fully resolve this from docs alone, that's expected &mdash; note your best current understanding and flag your remaining question. This is a good one to raise with a mentor.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-5">Your answer (and any open question you still have)</label>
+      <textarea id="answer-5" data-item="5" placeholder="Explain the requirement as best you understand it, and note anything unclear..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>What causes a certificate error when connecting to the AI CodeFix service?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Be able to troubleshoot a TLS/certificate error report from a customer.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Think generally about what causes TLS certificate errors in enterprise network setups: self-signed certs, internal CAs, proxies that intercept HTTPS, expired certs, hostname mismatches.</li>
+          <li>Cross-reference against the AI CodeFix network requirement (outbound HTTPS to a fixed endpoint) &mdash; what's on the customer's network path between their SonarQube instance and that endpoint?</li>
+          <li>This same class of problem shows up with the SonarQube MCP server and private certificates &mdash; if you get to that section later, compare notes.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-6">Your answer</label>
+      <textarea id="answer-6" data-item="6" placeholder="Explain likely causes and how you'd confirm which one applies..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Set up AI CodeFix using a Sonar-provided model</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Gain hands-on experience enabling AI CodeFix end to end.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Follow the "Enable and run" steps on the <a href="../ai-codefix-onboarding.html" target="_blank" rel="noopener">AI CodeFix onboarding page</a> against a test organization or instance.</li>
+          <li>Official steps: <a href="https://docs.sonarsource.com/sonarqube-cloud/administering-sonarcloud/ai-features/enable-ai-codefix" target="_blank" rel="noopener">Enable AI CodeFix, Cloud</a> or <a href="https://docs.sonarsource.com/sonarqube-server/instance-administration/ai-features/enable-ai-codefix" target="_blank" rel="noopener">Enable AI CodeFix, Server</a>, depending on which you have access to.</li>
+          <li>Use the project from task 3, generate a fix on a real issue, and walk through Apply/Decline so you've seen the full loop, not just the settings screen.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-7">Notes (which platform, which model, what you generated a fix for)</label>
+      <textarea id="answer-7" data-item="7" placeholder="Record what you set up and what you tested..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Set up a self-hosted model for AI CodeFix</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Learn how to integrate a non-Sonar-hosted LLM into AI CodeFix. Optional, but worth attempting.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>This one is marked optional in the source catalog &mdash; a cloud-hosted model you configure yourself counts. Bonus points if it's set up in Azure.</li>
+          <li>AI CodeFix on Server supports bring-your-own-LLM: Azure OpenAI, AWS Bedrock, or a self-hosted OpenAI-compatible gateway. Check the Server BYO-LLM options on the <a href="../ai-codefix-onboarding.html" target="_blank" rel="noopener">AI CodeFix onboarding page</a> and <a href="../cloud-server-requirements.html" target="_blank" rel="noopener">Cloud &amp; Server requirements</a>.</li>
+          <li>If you don't have Server admin access to actually configure this, write up the steps you'd take and what credentials/endpoint info you'd need, and note that as a limitation.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-8">Notes (what you set up, or your planned approach if you couldn't complete it)</label>
+      <textarea id="answer-8" data-item="8" placeholder="Record your approach and outcome..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Clone the support repo and use the AI CodeFix tools to find and resolve issues</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice using AI CodeFix against real issues in a shared support repo.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Ask your onboarding buddy or team channel for the support repo's location if you don't already have it &mdash; this is intentionally not linked here so you practice finding internal resources.</li>
+          <li>Scan the repo (or use its existing analysis) and work through a handful of eligible issues end to end: generate a fix, review it, then Apply or Decline.</li>
+          <li>Note anything that surprised you, especially issues where AI CodeFix wasn't offered &mdash; that ties back to the "eligible rule" scope limits on the onboarding page.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-9">Notes (issues resolved, anything that surprised you)</label>
+      <textarea id="answer-9" data-item="9" placeholder="Record what you found and fixed..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Review the AI CodeFix onboarding reference page</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get a quick, high-level overview of AI CodeFix at a glance before or after working through the rest of this exercise.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Visit the <a href="../ai-codefix-onboarding.html" target="_blank" rel="noopener">AI CodeFix onboarding page</a> in this hub and read it end to end.</li>
+          <li>Compare it against your own answers above &mdash; does anything on that page change or sharpen what you wrote earlier? Feel free to go back and revise.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-10">One or two things this reference page clarified or changed about your earlier answers</label>
+      <textarea id="answer-10" data-item="10" placeholder="Note what stood out or what you'd revise..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+  </div>
+</section>
+
+<div class="footer-note" data-glean-id="exercise-footer-note">
+  <strong>Your answers stay on this device</strong>
+  This page saves your answers in this browser's local storage, so they will still be here if you come back later, even after closing the browser. They are not synced anywhere else, so they will not follow you to another browser, another device, or survive clearing this site's data. Print this page (button above, or Cmd/Ctrl+P) for a permanent copy, and if this exercise is tracked as part of your onboarding, commit your written answers into your onboarding notes in your GitHub repo so the work isn't lost.
+</div>
+
+</main>
+<script>
+(function(){
+  var textareas=Array.from(document.querySelectorAll('textarea[data-item]'));
+  var fill=document.getElementById('progress-fill');
+  var label=document.getElementById('progress-label');
+  var total=textareas.length;
+  function storageKey(id){return 'ai-codefix-exercise-'+id;}
+  function updateProgress(){
+    var answered=textareas.filter(function(t){return t.value.trim().length>0;}).length;
+    fill.style.width=(total?Math.round(answered/total*100):0)+'%';
+    label.textContent=answered+' / '+total+' answered';
+  }
+  textareas.forEach(function(t){
+    try{
+      var saved=localStorage.getItem(storageKey(t.dataset.item));
+      if(saved)t.value=saved;
+    }catch(e){}
+    var statusEl=t.closest('.item').querySelector('.saved');
+    var timer;
+    t.addEventListener('input',function(){
+      try{localStorage.setItem(storageKey(t.dataset.item),t.value);}catch(e){}
+      updateProgress();
+      if(statusEl){
+        statusEl.classList.add('show');
+        clearTimeout(timer);
+        timer=setTimeout(function(){statusEl.classList.remove('show');},1200);
+      }
+    });
+  });
+  updateProgress();
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body></html>

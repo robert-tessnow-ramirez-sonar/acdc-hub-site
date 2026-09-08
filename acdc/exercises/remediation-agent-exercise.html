@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remediation Agent Onboarding Exercise</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--blue-soft);color:var(--ink)}.badge strong{display:block;margin-bottom:4px;color:var(--blue);font-size:13px}.badge span{font-size:13px}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 0;position:sticky;top:0;background:var(--bg);z-index:5}.progress-wrap{flex:1;min-width:180px;display:flex;align-items:center;gap:10px}.progress-track{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.progress-fill{height:100%;width:0%;background:var(--blue);border-radius:99px;transition:width .2s ease}#progress-label{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#1d4fd1;color:#fff}.notice{padding:16px 20px;border-radius:12px;background:var(--amber-soft);color:var(--amber);font-size:14px;margin:0 0 30px}.notice strong{display:block;margin-bottom:4px}.notice ul{margin:6px 0 0;padding-left:18px}.section-intro{margin:8px 0 22px;color:var(--muted)}.roadmap{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px;margin-top:10px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:90px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item.task .num{background:var(--purple)}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px}.tag.question{background:var(--blue-soft);color:var(--blue)}.tag.task{background:var(--purple-soft);color:var(--purple)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.guidance{margin:0 0 16px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:14px;color:var(--ink)}.guidance strong{display:block;margin-bottom:6px;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.guidance ul{margin:0;padding-left:18px}.guidance li{margin:4px 0}.guidance a{color:var(--blue);font-weight:700;text-decoration:none}.guidance a:hover{text-decoration:underline}.guidance code{background:var(--blue-soft);color:var(--blue);padding:1px 6px;border-radius:6px;font-size:12.5px}label.answer-label{display:block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:14px/1.5 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#fff}textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}.status-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--muted)}.status-row .saved{color:var(--green);font-weight:700;opacity:0;transition:opacity .3s}.status-row .saved.show{opacity:1}.footer-note{margin-top:44px;padding:20px 22px;border-radius:14px;background:var(--blue-soft);color:var(--ink);font-size:14px}.footer-note strong{display:block;margin-bottom:6px;color:var(--blue)}.teacher-link-row{position:fixed;left:14px;bottom:14px;z-index:10}.teacher-link{display:inline-flex;opacity:.1;transition:opacity .15s ease}.teacher-link:hover,.teacher-link:focus-visible{opacity:1}.teacher-link img{display:block}.print-only{display:none}@media print{.toolbar,.roadmap,.teacher-link-row{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}textarea{border:1px solid #999;min-height:70px}.print-only{display:block}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="remediation-agent-exercise-page">
+
+<section class="hero" data-glean-id="exercise-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="exercise-eyebrow">AC/DC · Onboarding exercise · Student copy</p>
+    <h1 data-glean-id="exercise-title">Remediation Agent &amp; Hunter Agent: figure it out</h1>
+    <p class="lead" data-glean-id="exercise-lead">Nine questions and hands-on tasks, mostly on Remediation Agent, with one Hunter Agent task at the end. Each one gives you a pointer, not the answer &mdash; use the linked docs, the onboarding pages in this hub, and your own testing to work it out.</p>
+  </div>
+  <aside class="badge" data-glean-id="exercise-availability">
+    <strong>A note on scope</strong>
+    <span>The source catalog groups this content under "Hunter Agent/Gitar," but almost everything below is actually about Remediation Agent. That mismatch is intentional here, it mirrors how these onboarding materials were originally organized.</span>
+  </aside>
+</section>
+
+<div class="teacher-link-row" data-glean-id="teacher-link-row"><a class="teacher-link" href="remediation-agent-exercise-teacher.html" target="_blank" rel="noopener" title="Grading key (mentors)" aria-label="Grading key (mentors)"><img src="../../shared/img/545988.png" alt="" width="22" height="22"></a></div>
+
+<div class="toolbar" data-glean-id="exercise-toolbar">
+  <div class="progress-wrap">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <span id="progress-label">0 / 9 answered</span>
+  </div>
+  <button class="btn primary" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<div class="notice" data-glean-id="exercise-local-save-notice">
+  <strong>Answers save to this browser only</strong>
+  Your answers are kept in this browser's local storage on this device, so closing the tab, refreshing, or reopening the page days later will restore them. They are NOT backed up anywhere and will be lost if you clear this browser's site data, switch browsers or devices, or use a private/incognito window.
+  <ul>
+    <li>Use <b>Print / save as PDF</b> to keep a permanent copy, especially before switching browsers, devices, or clearing site data.</li>
+    <li>If this exercise is part of a tracked onboarding task, <b>commit your written answers to your onboarding notes in your GitHub repo</b> so the work is actually saved and visible to your manager or mentor.</li>
+  </ul>
+</div>
+
+<nav class="roadmap" data-glean-id="exercise-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a>
+  <a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a>
+</nav>
+
+<section data-glean-id="exercise-items">
+  <div class="items" id="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>Determine how to come up with an example for Remediation Agent from "nemo" or "orqa"</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Determine examples. Optional, and the source material doesn't spell out what "nemo" or "orqa" refer to.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>These look like references to internal tools, test environments, or projects that aren't documented anywhere public or in this hub. Don't guess or invent an answer, ask your onboarding buddy, mentor, or team channel what "nemo" and "orqa" refer to in this context.</li>
+          <li>Once you know what they are, the actual task is probably: find or construct a good before/after example of Remediation Agent fixing a real issue, using whatever those systems provide.</li>
+          <li>If nobody on your team recognizes these terms either, that's useful information too, note it in your answer so this exercise can be corrected.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-1">Your answer (or what you learned by asking)</label>
+      <textarea id="answer-1" data-item="1" placeholder="Record what you found out, or that you couldn't resolve it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>What are the steps to configure Remediation Agent to operate on a project?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Learn the configuration steps for Remediation Agent.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Follow the "Install and run" steps on this hub's <a href="../remediation-agent-onboarding.html" target="_blank" rel="noopener">Remediation Agent onboarding page</a>.</li>
+          <li>Cross-check against <a href="https://docs.sonarsource.com/agent-centric-development-cycle/solve/solve-issues/administer-remediation-agent" target="_blank" rel="noopener">Administer Remediation Agent</a> for anything the internal page might be missing, especially around the LLM provider key, since this is an area that's evolved.</li>
+          <li>Identify the full ordered sequence: what has to be true at the organization level, what has to be bound at the project level, and what a developer or admin actually clicks to turn it on.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-2">Your answer</label>
+      <textarea id="answer-2" data-item="2" placeholder="List the configuration steps in order..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>What are the different modes of operation for Remediation Agent?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the distinct ways Remediation Agent can be triggered.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the "Two ways to engage the agent" section on this hub's <a href="../remediation-agent-onboarding.html" target="_blank" rel="noopener">Remediation Agent onboarding page</a>, then check <a href="https://docs.sonarsource.com/agent-centric-development-cycle/solve/remediation-agent" target="_blank" rel="noopener">Remediation Agent</a> and <a href="https://docs.sonarsource.com/agent-centric-development-cycle/solve/solve-issues/administer-remediation-agent" target="_blank" rel="noopener">Administer Remediation Agent</a> for whether there's a third mode not covered on the internal page.</li>
+          <li>For each mode, note: what triggers it (a person clicking something, a schedule, a PR event), and which DevOps platforms it's actually available on.</li>
+          <li>Pay attention to whether backlog remediation on a schedule is fully automatic, or whether a person still has to review the resulting PR either way.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-3">Your answer</label>
+      <textarea id="answer-3" data-item="3" placeholder="List each mode and what triggers it..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>How do you troubleshoot bad results from Remediation Agent?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Build a troubleshooting checklist for when a fix doesn't show up, or looks wrong.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the "Scope limits" notice on this hub's <a href="../remediation-agent-onboarding.html" target="_blank" rel="noopener">Remediation Agent onboarding page</a> as a starting list of hard limits, then check <a href="https://docs.sonarsource.com/agent-centric-development-cycle/solve/remediation-agent" target="_blank" rel="noopener">Remediation Agent</a> for anything more specific about caps on PR size or excluded rules.</li>
+          <li>Ask yourself: what would make the agent simply not trigger at all (language, platform, issue count), versus what would make it trigger but discard its own fix (failed re-verification)? Those are two different failure modes worth distinguishing.</li>
+          <li>Also consider the LLM provider side: since the agent can run on a customer-supplied key, what happens if that key is missing, invalid, or the provider account has run out of credit?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-4">Your answer</label>
+      <textarea id="answer-4" data-item="4" placeholder="List things you'd check, in the order you'd check them..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>What are the supported platforms and supported languages for Remediation Agent?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know the current support matrix well enough to answer a customer's eligibility question.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Check the readiness checklist on this hub's <a href="../remediation-agent-onboarding.html" target="_blank" rel="noopener">Remediation Agent onboarding page</a>, then verify against <a href="https://docs.sonarsource.com/agent-centric-development-cycle/solve/remediation-agent" target="_blank" rel="noopener">Remediation Agent</a> for the current language list, this is an area that expands over time, so confirm you're not quoting a stale list.</li>
+          <li>Separate the platform question from the language question: are all supported languages available on all supported DevOps platforms, or does one mode (say, PR remediation) have a narrower platform list than another (backlog remediation)?</li>
+          <li>Note what happens to an unsupported language in a project that otherwise has Remediation Agent enabled, does it error, or just silently not trigger?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-5">Your answer</label>
+      <textarea id="answer-5" data-item="5" placeholder="List supported platforms and languages, and any platform-specific gaps..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Where is Remediation Agent hosted?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand Remediation Agent's architecture, especially where the LLM call actually happens.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Read the "How a fix gets verified" flow on this hub's <a href="../remediation-agent-onboarding.html" target="_blank" rel="noopener">Remediation Agent onboarding page</a>, then check <a href="https://docs.sonarsource.com/agent-centric-development-cycle/solve/remediation-agent" target="_blank" rel="noopener">Remediation Agent</a> for how the LLM provider relationship actually works today.</li>
+          <li>Distinguish two things that are easy to conflate: where the orchestration/verification logic runs (Sonar's own service), versus which account the actual LLM inference is billed to and processed under. Who provides the API key, and what does that imply about whose usage agreement governs the code sent to the model?</li>
+          <li>Note that re-verification (re-running SonarQube's analysis engine against a candidate fix) is a distinct step from the LLM call itself, where does that verification step run?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-6">Your answer</label>
+      <textarea id="answer-6" data-item="6" placeholder="Explain the hosting/architecture split..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>What's the difference between Remediation Agent and AI CodeFix?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Distinguish the two Solve-stage AI products so you can route a customer to the right one.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>If you've done the AI CodeFix exercise, you already answered part of this from the other direction, revisit that answer and compare.</li>
+          <li>Read the "What the agent delivers" sections on both this hub's <a href="../remediation-agent-onboarding.html" target="_blank" rel="noopener">Remediation Agent onboarding page</a> and <a href="../ai-codefix-onboarding.html" target="_blank" rel="noopener">AI CodeFix onboarding page</a> side by side.</li>
+          <li>Focus on scale and trigger: one is a single-issue, on-demand action a developer takes; the other operates automatically or in batch across a PR or the whole backlog. Which is which, and why would a team want both rather than just the more powerful-sounding one?</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-7">Your answer</label>
+      <textarea id="answer-7" data-item="7" placeholder="Explain the key differences..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Set up a project with Remediation Agent and demonstrate how to trigger it</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice deploying and triggering Remediation Agent end to end.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Use the steps you wrote out in question 2 against a real project bound to GitHub or Azure DevOps.</li>
+          <li>Try to demonstrate at least one full trigger path, either a PR with a quality gate failure, or a backlog issue you assign to the agent, through to a proposed fix.</li>
+          <li>If the agent doesn't trigger, use your answer to question 4 as your troubleshooting checklist before asking for help.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-8">Notes (project used, mode triggered, outcome)</label>
+      <textarea id="answer-8" data-item="8" placeholder="Record what you set up and what happened..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+    <article class="item task" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Review the Hunter Agent onboarding reference page</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get a quick, high-level overview of Hunter Agent, a different product from everything else in this exercise.</p>
+      <div class="guidance">
+        <strong>Where to look, not what to write</strong>
+        <ul>
+          <li>Visit the <a href="../hunter-agent-onboarding.html" target="_blank" rel="noopener">Hunter Agent onboarding page</a> in this hub and read it end to end.</li>
+          <li>Hunter Agent is a Verify-stage tool that finds vulnerabilities, not a Solve-stage tool that fixes them. After reading, be able to say in one sentence how it relates to everything else you just answered questions about in this exercise.</li>
+        </ul>
+      </div>
+      <label class="answer-label" for="answer-9">One or two things this page told you, and how Hunter Agent relates to Remediation Agent</label>
+      <textarea id="answer-9" data-item="9" placeholder="Note what stood out and how the two products relate..."></textarea>
+      <div class="status-row"><span>Saved in this browser only, not backed up.</span><span class="saved">Saved on this device</span></div>
+    </article>
+
+  </div>
+</section>
+
+<div class="footer-note" data-glean-id="exercise-footer-note">
+  <strong>Your answers stay on this device</strong>
+  This page saves your answers in this browser's local storage, so they will still be here if you come back later, even after closing the browser. They are not synced anywhere else, so they will not follow you to another browser, another device, or survive clearing this site's data. Print this page (button above, or Cmd/Ctrl+P) for a permanent copy, and if this exercise is tracked as part of your onboarding, commit your written answers into your onboarding notes in your GitHub repo so the work isn't lost.
+</div>
+
+</main>
+<script>
+(function(){
+  var textareas=Array.from(document.querySelectorAll('textarea[data-item]'));
+  var fill=document.getElementById('progress-fill');
+  var label=document.getElementById('progress-label');
+  var total=textareas.length;
+  function storageKey(id){return 'remediation-agent-exercise-'+id;}
+  function updateProgress(){
+    var answered=textareas.filter(function(t){return t.value.trim().length>0;}).length;
+    fill.style.width=(total?Math.round(answered/total*100):0)+'%';
+    label.textContent=answered+' / '+total+' answered';
+  }
+  textareas.forEach(function(t){
+    try{
+      var saved=localStorage.getItem(storageKey(t.dataset.item));
+      if(saved)t.value=saved;
+    }catch(e){}
+    var statusEl=t.closest('.item').querySelector('.saved');
+    var timer;
+    t.addEventListener('input',function(){
+      try{localStorage.setItem(storageKey(t.dataset.item),t.value);}catch(e){}
+      updateProgress();
+      if(statusEl){
+        statusEl.classList.add('show');
+        clearTimeout(timer);
+        timer=setTimeout(function(){statusEl.classList.remove('show');},1200);
+      }
+    });
+  });
+  updateProgress();
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+})();
+</script>
+</body></html>

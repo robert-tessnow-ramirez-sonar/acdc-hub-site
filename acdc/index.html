@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AC/DC Resource Hub</title>
+<style>
+:root{--bg:#f7f9fc;--surface:#fff;--ink:#14233a;--muted:#53657c;--line:#d7e1ec;--accent:#2563eb;--accent-ink:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.shell{max-width:1440px;margin:0 auto;padding:28px}.masthead{display:flex;align-items:end;justify-content:space-between;gap:24px;padding:12px 4px 26px}.eyebrow{margin:0 0 8px;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}h1{margin:0;font-size:clamp(28px,4vw,45px);letter-spacing:-.04em;line-height:1}.intro{max-width:570px;margin:0;color:var(--muted);font-size:15px;line-height:1.5}.workspace{overflow:visible;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:0 12px 35px rgba(20,35,58,.1)}nav{position:relative;z-index:20;display:flex;gap:8px;padding:12px;border-bottom:1px solid var(--line);background:#edf3fa;border-radius:18px 18px 0 0}.nav-item{position:relative}.nav-button{appearance:none;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer;font:inherit;font-size:14px;font-weight:750;padding:11px 15px;display:inline-flex;align-items:center;gap:6px}.nav-button:hover{border-color:var(--line);background:var(--surface);color:var(--ink)}.nav-button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}.nav-button:focus-visible{outline:3px solid #5b8cff;outline-offset:2px}.nav-caret{font-size:10px;opacity:.7;transition:transform .15s ease}.nav-item[data-open="true"] .nav-caret{transform:rotate(180deg)}.nav-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:230px;padding:6px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 14px 30px rgba(20,35,58,.16);display:none;flex-direction:column;gap:2px}.nav-item[data-open="true"] .nav-menu{display:flex}.nav-menu-item{appearance:none;width:100%;text-align:left;border:0;border-radius:8px;background:transparent;color:var(--ink);cursor:pointer;font:inherit;font-size:13.5px;font-weight:650;padding:10px 12px}.nav-menu-item:hover{background:var(--bg)}.nav-menu-item[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}.nav-menu-item span{display:block;margin-top:2px;font-size:11.5px;font-weight:500;color:var(--muted)}.nav-menu-item[aria-selected="true"] span{color:rgba(255,255,255,.85)}.page-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 18px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px}.status{display:inline-flex;align-items:center;gap:8px}.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}iframe{display:block;width:100%;height:calc(100vh - 238px);min-height:640px;border:0;background:var(--surface)}@media(max-width:700px){.shell{padding:14px}.masthead{display:block;padding:12px 2px 20px}.intro{margin-top:14px}nav{overflow-x:auto}.nav-button{white-space:nowrap}iframe{min-height:560px;height:calc(100vh - 236px)}}
+</style></head><body><div class="shell"><header class="masthead"><div><p class="eyebrow">Sonar agent-centric development cycle</p><h1>AC/DC Resource Hub</h1></div><p class="intro">A focused workspace for evaluating Cloud capabilities, checking Cloud versus Server requirements, and onboarding Hunter Agent, Vortex, Remediation Agent, AI CodeFix, and SARA.</p></header><main class="workspace"><nav aria-label="AC/DC resources">
+
+<div class="nav-item"><button class="nav-button" type="button" aria-selected="true" data-page="testing-playbook.html" data-label="Testing playbook" data-description="Evaluation steps, prompts, evidence, and scorecards">Testing playbook</button></div>
+
+<div class="nav-item"><button class="nav-button" type="button" aria-selected="false" data-page="cloud-server-requirements.html" data-label="Cloud &amp; Server requirements" data-description="Deployment requirements and support triage guidance">Cloud &amp; Server requirements</button></div>
+
+<div class="nav-item" data-menu="hunter"><button class="nav-button nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">Hunter Agent <span class="nav-caret">&#9662;</span></button>
+  <div class="nav-menu" role="menu">
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="hunter-agent-onboarding.html" data-label="Hunter Agent onboarding" data-description="Eligibility, enablement, first-run safeguards, and triage">Onboarding<span>Eligibility, enablement, first-run safeguards, and triage</span></button>
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="exercises/remediation-agent-exercise.html" data-label="Remediation &amp; Hunter Agent exercise" data-description="Self-directed questions and hands-on tasks on Remediation Agent, plus a Hunter Agent task">Exercise<span>Remediation Agent questions and tasks, plus one Hunter Agent task</span></button>
+  </div>
+</div>
+
+<div class="nav-item" data-menu="vortex"><button class="nav-button nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">Vortex <span class="nav-caret">&#9662;</span></button>
+  <div class="nav-menu" role="menu">
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="vortex-onboarding.html" data-label="Vortex onboarding" data-description="Eligibility, install steps, supported agents, and the guide-verify loop">Onboarding<span>Eligibility, install steps, supported agents, and the guide-verify loop</span></button>
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="exercises/vortex-exercise.html" data-label="Vortex exercise" data-description="Self-directed questions and hands-on tasks on Sonar Vortex context augmentation">Exercise<span>Self-directed questions and hands-on tasks</span></button>
+  </div>
+</div>
+
+<div class="nav-item" data-menu="remediation"><button class="nav-button nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">Remediation Agent <span class="nav-caret">&#9662;</span></button>
+  <div class="nav-menu" role="menu">
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="remediation-agent-onboarding.html" data-label="Remediation Agent onboarding" data-description="Eligibility, install steps, PR and backlog workflows, and verification loop">Onboarding<span>Eligibility, install steps, PR and backlog workflows, and verification loop</span></button>
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="exercises/remediation-agent-exercise.html" data-label="Remediation &amp; Hunter Agent exercise" data-description="Self-directed questions and hands-on tasks on Remediation Agent, plus a Hunter Agent task">Exercise<span>Self-directed questions and hands-on tasks</span></button>
+  </div>
+</div>
+
+<div class="nav-item" data-menu="ai-codefix"><button class="nav-button nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">AI CodeFix <span class="nav-caret">&#9662;</span></button>
+  <div class="nav-menu" role="menu">
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="ai-codefix-onboarding.html" data-label="AI CodeFix onboarding" data-description="Eligibility, enable steps, LLM choice, and Cloud versus Server differences">Onboarding<span>Eligibility, enable steps, LLM choice, and Cloud versus Server differences</span></button>
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="exercises/ai-codefix-exercise.html" data-label="AI CodeFix exercise" data-description="Self-directed questions and hands-on tasks with a free-text answer area">Exercise<span>Self-directed questions and hands-on tasks</span></button>
+  </div>
+</div>
+
+<div class="nav-item" data-menu="mcp"><button class="nav-button nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">MCP Server <span class="nav-caret">&#9662;</span></button>
+  <div class="nav-menu" role="menu">
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="exercises/mcp-server-exercise.html" data-label="MCP Server exercise" data-description="Self-directed questions and hands-on tasks on the SonarQube MCP Server">Exercise<span>Self-directed questions and hands-on tasks</span></button>
+  </div>
+</div>
+
+<div class="nav-item" data-menu="sara"><button class="nav-button nav-toggle" type="button" aria-haspopup="true" aria-expanded="false">SARA <span class="nav-caret">&#9662;</span></button>
+  <div class="nav-menu" role="menu">
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="sara-onboarding.html" data-label="SARA onboarding" data-description="Eight-pillar model, maturity levels, and how to run an assessment">Onboarding<span>Eight-pillar model, maturity levels, and how to run an assessment</span></button>
+    <button class="nav-menu-item" type="button" aria-selected="false" data-page="exercises/sara-exercise.html" data-label="SARA exercise" data-description="Self-directed questions and hands-on tasks on the Sonar Agentic Readiness Assessment">Exercise<span>Self-directed questions and hands-on tasks</span></button>
+  </div>
+</div>
+
+</nav><div class="page-meta"><span class="status"><span class="dot"></span><span id="active-label">Testing playbook</span></span><span id="active-description">Evaluation steps, prompts, evidence, and scorecards</span></div><iframe id="resource-frame" title="Testing playbook" src="testing-playbook.html"></iframe></main></div><script>
+const frame=document.getElementById('resource-frame'),label=document.getElementById('active-label'),description=document.getElementById('active-description');
+const plainButtons=Array.from(document.querySelectorAll('.nav-button[data-page]'));
+const menuItems=Array.from(document.querySelectorAll('.nav-menu-item'));
+const allTargets=plainButtons.concat(menuItems);
+const navItems=Array.from(document.querySelectorAll('.nav-item'));
+const toggles=Array.from(document.querySelectorAll('.nav-toggle'));
+const slugFor=page=>page.replace(/\.html$/,'');
+
+function closeAllMenus(){
+  navItems.forEach(item=>{item.removeAttribute('data-open');});
+  toggles.forEach(t=>t.setAttribute('aria-expanded','false'));
+}
+function activate(target,pushHistory){
+  frame.src=target.dataset.page;
+  frame.title=target.dataset.label;
+  label.textContent=target.dataset.label;
+  description.textContent=target.dataset.description;
+  allTargets.forEach(item=>item.setAttribute('aria-selected',String(item===target)));
+  closeAllMenus();
+  const slug=slugFor(target.dataset.page);
+  if(pushHistory && window.location.hash.slice(2)!==slug){
+    window.location.hash='/'+slug;
+  }
+}
+allTargets.forEach(target=>target.addEventListener('click',()=>activate(target,true)));
+toggles.forEach(toggle=>{
+  toggle.addEventListener('click',e=>{
+    e.stopPropagation();
+    const item=toggle.closest('.nav-item');
+    const isOpen=item.hasAttribute('data-open');
+    closeAllMenus();
+    if(!isOpen){
+      item.setAttribute('data-open','true');
+      toggle.setAttribute('aria-expanded','true');
+    }
+  });
+});
+document.addEventListener('click',closeAllMenus);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAllMenus();});
+function routeFromHash(){
+  const slug=window.location.hash.replace(/^#\/?/,'');
+  const match=slug && allTargets.find(target=>slugFor(target.dataset.page)===slug);
+  activate(match||plainButtons[0],false);
+}
+window.addEventListener('hashchange',routeFromHash);
+routeFromHash();
+</script></body></html>

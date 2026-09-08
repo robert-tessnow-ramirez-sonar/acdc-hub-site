@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SonarQube MCP Server Onboarding Exercise: Teacher Key</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff;--red:#b42318;--red-soft:#fdecea}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--red);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--red-soft);color:var(--red)}.badge strong{display:block;margin-bottom:4px;font-size:13px}.badge span{font-size:13px;color:var(--ink)}.notice{padding:16px 20px;border-radius:12px;background:var(--red-soft);color:var(--red);font-size:14px;margin:26px 0 30px}.notice strong{display:block;margin-bottom:4px}.toolbar{display:flex;justify-content:flex-end;padding:0 0 20px}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700;font:inherit;cursor:pointer}.btn:hover{border-color:var(--blue);color:var(--blue)}.roadmap{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:20px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item.task .num{background:var(--purple)}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px}.tag.question{background:var(--blue-soft);color:var(--blue)}.tag.task{background:var(--purple-soft);color:var(--purple)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.answer{margin:0 0 14px;padding:16px 18px;border-radius:10px;background:var(--green-soft);border:1px solid #bfe6d8}.answer strong{display:block;margin-bottom:6px;color:var(--green);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.answer p{margin:0 0 8px;font-size:14px}.answer p:last-child{margin-bottom:0}.answer ul{margin:0;padding-left:18px;font-size:14px}.answer code{background:#fff;border:1px solid #bfe6d8;padding:1px 6px;border-radius:6px;font-size:12.5px}.rubric{margin:0 0 14px;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:13.5px}.rubric strong{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.rubric ul{margin:0;padding-left:18px}.rubric li{margin:3px 0}.flag{margin:0;padding:12px 14px;border-radius:10px;background:var(--amber-soft);color:var(--amber);font-size:13px}.flag strong{display:block;margin-bottom:3px}.refs{margin-top:10px;font-size:12.5px;color:var(--muted)}.refs a{color:var(--blue);font-weight:700;text-decoration:none}.refs a:hover{text-decoration:underline}@media print{.toolbar,.roadmap{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="mcp-server-exercise-teacher-page">
+
+<section class="hero" data-glean-id="teacher-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="teacher-eyebrow">AC/DC · Onboarding exercise · Teacher key</p>
+    <h1 data-glean-id="teacher-title">SonarQube MCP Server: grading key</h1>
+    <p class="lead" data-glean-id="teacher-lead">Model answers, grading notes, and what to listen for when reviewing a new joiner's responses on the <a href="mcp-server-exercise.html" target="_blank" rel="noopener">student exercise page</a>. Not for distribution to onboarders.</p>
+  </div>
+  <aside class="badge" data-glean-id="teacher-availability">
+    <strong>Restricted</strong>
+    <span>This page is not linked from the hub navigation. Share the link only with people grading onboarding work.</span>
+  </aside>
+</section>
+
+<div class="notice" data-glean-id="teacher-confidential-warning">
+  <strong>Do not share this URL with new joiners</strong>
+  This page contains model answers for the SonarQube MCP Server onboarding exercise. Send onboarders to <code>mcp-server-exercise.html</code> instead. Treat the model answers as a grading aid, not a rigid rubric &mdash; a new joiner who reasons to a correct answer by a different path should still pass.
+</div>
+
+<div class="toolbar" data-glean-id="teacher-toolbar">
+  <button class="btn" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<nav class="roadmap" data-glean-id="teacher-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a>
+  <a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a>
+</nav>
+
+<section data-glean-id="teacher-items">
+  <div class="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>What is the SonarQube MCP Server used for, and where does it run?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand MCP Server architecture and deployment modes.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The SonarQube MCP Server exposes SonarQube's code quality and security data and analysis capabilities as tools an AI agent can call directly, via the Model Context Protocol, instead of the agent guessing or text-searching. It typically runs locally alongside the developer's agent (as a Docker container or standalone jar), but it can also be hosted differently depending on the setup: self-hosted (you run it yourself), SonarQube Server-hosted (SonarQube Server itself proxies it at <code>&lt;YourSonarQubeURL&gt;/mcp</code>), or SonarQube Cloud-hosted.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>Pass: correctly identifies it as a bridge/tool layer between an AI agent and SonarQube, and names at least two of the three hosting shapes (self-hosted, Server-hosted, Cloud-hosted).</li>
+          <li>Common miss: describing it only as "a Docker container," missing that it can also run as a jar or be proxied through SonarQube Server itself.</li>
+        </ul>
+      </div>
+      <p class="refs">See: <a href="https://docs.sonarsource.com/sonarqube-mcp-server/about-the-mcp-server" target="_blank" rel="noopener">About the MCP Server</a>, <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/self-hosted" target="_blank" rel="noopener">Self-hosted</a>, <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/sonarqube-server-hosted" target="_blank" rel="noopener">Server-hosted</a>.</p>
+    </article>
+
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>What does it mean to integrate the SonarQube MCP Server with SonarQube for IDE?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the IDE integration.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>When SonarQube for IDE is running in connected mode and wired up to the MCP server, the MCP server can trigger a real on-the-fly analysis directly in the editor, the same analysis SonarQube for IDE would normally run itself, instead of only returning previously-known data. Most IDEs with an agent-enabled setup (VS Code, Cursor, etc.) surface a one-click "Configure MCP Server" action from the Connected Mode view once connected mode is already set up, which reuses the connected mode credentials. Setup requires a SonarQube user token specifically; project tokens, global tokens, and scoped organization tokens are explicitly not supported for this binding.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>Pass: identifies that the integration lets the MCP server trigger live analysis in the editor (not just fetch static data), and correctly names user token as the required token type.</li>
+          <li>Bonus: mentions the Linux Docker networking caveat (container can't reach the IDE's embedded server on localhost without <code>--network=host</code>), a real-world gotcha worth knowing for support.</li>
+        </ul>
+      </div>
+      <p class="refs">See: <a href="https://docs.sonarsource.com/sonarqube-mcp-server/using/integration" target="_blank" rel="noopener">Integrate with SonarQube for IDE</a>.</p>
+    </article>
+
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>What configuration setting should you include if your SonarQube Server has a private certificate (self-signed or internal CA-signed)?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Configuration of private certificates.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Mount a directory containing your certificate(s) into the MCP server's Docker container at <code>/usr/local/share/ca-certificates/</code>, for example: <code>-v /path/to/your/certificates/:/usr/local/share/ca-certificates/:ro</code>. Certificates placed there are automatically installed into the container's trust store on startup. Several formats are supported; PEM files split into separate <code>.crt</code>/<code>.key</code> pairs need to be converted to PKCS12 first (<code>openssl pkcs12 -export -in client.crt -inkey client.key -out client.p12</code>) before they'll work. If you're using SonarQube Server's own MCP proxy instead of a standalone MCP server, the equivalent fix is importing the CA certificate into SonarQube's JVM truststore via the <code>caCerts</code> feature.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>Pass: names the certificate mount path/mechanism for Docker, even without exact syntax memorized.</li>
+          <li>Strong answer: also mentions the PEM-to-PKCS12 conversion requirement, or the separate JVM truststore path for the Server-hosted proxy mode.</li>
+        </ul>
+      </div>
+      <p class="refs">See: <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/environment-considerations" target="_blank" rel="noopener">Environment considerations</a>, <a href="https://github.com/SonarSource/sonarqube-mcp-server" target="_blank" rel="noopener">GitHub repo</a>.</p>
+    </article>
+
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>What configuration setting allows you to run the SonarQube MCP Server with an HTTPS endpoint?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Configuration of HTTPS for MCP.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The server supports three transport modes: Stdio (the default, recommended for local single-user development), Streamable HTTP over plain HTTP, and Streamable HTTP over TLS (HTTPS). Switching to HTTPS uses the same environment variables as the HTTP transport mode, but also requires configuring a TLS certificate/keystore for the server. HTTPS is the recommended choice for any multi-user or production deployment; HTTP should be limited to trusted internal networks or local testing.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>Pass: names Streamable HTTP with TLS as the mechanism, and explains why it's preferred over plain HTTP for anything beyond local testing.</li>
+          <li>Watch for: confusing this with the older SSE-only HTTP transport from earlier MCP protocol versions, that's deprecated and not what current SonarQube MCP Server documentation describes.</li>
+        </ul>
+      </div>
+      <p class="refs">See: <a href="https://docs.sonarsource.com/sonarqube-mcp-server/setup/environment-considerations" target="_blank" rel="noopener">Environment considerations</a>, <a href="https://docs.sonarsource.com/sonarqube-mcp-server/reference/environment-variables" target="_blank" rel="noopener">Environment variables reference</a>.</p>
+    </article>
+
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Can you restrict which MCP tools a user's valid token can reach? How would you monitor MCP server usage, and what makes that hard?</h3></div>
+        <div class="tags"><span class="tag question">Question</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Security and monitoring of MCP servers.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <ul>
+          <li><b>Restriction:</b> In Streamable HTTP mode, a client can send a <code>SONARQUBE_TOOLSETS</code> (and a read-only equivalent) header per request to narrow the tool set for that request. Critically, these headers can only <i>reduce</i> scope below what the server was launched with, they can never expand it or grant a tool the server-level config excluded. A leaked or overly-broad user token is still bounded by whatever toolset the server itself was started with.</li>
+          <li><b>Token scope itself:</b> the MCP server requires a SonarQube user token, which carries all the permissions of the user who issued it, not a narrowly-scoped project token. That means the practical security boundary is largely "which user issued this token," not anything MCP-specific.</li>
+          <li><b>Monitoring:</b> the server exposes some unauthenticated service endpoints in HTTP/HTTPS mode intended for health/orchestration checks, and it emits anonymous, non-sensitive usage telemetry to Sonar (disableable via <code>TELEMETRY_DISABLED</code>). What's genuinely hard: there isn't a built-in, per-user audit trail of "which tool did this specific person invoke, against what data." Any real audit trail today has to be reconstructed from SonarQube's own request logs and token metadata, not from anything the MCP server itself logs.</li>
+        </ul>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>Pass: correctly states that toolset headers can narrow but not expand scope, and identifies the lack of a built-in per-user audit trail as the core monitoring gap.</li>
+          <li>Strong answer: connects token scoping back to standard SonarQube token types rather than treating it as an MCP-specific mechanism, since the MCP server inherits whatever the underlying user token can already do.</li>
+          <li>This is a good one to discuss live: docs move fast here, confirm the new joiner checked current documentation rather than relying purely on general MCP security intuition.</li>
+        </ul>
+      </div>
+      <p class="refs">See: <a href="https://docs.sonarsource.com/sonarqube-mcp-server/reference/environment-variables" target="_blank" rel="noopener">Environment variables reference</a>, <a href="https://docs.sonarsource.com/sonarqube-server/user-guide/managing-tokens" target="_blank" rel="noopener">Managing your tokens</a>.</p>
+    </article>
+
+    <article class="item task" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Install the SonarQube MCP Server locally using both the jar and Docker installation methods</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice MCP server installation.</p>
+      <div class="answer">
+        <strong>What to check</strong>
+        <p>Confirm both installs actually connected to a real SonarQube instance and exposed tools to an agent, not just that a process started. For the Docker path, the recommended image is <code>sonarsource/sonarqube-mcp</code>; note whether they used <code>--pull=always</code> and understand why (Docker caches images locally, so it won't auto-update). For the jar path, confirm they used a compatible Java version and can name it.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>Pass: both installs demonstrated working against the same instance, and they can articulate at least one practical tradeoff between the two (e.g., Docker handles dependencies/updates more cleanly; jar has no container runtime dependency).</li>
+          <li>Flag for future updates: the jar install path is called out in the source catalog as possibly not a permanent deployment option, revisit this task if that changes.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="item task" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Set up the SonarQube MCP Server in HTTP transport mode, and point your AI agent at the HTTP connection</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice MCP transport configuration.</p>
+      <div class="answer">
+        <strong>What to check</strong>
+        <p>Confirm the new joiner actually reconfigured an agent's MCP client settings to talk to an HTTP endpoint, not just launched the server in HTTP mode and left it untested. If they ran this in a container, check they hit (and resolved) the interface-binding requirement for port mapping to work.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>Pass: names the specific agent/client they reconfigured and confirms tools were reachable over the HTTP connection.</li>
+          <li>Good follow-up question: did they try HTTPS too, or note why they didn't (e.g., no cert readily available for a quick local test)? Either is fine, the goal is understanding the tradeoff, not mandating HTTPS in a throwaway test.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="item task" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Get information about one of your projects from the AI agent via the MCP server, and validate it against the SonarQube UI</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Verify MCP server data retrieval.</p>
+      <div class="answer">
+        <strong>What to check</strong>
+        <p>Look for an actual side-by-side comparison: a specific number or status reported by the agent, checked against the same thing in the SonarQube UI. If there was a mismatch, did they investigate why (branch scoping, caching, stale data) rather than just noting the discrepancy?</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>Pass: names the specific data point checked and confirms it matched (or explains a reasonable cause if it didn't).</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="item task" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Test the toolsets-related environment variables and see how the agent's available tools change</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag stretch">Stretch, optional</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Deep dive into toolsets env variables. Marked "not highly suggested" in the source catalog, treat as a stretch goal.</p>
+      <div class="answer">
+        <strong>Model answer / what to check</strong>
+        <p>The relevant variable is <code>SONARQUBE_TOOLSETS</code>, a comma-separated list from: analysis, coverage, dependency-risks, duplications, quality-gates, issues, measures, projects, rules, security-hotspots (the projects toolset is always on and doesn't need to be listed). The important behavior to verify hands-on: specifying a subset <i>replaces</i> the default configuration rather than removing individual items from it, so listing only <code>issues,projects</code> means quality-gates and security-hotspots tools disappear too, even though they weren't the target.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>This is optional, don't block onboarding completion on it. Use as a signal of initiative if attempted.</li>
+          <li>Pass (if attempted): correctly demonstrates or describes the "replace, not subtract" behavior, that's the non-obvious part worth testing hands-on rather than just reading about.</li>
+        </ul>
+      </div>
+      <p class="refs">See: <a href="https://docs.sonarsource.com/sonarqube-mcp-server/reference/environment-variables" target="_blank" rel="noopener">Environment variables reference</a>, <a href="https://docs.sonarsource.com/sonarqube-mcp-server/reference/tools" target="_blank" rel="noopener">Tools reference</a>.</p>
+    </article>
+
+    <article class="item task" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Test the SonarQube MCP Server alongside Sonar Vortex agentic analysis and context augmentation</h3></div>
+        <div class="tags"><span class="tag task">Task</span><span class="tag stretch">Stretch, optional</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand Agentic Analysis integration. Marked "not highly suggested" in the source catalog, treat as a stretch goal.</p>
+      <div class="answer">
+        <strong>What to check</strong>
+        <p>This depends on the new joiner having done (or being willing to do) the Vortex onboarding exercise as well. Confirm they can articulate that Vortex's context augmentation and agentic analysis tools are delivered to the agent through this same MCP server (sharing a single combined organization entitlement), rather than being a completely separate integration. If they tried this hands-on, check they hit the CI-analysis prerequisite that agentic analysis depends on.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <ul>
+          <li>This is optional, don't block onboarding completion on it.</li>
+          <li>Pass (if attempted): correctly identifies Vortex tools as riding on the same MCP server rather than a separate product/connection, and names at least one Vortex-specific prerequisite (e.g., a completed CI analysis on a long-lived branch) that plain MCP server usage doesn't require.</li>
+        </ul>
+      </div>
+      <p class="refs">See: <a href="../vortex-onboarding.html" target="_blank" rel="noopener">Vortex onboarding</a>.</p>
+    </article>
+
+  </div>
+</section>
+
+</main>
+<script>
+document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+</script>
+</body></html>

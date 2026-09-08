@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operations Onboarding Exercise: Teacher Key</title>
+<style>
+:root{--ink:#14233a;--muted:#55667d;--line:#d9e3ee;--bg:#f7f9fc;--surface:#fff;--blue:#2563eb;--blue-soft:#eaf1ff;--green:#08785f;--green-soft:#e7f7f1;--amber:#9a5b00;--amber-soft:#fff5df;--purple:#6d28d9;--purple-soft:#f2ecff;--red:#b42318;--red-soft:#fdecea}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}.page{max-width:1100px;margin:0 auto;padding:42px 28px 70px}.hero{display:grid;grid-template-columns:1.4fr .6fr;gap:30px;align-items:end;padding:28px 0 38px;border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 12px;color:var(--red);font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}h1{max-width:760px;margin:0;font-size:clamp(30px,4.6vw,50px);letter-spacing:-.05em;line-height:1}h2{margin:0;font-size:22px;letter-spacing:-.02em}.lead{margin:18px 0 0;max-width:690px;color:var(--muted);font-size:17px}.badge{justify-self:end;max-width:270px;padding:18px;border-radius:14px;background:var(--red-soft);color:var(--red)}.badge strong{display:block;margin-bottom:4px;font-size:13px}.badge span{font-size:13px;color:var(--ink)}.notice{padding:16px 20px;border-radius:12px;background:var(--red-soft);color:var(--red);font-size:14px;margin:26px 0 30px}.notice strong{display:block;margin-bottom:4px}.toolbar{display:flex;justify-content:flex-end;padding:0 0 20px}.btn{border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 16px;font-size:13px;font-weight:700;font:inherit;cursor:pointer}.btn:hover{border-color:var(--blue);color:var(--blue)}.roadmap{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 24px;max-height:92px;overflow-y:auto;padding:2px}.roadmap a{text-decoration:none;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:5px 10px;background:var(--surface)}.roadmap a:hover{color:var(--blue);border-color:var(--blue)}.items{display:grid;gap:18px}.item{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:22px 24px;scroll-margin-top:20px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}.item-title{display:flex;align-items:flex-start;gap:12px}.num{flex:0 0 auto;display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800}.item h3{margin:0;font-size:16.5px;letter-spacing:-.01em}.tags{display:flex;gap:6px;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}.tag{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:99px;white-space:nowrap}.tag.diff{background:var(--blue-soft);color:var(--blue)}.tag.core{background:var(--green-soft);color:var(--green)}.tag.stretch{background:var(--amber-soft);color:var(--amber)}.goal{margin:0 0 14px;color:var(--muted);font-size:13.5px}.goal b{color:var(--ink)}.answer{margin:0 0 14px;padding:16px 18px;border-radius:10px;background:var(--green-soft);border:1px solid #bfe6d8}.answer strong{display:block;margin-bottom:6px;color:var(--green);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.answer p{margin:0;font-size:14px}.rubric{margin:0;padding:14px 16px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:13.5px}.rubric strong{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.rubric p{margin:0}@media print{.toolbar,.roadmap{display:none!important}.item{break-inside:avoid;border:1px solid #ccc}body{background:#fff}}@media(max-width:720px){.page{padding:26px 18px 50px}.hero{grid-template-columns:1fr}.badge{justify-self:start}.item-head{flex-direction:column}}
+</style></head>
+<body><main class="page" data-glean-id="operations-exercise-teacher-page">
+
+<section class="hero" data-glean-id="teacher-hero">
+  <div>
+    <p class="eyebrow" data-glean-id="teacher-eyebrow">Sonar Support &middot; Onboarding exercise &middot; Teacher key</p>
+    <h1 data-glean-id="teacher-title">Operations: grading key</h1>
+    <p class="lead" data-glean-id="teacher-lead">Model answers and grading notes for all 36 items on the <a href="operations-exercise.html" target="_blank" rel="noopener">student exercise page</a>. Not for distribution to onboarders.</p>
+  </div>
+  <aside class="badge" data-glean-id="teacher-availability">
+    <strong>Restricted</strong>
+    <span>This page is not linked from any nav. Share the link only with people grading onboarding work.</span>
+  </aside>
+</section>
+
+<div class="notice" data-glean-id="teacher-confidential-warning">
+  <strong>Do not share this URL with new joiners</strong>
+  This page contains model answers for the Operations onboarding exercise. Send onboarders to <code>operations-exercise.html</code> instead. A few items (notably api/ce/pause behavior and the exact log-correlation field name) rest on reasonable inference rather than directly confirmed documentation, verify against a live instance before stating them as settled fact to a customer.
+</div>
+
+<div class="toolbar" data-glean-id="teacher-toolbar">
+  <button class="btn" id="print-btn" type="button">Print / save as PDF</button>
+</div>
+
+<nav class="roadmap" data-glean-id="teacher-roadmap" aria-label="Jump to item">
+  <a href="#item-1">1</a><a href="#item-2">2</a><a href="#item-3">3</a><a href="#item-4">4</a><a href="#item-5">5</a><a href="#item-6">6</a><a href="#item-7">7</a><a href="#item-8">8</a><a href="#item-9">9</a><a href="#item-10">10</a><a href="#item-11">11</a><a href="#item-12">12</a><a href="#item-13">13</a><a href="#item-14">14</a><a href="#item-15">15</a><a href="#item-16">16</a><a href="#item-17">17</a><a href="#item-18">18</a><a href="#item-19">19</a><a href="#item-20">20</a><a href="#item-21">21</a><a href="#item-22">22</a><a href="#item-23">23</a><a href="#item-24">24</a><a href="#item-25">25</a><a href="#item-26">26</a><a href="#item-27">27</a><a href="#item-28">28</a><a href="#item-29">29</a><a href="#item-30">30</a><a href="#item-31">31</a><a href="#item-32">32</a><a href="#item-33">33</a><a href="#item-34">34</a><a href="#item-35">35</a><a href="#item-36">36</a></nav>
+
+<section data-glean-id="teacher-items">
+  <div class="items">
+
+    <article class="item" id="item-1" data-glean-id="item-1">
+      <div class="item-head">
+        <div class="item-title"><span class="num">1</span><h3>Find release upgrade notes</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how to find release/upgrade notes, why customers often struggle to find them, and how customers are notified of releases and bugfixes.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Release/upgrade notes are published alongside each SonarQube release on Sonar's documentation site, but hotfix-specific announcements are less prominently placed and easier to miss than major-version release notes, part of why customers often struggle to find them, discoverability and scattered locations rather than the content being genuinely hidden. Customers are generally notified of releases through documentation/changelog channels they have to actively check (pull), rather than a guaranteed proactive push notification for every fix or dev ticket completion.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually located both major release notes and a hotfix announcement, and can articulate the discoverability gap (scattered locations, no guaranteed push notification) rather than just saying "they're on the website."</p>
+      </div>
+    </article>
+    <article class="item" id="item-2" data-glean-id="item-2">
+      <div class="item-head">
+        <div class="item-title"><span class="num">2</span><h3>Check the System Info File</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the configuration parameters visible in a System Info File, and how to use it to debug OOMs or performance issues.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A System Info File's configuration section exposes JVM/memory-related settings (heap sizes, JVM options per process) alongside general instance configuration; reviewing these against known guidance (heap sized appropriately for instance scale, no obviously undersized settings) is often the first concrete step in triaging an OOM or slow-performance ticket, since it tells you the customer's actual configured state without needing live access to their instance.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually downloaded and read a real System Info File and identified specific memory-related settings in it, connecting this to why it's typically the first artifact pulled for a performance ticket.</p>
+      </div>
+    </article>
+    <article class="item" id="item-3" data-glean-id="item-3">
+      <div class="item-head">
+        <div class="item-title"><span class="num">3</span><h3>Review and understand logs and different logging levels</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Know how to get INFO, DEBUG, and TRACE level logging, both instance-wide and for individual JVM processes, and how to modify log rolling policy.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>SonarQube's Elasticsearch indexes live under the data/es8 directory (path may vary by version); the documented fix for corrupted or inconsistent indexes is stopping SonarQube, deleting that directory, and restarting, which triggers a full automatic rebuild. While rebuilding, issue search, the global Issues page, and security reports become unavailable or incomplete (availability is restored progressively, prioritizing recently-analyzed projects); SonarQube also has a built-in resilience mechanism that can self-heal indexes merely behind the database without a full manual delete, worth trying first before the more disruptive manual step.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly identifies the data/es8 directory and the stop-delete-restart mechanism, and knows to try the automatic resilience/self-heal path before resorting to a manual full delete.</p>
+      </div>
+    </article>
+    <article class="item" id="item-4" data-glean-id="item-4">
+      <div class="item-head">
+        <div class="item-title"><span class="num">4</span><h3>Review and set the platform prerequisite parameters</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 1/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand SonarQube's platform-level prerequisites before even attempting an install.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A single-project reindex (a targeted POST call under api/issues/) fixes one project showing inconsistent search/issue data, typically after an upgrade or a broader reindex leaves that project's data stale, without touching the rest of the instance. A full instance-wide reindex is heavier and more disruptive (triggered automatically by upgrades/restores, or manually via the data-directory-delete approach), reserved for global corruption rather than a single misbehaving project.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: named the correct single-project API call and can articulate when you'd reach for the narrow fix versus the full, more disruptive reindex.</p>
+      </div>
+    </article>
+    <article class="item" id="item-5" data-glean-id="item-5">
+      <div class="item-head">
+        <div class="item-title"><span class="num">5</span><h3>Clear Elasticsearch indexes and observe the impact</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand where Elasticsearch indexes live, and why/how they get rebuilt.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Each SonarQube process (Web, CE, Search/Elasticsearch) has independent JVM memory settings; Sonar's own guidance recommends keeping -Xms equal to -Xmx per process to avoid runtime heap resizing hurting response times. Rather than memorizing specific numbers (which vary hugely by instance scale), the diagnostic approach is: check whether a process is consistently near its configured heap limit, look for OutOfMemory errors/crashes in sonar.log, and for Compute Engine specifically, watch pending/in-progress/failed task counts and oldest-pending-task wait time, a growing backlog suggests CE needs more heap or workers, not just a temporarily slow queue.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly focuses on diagnostic signals (heap-limit proximity, OOM log entries, CE task backlog trends) rather than inventing specific -Xmx numbers as universally correct, since real-world tuning is workload-dependent.</p>
+      </div>
+    </article>
+    <article class="item" id="item-6" data-glean-id="item-6">
+      <div class="item-head">
+        <div class="item-title"><span class="num">6</span><h3>Pause the Compute Engine queue with api/ce/pause and observe the impact</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand why pausing CE task processing is a genuinely useful operational tool, not just a curiosity.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Log entries across Web, CE, Search, and Access logs for a single request/task share an identifier that lets you trace its full lifecycle end to end, an access log entry, the corresponding web.log detail, and (if it spawned a background task) the ce.log processing record. Raising the log level to DEBUG or TRACE (globally or per-process via sonar.log.level.web/.ce/.es) surfaces more detail including SQL/ES call information; note the exact field name for this correlation ID is worth confirming against a real log sample or the background task's own id field in the API, rather than assuming a fixed universal "UUID" label across all four log types.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually cross-referenced the same identifier across at least two of the four log files for a single real request, this is a genuinely useful troubleshooting technique worth having hands-on experience with, even if the exact field naming needs verifying case by case.</p>
+      </div>
+    </article>
+    <article class="item" id="item-7" data-glean-id="item-7">
+      <div class="item-head">
+        <div class="item-title"><span class="num">7</span><h3>Tune memory settings for a SonarQube instance</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the diagnostic approach for judging whether a customer's JVM memory settings are healthy, without needing to invent specific numbers.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A SonarQube service (Windows Service or a Linux systemd unit) gives you auto-start on boot and process supervision/restart, versus a foreground process that dies when the terminal session ends and doesn't restart itself on failure. Running multiple versions/instances as services on the same machine requires distinct service names/configurations (and non-conflicting ports/data directories) for each, rather than a single service definition handling more than one version.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually set up a real service on both Windows and Linux, and correctly identifies auto-start/supervision as the core difference from a foreground process, plus a concrete plan for running multiple versions without conflict.</p>
+      </div>
+    </article>
+    <article class="item" id="item-8" data-glean-id="item-8">
+      <div class="item-head">
+        <div class="item-title"><span class="num">8</span><h3>Link a request's UUID across the Web, CE, Search, and Access logs</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 2/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that a single request/task can be traced across multiple separate log files using a shared correlation ID.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The specific endpoint is a POST to an endpoint under api/issues/ (commonly api/issues/reindex) scoped to one project, letting you fix that project's search/issue data without a full instance-wide reindex. You'd reach for this when one specific project shows stale or inconsistent data (often after an upgrade), reserving the more disruptive full reindex for genuinely global corruption affecting many or all projects.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually called the real API endpoint against a real project and can articulate the single-project-vs-full tradeoff (narrower and faster vs. broader and more disruptive but sometimes necessary).</p>
+      </div>
+    </article>
+    <article class="item" id="item-9" data-glean-id="item-9">
+      <div class="item-head">
+        <div class="item-title"><span class="num">9</span><h3>Set SonarQube to run as a service</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Test running SonarQube as a service on both Windows and Linux, and understand the difference between a service and a single foreground process.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A standard pg_dump/pg_restore cycle (or the equivalent for whichever database engine is in use) backs up and restores SonarQube's own database; common gotchas include version mismatches between the dump and restore target, missing database extensions the dump depends on, and permission/ownership issues on the restored objects, all realistic issues a customer would also hit.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually performed a real backup and restore cycle (not just described the commands) and confirmed the restored instance came up showing the same data.</p>
+      </div>
+    </article>
+    <article class="item" id="item-10" data-glean-id="item-10">
+      <div class="item-head">
+        <div class="item-title"><span class="num">10</span><h3>Reindex a single project via the Web API</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand when reindexing one specific project is appropriate versus a full Elasticsearch reindex.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Housekeeping (the dbcleaner) matters because without it, a SonarQube database accumulates years of granular historical data (old analysis snapshots, source-level detail from every past analysis) that isn't actually needed for long-term trend visibility, only for the current/recent state; without pruning, this would grow unbounded. It runs automatically as part of routine analysis processing, and can also be influenced/forced via specific settings like sonar.projectDate manipulation or the daysBeforeDeletingInactiveBranchesAndPRs threshold, connecting directly to the equivalent Administration exercise item on this same mechanism.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: explains the unbounded-growth rationale in their own words, and correctly connects this to the same underlying dbcleaner mechanism tested in the Administration exercise, rather than treating it as an unrelated Operations-only concept.</p>
+      </div>
+    </article>
+    <article class="item" id="item-11" data-glean-id="item-11">
+      <div class="item-head">
+        <div class="item-title"><span class="num">11</span><h3>Back up and restore a database</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice a real database backup and restore cycle for SonarQube's own database.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>By default, users with Administer Quality Profile permission receive an email whenever a built-in Quality Profile (e.g. "Sonar way") is updated, typically as a side effect of a SonarQube or analyzer version upgrade introducing new or deprecated rules. sonar.builtInQualityProfiles.disableNotificationOnUpdate (default off, meaning notifications are on) lets an admin suppress this; a reasonable admin motivation is notification fatigue, especially at scale managing many instances/upgrades where the notification doesn't drive any actual action since profiles are expected to inherit and auto-update anyway.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually triggered or observed the real notification during an upgrade, and correctly names the property plus a plausible reason (notification fatigue at scale) an admin would want to suppress it.</p>
+      </div>
+    </article>
+    <article class="item" id="item-12" data-glean-id="item-12">
+      <div class="item-head">
+        <div class="item-title"><span class="num">12</span><h3>Trigger housekeeping</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand why housekeeping matters and how to trigger it on demand.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>PostgreSQL setup for SonarQube is comparatively simple: create a database and user, point sonar.properties at it, and start the instance, no vendor driver installation or licensing considerations required, unlike Oracle or MS SQL. This relative ease is worth remembering as a baseline for how much heavier the other supported database setups are by comparison.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually stood up a real PostgreSQL-backed instance and can speak to how few steps it took relative to Oracle or MS SQL Server.</p>
+      </div>
+    </article>
+    <article class="item" id="item-13" data-glean-id="item-13">
+      <div class="item-head">
+        <div class="item-title"><span class="num">13</span><h3>Configure notifications for a Quality Profile update during an upgrade</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 3/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the notification that fires when a built-in Quality Profile is updated during a SonarQube upgrade, and the setting that suppresses it.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Cloning a populated SonarQube database and pointing a second, potentially different-version instance at the clone lets you test against realistic, pre-existing data without needing to regenerate it from scratch each time, useful for validating an upgrade path or comparing version behavior side by side without risking the original data.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually cloned a real database and confirmed two independent instances both worked correctly against their respective copies.</p>
+      </div>
+    </article>
+    <article class="item" id="item-14" data-glean-id="item-14">
+      <div class="item-head">
+        <div class="item-title"><span class="num">14</span><h3>Set up PostgreSQL as SonarQube's database</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how straightforward PostgreSQL setup is compared to other supported databases.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Only tasks still in the Pending state can be cancelled (individually or in bulk) via the UI or the api/ce/cancel / cancel_all endpoints; a task already In Progress cannot be cancelled through any documented, supported mechanism, since Compute Engine processes reports serially and is actively writing to the database mid-processing, making a safe mid-flight cancel impossible without risking inconsistent state. If an in-progress task appears stuck, the only supported recourse is checking CE logs for the actual hang, or restarting the CE/server process, there's no force-kill option.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually attempted to cancel both a pending and an in-progress task and observed the real difference in what's possible, and correctly states there's no supported force-cancel for an in-progress task.</p>
+      </div>
+    </article>
+    <article class="item" id="item-15" data-glean-id="item-15">
+      <div class="item-head">
+        <div class="item-title"><span class="num">15</span><h3>Clone a database to run multiple SonarQube versions against the same data</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Have multiple SonarQube instances running against a copy of the same data, without needing to repopulate it each time.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>A Portfolio hierarchy has to be a genuine tree; nesting the same Portfolio under two different parents (or under one of its own descendants) creates a structure where recomputation logic breaks, since there's no well-defined "correct" rolled-up value when a node's contribution would need to be counted through more than one path, or the tree becomes circular. In practice this manifests as a recomputation failure, a stuck computation, or visibly incorrect aggregate numbers rather than a clean error explaining the structural problem.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually built the duplicated/nested structure and observed a real recomputation failure or misbehavior, and can explain in their own words why a non-tree structure breaks the rollup logic conceptually.</p>
+      </div>
+    </article>
+    <article class="item" id="item-16" data-glean-id="item-16">
+      <div class="item-head">
+        <div class="item-title"><span class="num">16</span><h3>Clear a pending or in-progress background task</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand which background tasks can actually be cancelled, and which can't.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>SQL Authentication for MS SQL Server means a SQL login (username/password) stored in SonarQube's connection configuration; Windows/Integrated Security (a separate item in this exercise) avoids storing that credential at all by delegating to the Windows account already running the SonarQube service. The tradeoff: SQL Auth is simpler to set up across mixed environments (doesn't require the Windows-domain relationship Integrated Security needs), but carries the credential-management downside of a plaintext password living in a config file.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually set up SQL Auth and can articulate the specific tradeoff versus Integrated Security (setup simplicity vs. credential exposure), not just "one is more secure."</p>
+      </div>
+    </article>
+    <article class="item" id="item-17" data-glean-id="item-17">
+      <div class="item-head">
+        <div class="item-title"><span class="num">17</span><h3>Create a Portfolio structure with the same Portfolio nested twice and observe the recomputation failure</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 4/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand that a Portfolio hierarchy has to be a genuine tree, and see what happens when that assumption is violated by nesting the same Portfolio under two different parents (or under itself).</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Debugging a real performance problem means going through web, CE, and Elasticsearch logs together to piece together where time is actually being spent, rather than assuming the bottleneck's location upfront. There's no fixed universal answer here; the value is in practicing a real triage order (usually: confirm which process/operation is actually slow first, then drill into that specific log) on a real or simulated slow scenario.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually walked through real logs on a genuine (even if artificially induced) slow scenario, and can explain the order they checked things in and why that order made sense, rather than reciting a generic checklist.</p>
+      </div>
+    </article>
+    <article class="item" id="item-18" data-glean-id="item-18">
+      <div class="item-head">
+        <div class="item-title"><span class="num">18</span><h3>Configure SonarQube with MS SQL using SQL Authentication</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the advantage of Windows Authentication (Integrated Security) versus plain SQL Authentication for MS SQL Server.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Plugins added to a SonarQube Helm chart deployment need to persist across pod restarts and redeploys; depending on the chart's configuration, this typically requires either a persistent volume for the plugins directory or an init-container approach that re-installs the plugin on every pod start, a plain in-container copy without persistence or an init step would be lost on the next restart.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually added a plugin to a real Helm-deployed instance and specifically tested whether it survived a pod restart, confirming (or fixing) the persistence mechanism rather than assuming it would just work.</p>
+      </div>
+    </article>
+    <article class="item" id="item-19" data-glean-id="item-19">
+      <div class="item-head">
+        <div class="item-title"><span class="num">19</span><h3>Debug a SonarQube server performance problem via logs</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Practice going through web, CE, and Elasticsearch logs to diagnose a performance issue the way a real support ticket would require.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>JMX exposes standard JVM mBeans (ClassLoader, Memory, Threads, OS) plus a few SonarQube-specific ones, all read-only (can't be reset without restarting the process), and each process (Web, CE, Search) needs separate JMX configuration rather than one unified view. A specifically documented limitation: SonarQube's CE task-processing-time metric via JMX is cumulative since the last restart, so it can't show a recent time window in isolation, one of the reasons Sonar's docs now point toward the newer Prometheus-based /api/monitoring/metrics endpoint as the preferred modern alternative.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually connected via jconsole (or similar) to a real SonarQube JVM and browsed real mBeans, and correctly names at least one specific documented limitation (read-only, cumulative-since-restart metric, or per-process config) rather than a vague "it's limited."</p>
+      </div>
+    </article>
+    <article class="item" id="item-20" data-glean-id="item-20">
+      <div class="item-head">
+        <div class="item-title"><span class="num">20</span><h3>Add plugins to a SonarQube Helm chart deployment</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how plugin persistence works in a Kubernetes Helm chart deployment, as opposed to a simple binary install.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Deploying via Docker requires pulling the official image and mounting appropriate volumes for data persistence; Docker Compose wraps this into a single declarative file, and Sonar publishes official example compose files rather than expecting you to write one from scratch. Memory settings are adjusted the same way as any containerized JVM process, environment variables passed to the container controlling each process's heap settings.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually deployed via both plain Docker and Docker Compose, adjusted a real memory setting and confirmed it took effect, and knows where the official example compose files live rather than having written one entirely from scratch.</p>
+      </div>
+    </article>
+    <article class="item" id="item-21" data-glean-id="item-21">
+      <div class="item-head">
+        <div class="item-title"><span class="num">21</span><h3>Monitor SonarQube with JMX mBeans</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the official JMX monitoring method, and its real limitations compared to better alternatives.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Cloud deployment introduces considerations that don't exist locally: network/firewall rules controlling who can reach the instance, persistent storage that survives VM restarts or redeploys, and how you actually expose/reach the instance externally (a public IP, load balancer, or VPN), none of which are concerns on a purely local setup.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually provisioned a real cloud VM and deployed SonarQube on it, and can name at least one concrete networking or storage consideration that came up which wouldn't apply locally.</p>
+      </div>
+    </article>
+    <article class="item" id="item-22" data-glean-id="item-22">
+      <div class="item-head">
+        <div class="item-title"><span class="num">22</span><h3>Install SonarQube on Docker</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand local Docker deployment, memory settings, and Docker Compose.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>An LTS-to-LTS upgrade involves more than swapping the binary or container image: database schema migration (usually automatic on first startup of the new version, but can take significant time on large instances), checking plugin/analyzer compatibility with the new version, and reviewing configuration changes the new version may require or deprecate. Skipping any of these steps, or assuming the upgrade is "just download and restart," is a common way customers get into trouble.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually performed (or closely simulated) a real LTS-to-LTS upgrade and encountered at least one real step beyond the binary swap (a migration step, a plugin compatibility check, or a configuration change), not just described the process from documentation.</p>
+      </div>
+    </article>
+    <article class="item" id="item-23" data-glean-id="item-23">
+      <div class="item-head">
+        <div class="item-title"><span class="num">23</span><h3>Project import and export</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> See exactly what does and doesn't come along when a project is exported and re-imported via the Web API.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Upgrading between editions (e.g. Community/Developer to Enterprise) unlocks new features and settings tied to the new license, but confirming exactly what becomes newly available (and whether any restart or additional configuration step beyond just applying the license is required) is worth verifying hands-on rather than assuming it's purely a license-key swap.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually performed a real edition upgrade and can name at least one specific new feature/setting that became available as a direct result, plus whether any extra step beyond the license itself was needed.</p>
+      </div>
+    </article>
+    <article class="item" id="item-24" data-glean-id="item-24">
+      <div class="item-head">
+        <div class="item-title"><span class="num">24</span><h3>Experiment with Server ID changes</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 5/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand exactly how a Server ID is generated and in which situations it actually changes.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>DCE's inter-node Elasticsearch encryption has two separate layers: the HTTP layer between app nodes and search nodes (which Sonar's own docs cover, requiring ES auth enabled first, then TLS certs referenced by sonar.cluster.es.http.ssl.keystore), and the ES transport layer between search nodes themselves (port 9300), which is native Elasticsearch mutual-TLS, documented by Elastic rather than Sonar. Enterprises want this because compliance frameworks and strict internal security policy often don't carve out an exception for "internal-only" traffic, an attacker who reaches the internal network segment could otherwise read or manipulate cluster data even though it never crosses a public boundary.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: correctly distinguishes the HTTP layer (Sonar-documented) from the ES transport layer (Elastic-documented, native mutual-TLS) as two separate encryption concerns, and articulates the compliance rationale for encrypting supposedly-internal traffic.</p>
+      </div>
+    </article>
+    <article class="item" id="item-25" data-glean-id="item-25">
+      <div class="item-head">
+        <div class="item-title"><span class="num">25</span><h3>Use cloud services to deploy SonarQube</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get hands-on experience deploying SonarQube to a cloud VM.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The standard, non-DCE Helm chart deploys a single StatefulSet (a monolithic pod running Web, CE, and an embedded Elasticsearch together), with persistence typically disabled by default, suitable for Community through Enterprise editions without HA requirements. Deploying it via Minikube locally versus a managed service like AKS mainly differs in ingress/storage-class configuration, not the chart's fundamental single-deployment structure.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually deployed the non-DCE chart to at least one real target (Minikube or AKS) and correctly describes its single-deployment, non-clustered structure.</p>
+      </div>
+    </article>
+    <article class="item" id="item-26" data-glean-id="item-26">
+      <div class="item-head">
+        <div class="item-title"><span class="num">26</span><h3>Upgrade from LTS to LTS</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the upgrade process end to end, not just "download the new version."</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>The DCE-specific Helm chart is structurally different from the non-DCE chart: separate application-node and search-node pools, Kubernetes-service-based auto-discovery of cluster members (no manual node list needed, unlike a VM-based DCE setup), and persistence enabled by default for search data so losing one search node doesn't lose index data. These structural differences map directly to what true DCE needs for high availability that the simpler non-DCE chart doesn't provide.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually deployed the DCE chart (ideally to a managed service like AKS, since replicating this fully on Minikube is harder) and can name the specific structural pieces (separate node pools, service-based discovery, default persistence) that distinguish it from the non-DCE chart.</p>
+      </div>
+    </article>
+    <article class="item" id="item-27" data-glean-id="item-27">
+      <div class="item-head">
+        <div class="item-title"><span class="num">27</span><h3>Upgrade between editions</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand what changes when moving between SonarQube editions, beyond just a license key swap.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Setting up a proxy for SonarQube (or a scanner reaching out through one) means configuring the relevant proxy host/port/credential settings, then verifying traffic actually flows through the proxy, not just that connectivity happens to work. Using a tool like ngrok as a controllable, inspectable target is a good way to prove the proxy configuration is actually doing something: if removing the proxy config breaks connectivity to that same target, that confirms the proxy was genuinely in the path, not just coincidentally irrelevant.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually configured a real proxy and used a verifiable target (like ngrok) to confirm traffic genuinely routed through it, specifically by testing that removing the config broke connectivity again, that's the real test of whether the proxy config was doing anything.</p>
+      </div>
+    </article>
+    <article class="item" id="item-28" data-glean-id="item-28">
+      <div class="item-head">
+        <div class="item-title"><span class="num">28</span><h3>Encrypt Elasticsearch inter-node communication in a DCE cluster</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand why enterprises want ALL network traffic encrypted, including internal cluster traffic between search nodes, not just client-facing traffic.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Setting up Oracle locally for SonarQube is a noticeably heavier lift than PostgreSQL, typically requiring a Docker-based Oracle image (given Oracle's licensing model makes a lightweight native local install impractical), plus obtaining and configuring the Oracle JDBC driver, which isn't bundled with SonarQube by default for licensing reasons.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually stood up a real local Oracle instance (via Docker or otherwise) and connected SonarQube to it, and can speak concretely to how much heavier this setup was compared to PostgreSQL.</p>
+      </div>
+    </article>
+    <article class="item" id="item-29" data-glean-id="item-29">
+      <div class="item-head">
+        <div class="item-title"><span class="num">29</span><h3>Deploy the non-DCE SonarQube Helm chart</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the structure of a standard (non-Data-Center-Edition) Kubernetes deployment via Helm.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Connecting to an Azure-hosted managed PostgreSQL instance instead of a local database introduces cloud-specific considerations: firewall/network rules on the Azure DB resource itself (allowing SonarQube's host to connect), a managed-service connection string format, and potentially managed-service-specific settings (SSL enforcement, connection pooling limits) that don't apply to a local database.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually connected a real SonarQube instance to a real Azure-hosted PostgreSQL database and can name at least one concrete difference (firewall rule, SSL requirement, or connection string quirk) versus a local DB connection.</p>
+      </div>
+    </article>
+    <article class="item" id="item-30" data-glean-id="item-30">
+      <div class="item-head">
+        <div class="item-title"><span class="num">30</span><h3>Deploy the DCE SonarQube Helm chart</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 6/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the structure of a Data Center Edition Kubernetes deployment via Helm, and how it differs from the non-DCE chart.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Sonar's DB Copy Tool migrates SonarQube's data between different supported database engines; when Oracle is either the source or target, the Oracle JDBC driver needs to be added manually (it isn't bundled by default, for licensing reasons), a step easy to miss if you assume the tool ships with every driver out of the box.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually ran a real cross-engine copy (even a small one) and, if Oracle was involved, explicitly handled the driver-add step rather than getting stuck on a missing-driver error without understanding why.</p>
+      </div>
+    </article>
+    <article class="item" id="item-31" data-glean-id="item-31">
+      <div class="item-head">
+        <div class="item-title"><span class="num">31</span><h3>Configure SonarQube with MS SQL using Windows Authentication (Integrated Security)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand the advantage of Windows Authentication (Integrated Security) over plain SQL Authentication for MS SQL Server.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>"DCE in a box" runs a full DCE topology (multiple application nodes, shared database, shared Elasticsearch cluster) on a single machine, explicitly for learning/testing purposes, since collapsing everything onto one host defeats DCE's actual HA purpose (a single hardware failure would take down the whole thing). A customer who thinks running several separate Enterprise Edition instances achieves the same HA outcome is missing the coordinated, shared state that true DCE provides: a single shared database, a single shared/coordinated Elasticsearch cluster, and load-balanced session handling across app nodes, standalone EE instances are independent silos with entirely separate data, not a coordinated cluster at all.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually ran DCE-in-a-box (or the docker-compose variant) and can clearly articulate why multiple standalone EE instances are NOT equivalent to true DCE HA, specifically calling out the lack of shared/coordinated state as the real gap, not just "it's not the same."</p>
+      </div>
+    </article>
+    <article class="item" id="item-32" data-glean-id="item-32">
+      <div class="item-head">
+        <div class="item-title"><span class="num">32</span><h3>Configure SonarQube with Oracle DB (local setup)</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to set up an Oracle database locally for SonarQube, a noticeably heavier lift than PostgreSQL.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Setting logging to INFO, DEBUG, or TRACE can be done instance-wide or targeted at one specific process (web, ce, or search) independently via separate per-process log-level settings; the log rolling policy (how logs are rotated/archived over time) is a separate, distinct setting from the log level itself, and both are worth confirming by actually changing them and observing the effect, rather than assuming from documentation alone.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually changed logging level both instance-wide and for one specific process independently, and separately modified and confirmed a change to the log rolling policy.</p>
+      </div>
+    </article>
+    <article class="item" id="item-33" data-glean-id="item-33">
+      <div class="item-head">
+        <div class="item-title"><span class="num">33</span><h3>Configure SonarQube with an Azure-hosted PostgreSQL database</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Get familiar with a managed cloud database offering as SonarQube's backing store.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>SonarQube's platform prerequisites cover OS-level settings (like max virtual memory map count areas, file descriptor limits) and the required Java version, all documented in the platform notes; going through each one explicitly on a real test machine (rather than just reading the list) surfaces which ones are easy to overlook until an install actually fails because of them.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually verified/set each prerequisite on a real machine (not just read the checklist) and can speak to which one, if any, wasn't already correctly configured by default.</p>
+      </div>
+    </article>
+    <article class="item" id="item-34" data-glean-id="item-34">
+      <div class="item-head">
+        <div class="item-title"><span class="num">34</span><h3>Use the DB Copy Tool between different database engines</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag stretch">Stretch</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand how to migrate SonarQube's data between different database engines using Sonar's DB Copy Tool.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Changing the database connection configuration (e.g. switching a hostname to an IP, or repointing at a different/fresh database) on a test instance triggers a genuine Server ID regeneration, confirming this is a DB-connection-string-driven mechanism rather than tied to the application server itself. Restoring the original connection configuration does not necessarily restore the original Server ID, since the ID also incorporates a value generated the first time a given database was set up, once changed, it may not revert just by pointing back at the original connection string if the underlying database's own state has since diverged.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually changed a real connection configuration and observed the Server ID change, and correctly notes that reverting the connection string doesn't necessarily reverse the Server ID change, since a first-setup-generated value factors in too, this is a subtler point than the equivalent Administration exercise item and worth calling out explicitly.</p>
+      </div>
+    </article>
+    <article class="item" id="item-35" data-glean-id="item-35">
+      <div class="item-head">
+        <div class="item-title"><span class="num">35</span><h3>Install SonarQube Data Center Edition (DCE) locally, all on one machine</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 7/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand DCE's architecture using "DCE in a box": multiple application nodes plus shared database and shared Elasticsearch, for high availability, and see the limitations of trying to replicate this with plain Enterprise Edition instances instead.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>See item 3b (Elasticsearch reindexing) for related context: Project export/import via the Web API carries a project's issues and analysis data, but branches or PRs not explicitly marked to be kept when inactive are excluded from the export, the same underlying retention logic housekeeping would eventually apply anyway. Issue assignees are also worth verifying explicitly, whether they carry over correctly depends on whether the target instance has matching user accounts for the same identities.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually exported and re-imported a real project with assignees, multiple branches, and at least one PR, and specifically checked (not assumed) whether assignees and each branch/PR type carried over.</p>
+      </div>
+    </article>
+    <article class="item" id="item-36" data-glean-id="item-36">
+      <div class="item-head">
+        <div class="item-title"><span class="num">36</span><h3>Set up a proxy</h3></div>
+        <div class="tags"><span class="tag diff">Difficulty 8/10</span><span class="tag core">Core</span></div>
+      </div>
+      <p class="goal"><b>Goal:</b> Understand proxy and network setup for a SonarQube instance that needs to reach the internet (or specific external services) through a proxy.</p>
+      <div class="answer">
+        <strong>Model answer</strong>
+        <p>Setting up a proxy (a more constrained/advanced network scenario at this difficulty tier) means SonarQube or the scanner needs correct proxy host/port/credential configuration to reach required external endpoints through a restrictive network path; verifying this with a controllable target (like ngrok) and confirming that removing the proxy configuration breaks connectivity again is the way to prove the configuration is genuinely functional rather than coincidentally working.</p>
+      </div>
+      <div class="rubric">
+        <strong>Grading notes</strong>
+        <p>Pass: actually configured and verified a real proxy setup, specifically testing that connectivity depended on the proxy config being present (removing it broke things) rather than assuming success from a single successful test.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+<script>
+document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+</script>
+</body></html>
