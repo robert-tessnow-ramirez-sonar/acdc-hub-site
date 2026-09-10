@@ -1,5 +1,6 @@
 # Sonar New Joiner
-
+Start here: https://robert-tessnow-ramirez-sonar.github.io/acdc-hub-site/new-joiner.html
+or
 Start here: [new-joiner.html](new-joiner.html)
 
 This is the entry point for onboarding exercises. From there you can go to:
