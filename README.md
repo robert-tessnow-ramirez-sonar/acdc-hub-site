@@ -1,5 +1,5 @@
 # Sonar New Joiner
-Start here: [read me](tessnow-ramirez-sonar.github.io/acdc-hub-site/)
+Start here: [read me](https://robert-tessnow-ramirez-sonar.github.io/acdc-hub-site/)
 or
 Start here: [new-joiner.html](new-joiner.html)
 
