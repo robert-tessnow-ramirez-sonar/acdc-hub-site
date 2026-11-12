@@ -20,6 +20,8 @@ administration/        Administration onboarding exercise + teacher key
 integration/           Integration onboarding exercise + teacher key
 analysis/               Analysis onboarding exercise + teacher key
 operations/             Operations onboarding exercise + teacher key
+shared/css/chrome.css  Shared nav, back-to-hub pill, flag-question styles
+shared/js/             Shared scripts: nav dropdown, flag link, exercise autosave/progress/backup
 shared/img/            Shared static assets
 ```
 
@@ -34,3 +36,7 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000/new-joiner.html`.
+
+## Saving answers
+
+Student exercise pages autosave to the browser's localStorage. Use **Export answers** / **Import answers** in the toolbar to back up or move answers between browsers (JSON file). Print / save as PDF still works.
